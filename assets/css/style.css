@@ -3,18 +3,18 @@
    ============================================ */
 
 :root {
-  --color-bg: #0a0a0f;
-  --color-bg-alt: #111118;
-  --color-surface: #1a1a24;
-  --color-surface-hover: #22222e;
-  --color-border: #2a2a3a;
-  --color-text: #e4e4ed;
-  --color-text-muted: #8888a0;
-  --color-primary: #6c5ce7;
-  --color-primary-light: #a29bfe;
+  --color-bg: #0a0e1a;
+  --color-bg-alt: #0f1524;
+  --color-surface: #151d2e;
+  --color-surface-hover: #1c2640;
+  --color-border: #243352;
+  --color-text: #e4e8f0;
+  --color-text-muted: #7a8ba8;
+  --color-primary: #2397f8;
+  --color-primary-light: #5bb5ff;
   --color-accent: #00cec9;
   --color-accent-light: #55efc4;
-  --color-gradient-start: #6c5ce7;
+  --color-gradient-start: #2397f8;
   --color-gradient-end: #00cec9;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --radius: 12px;
@@ -157,11 +157,11 @@ img {
 .btn-primary {
   background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
   color: #fff;
-  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 20px rgba(35, 151, 248, 0.3);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 30px rgba(108, 92, 231, 0.5);
+  box-shadow: 0 6px 30px rgba(35, 151, 248, 0.5);
   transform: translateY(-2px);
 }
 
@@ -174,19 +174,19 @@ img {
 .btn-outline:hover {
   border-color: var(--color-primary);
   color: var(--color-primary-light);
-  background: rgba(108, 92, 231, 0.08);
+  background: rgba(35, 151, 248, 0.08);
 }
 
 .btn-nav {
   padding: 8px 20px;
-  background: rgba(108, 92, 231, 0.15);
+  background: rgba(35, 151, 248, 0.15);
   color: var(--color-primary-light);
-  border: 1px solid rgba(108, 92, 231, 0.3);
+  border: 1px solid rgba(35, 151, 248, 0.3);
   border-radius: var(--radius-sm);
 }
 
 .btn-nav:hover {
-  background: rgba(108, 92, 231, 0.25);
+  background: rgba(35, 151, 248, 0.25);
   color: #fff !important;
 }
 
@@ -213,9 +213,9 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 92, 231, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(35, 151, 248, 0.15) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0, 206, 201, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(108, 92, 231, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(35, 151, 248, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -325,8 +325,8 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary-light);
-  background: rgba(108, 92, 231, 0.1);
-  border: 1px solid rgba(108, 92, 231, 0.2);
+  background: rgba(35, 151, 248, 0.1);
+  border: 1px solid rgba(35, 151, 248, 0.2);
   margin-bottom: 16px;
 }
 
@@ -370,7 +370,7 @@ img {
 .about-card:hover {
   border-color: var(--color-primary);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(108, 92, 231, 0.1);
+  box-shadow: 0 12px 40px rgba(35, 151, 248, 0.1);
 }
 
 .about-icon {
@@ -416,7 +416,7 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background: linear-gradient(135deg, rgba(108, 92, 231, 0.05), rgba(0, 206, 201, 0.05));
+  background: linear-gradient(135deg, rgba(35, 151, 248, 0.05), rgba(0, 206, 201, 0.05));
 }
 
 .play-button {
@@ -474,7 +474,7 @@ img {
 
 .video-url-input input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+  box-shadow: 0 0 0 3px rgba(35, 151, 248, 0.15);
 }
 
 .video-url-input input::placeholder {
@@ -548,7 +548,7 @@ img {
 .blog-card:hover {
   border-color: var(--color-primary);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(108, 92, 231, 0.1);
+  box-shadow: 0 12px 40px rgba(35, 151, 248, 0.1);
 }
 
 .blog-card-tag {
@@ -613,7 +613,7 @@ img {
 
 .contact-link:hover {
   border-color: var(--color-primary);
-  background: rgba(108, 92, 231, 0.08);
+  background: rgba(35, 151, 248, 0.08);
   transform: translateY(-2px);
 }
 
@@ -765,7 +765,7 @@ img {
   border-left: 3px solid var(--color-primary);
   padding: 16px 24px;
   margin: 32px 0;
-  background: rgba(108, 92, 231, 0.05);
+  background: rgba(35, 151, 248, 0.05);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
