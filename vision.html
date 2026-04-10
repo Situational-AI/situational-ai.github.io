@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision — Situational AI</title>
+  <meta name="description" content="The Missing Cognitive Layer — Why Situational AI is the next frontier in autonomous intelligence.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .vision-hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 0 80px;
+      position: relative;
+    }
+    .vision-hero .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 92, 231, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(0, 206, 201, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .vision-hero-content { position: relative; z-index: 1; }
+    .vision-hero-icon { width: 80px; margin: 0 auto 24px; }
+    .vision-hero-icon img { width: 100%; filter: brightness(0) invert(1); opacity: 0.8; }
+
+    .vision-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .vision-section:nth-child(even) {
+      background: var(--color-bg-alt);
+    }
+
+    .vision-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .vision-row.reverse .vision-text { order: 2; }
+    .vision-row.reverse .vision-media { order: 1; }
+
+    .vision-text h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .vision-text p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .vision-text ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .vision-text li {
+      color: var(--color-text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+    .vision-text li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    }
+
+    .vision-media img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+
+    .vision-quote {
+      text-align: center;
+      padding: 60px 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .vision-quote blockquote {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      color: var(--color-text);
+      max-width: 700px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+    }
+    .vision-quote cite {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      font-style: normal;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .timeline-item {
+      text-align: center;
+      padding: 20px 12px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .timeline-item.active {
+      border-color: var(--color-accent);
+      background: rgba(0, 206, 201, 0.08);
+    }
+    .timeline-item .era {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-primary-light);
+      margin-bottom: 4px;
+    }
+    .timeline-item .label {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+    .timeline-item.active .label {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .vision-cta {
+      text-align: center;
+      padding: 100px 0;
+      background: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border);
+    }
+    .vision-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .vision-cta p {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+    .vision-cta .cta-reasons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: left;
+    }
+    .cta-reason {
+      padding: 24px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+    }
+    .cta-reason h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .cta-reason p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .vision-centered {
+      text-align: center;
+      padding: 80px 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .vision-centered h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .vision-centered p {
+      color: var(--color-text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .vision-centered img {
+      max-width: 500px;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .vision-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .vision-row.reverse .vision-text { order: 1; }
+      .vision-row.reverse .vision-media { order: 2; }
+      .timeline {
+        grid-template-columns: 1fr 1fr;
+      }
+      .timeline-item:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#9670;</span> Situational AI
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="vision.html" style="color: var(--color-primary-light);">Vision</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="index.html#contact" class="btn btn-nav">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="vision-hero">
+    <div class="hero-bg"></div>
+    <div class="container vision-hero-content">
+      <div class="vision-hero-icon">
+        <img src="assets/images/brain-icon.png" alt="Brain">
+      </div>
+      <div class="hero-badge">Vision</div>
+      <h1>The Missing <span class="gradient-text">Cognitive Layer</span></h1>
+      <p class="hero-subtitle">
+        Building the future of autonomous intelligence — from reactive AI to agents that truly understand the situation.
+      </p>
+      <div class="hero-actions">
+        <a href="#opportunity" class="btn btn-primary">Explore the Vision</a>
+        <a href="#join" class="btn btn-outline">Join the Movement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Opportunity -->
+  <section class="vision-centered" id="opportunity">
+    <div class="container">
+      <span class="section-tag">The Opportunity</span>
+      <h2>Every Generation Gets One Chance</h2>
+      <p>
+        The defining technologies of each era create massive shifts.
+        We're at the beginning of the AI agent era — and the window to shape it is now.
+      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="era">1960s</div>
+          <div class="label">Computers</div>
+        </div>
+        <div class="timeline-item">
+          <div class="era">1990s</div>
+          <div class="label">Internet</div>
+        </div>
+        <div class="timeline-item">
+          <div class="era">2007</div>
+          <div class="label">Mobile</div>
+        </div>
+        <div class="timeline-item">
+          <div class="era">2010s</div>
+          <div class="label">Cloud</div>
+        </div>
+        <div class="timeline-item active">
+          <div class="era">2020s</div>
+          <div class="label">AI Agents</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <div class="vision-quote">
+    <div class="container">
+      <blockquote>"If we don't do it, someone else will."</blockquote>
+      <cite>— Bill Gates</cite>
+    </div>
+  </div>
+
+  <!-- Skepticism -->
+  <section class="vision-centered" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <h2>History Repeats Before Every Shift</h2>
+      <p>
+        "No one needs a computer at home." "The internet is a fad." "AI agents are just chatbots."
+      </p>
+      <p>
+        <strong style="color: var(--color-text);">Skepticism is a signal, not a verdict.</strong>
+        Every transformative technology faced doubt before it became the default.
+      </p>
+    </div>
+  </section>
+
+  <!-- What's Broken -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row">
+        <div class="vision-text">
+          <span class="section-tag">The Problem</span>
+          <h2>What's Broken in Today's AI</h2>
+          <p>Current AI agents are powerful but fundamentally limited:</p>
+          <ul>
+            <li>Reactive, not cognitive — they respond but don't understand</li>
+            <li>Driven by prompts, rules, and static workflows</li>
+            <li>Break when the real world becomes messy</li>
+            <li>Require constant human babysitting</li>
+          </ul>
+          <p>
+            <strong style="color: var(--color-text);">Humans don't think in prompts.</strong>
+            We think in situations — combining events, time, context, and meaning.
+            Intelligence is knowing what matters.
+          </p>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/missing-piece.png" alt="AI agents lack situational awareness">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introducing Situational AI -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row reverse">
+        <div class="vision-text">
+          <span class="section-tag">The Solution</span>
+          <h2>Introducing Situational AI</h2>
+          <p>
+            Situational AI treats <strong style="color: var(--color-text);">situations as the atomic unit of intelligence</strong>.
+          </p>
+          <p>
+            Not events. Not triggers. Not workflows. But lived, relatable situations that combine context,
+            intent, and meaning — the way humans naturally process the world.
+          </p>
+          <ul>
+            <li>Situations as atomic units of cognition</li>
+            <li>Situational vector space + context graphs</li>
+            <li>Continuous Think–Act–Observe loop</li>
+          </ul>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/new-situation.png" alt="Introducing Situational AI">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCBCM -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row">
+        <div class="vision-text">
+          <span class="section-tag">The Framework</span>
+          <h2>SCBCM — Situation-Centric Bot Cognitive Model</h2>
+          <p>
+            A cognitive framework that enables AI agents to think and act with situational awareness:
+          </p>
+          <ul>
+            <li><strong style="color: var(--color-text);">Detect</strong> situations as they emerge</li>
+            <li><strong style="color: var(--color-text);">Reason</strong> using roles and playbooks</li>
+            <li><strong style="color: var(--color-text);">Plan</strong> actions based on context</li>
+            <li><strong style="color: var(--color-text);">Execute</strong> workflows autonomously</li>
+            <li><strong style="color: var(--color-text);">Learn</strong> from outcomes</li>
+          </ul>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/scbcm-bot.png" alt="SCBCM cognitive model">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- From Automation to Agency -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row reverse">
+        <div class="vision-text">
+          <span class="section-tag">The Shift</span>
+          <h2>From Automation to Agency</h2>
+          <p>
+            Automation follows instructions. Agency understands context.
+          </p>
+          <p>Situational AI enables:</p>
+          <ul>
+            <li>Explainable decisions — know why an agent acted</li>
+            <li>Adaptive behavior — agents adjust as situations evolve</li>
+            <li>Human-like reasoning under supervision</li>
+          </ul>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/human-bot-desk.png" alt="From automation to agency">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent Teams -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row">
+        <div class="vision-text">
+          <span class="section-tag">Collective Intelligence</span>
+          <h2>Situation-Aware Agent Teams</h2>
+          <p>
+            Specialized agents coordinated through shared situational understanding.
+            Not just individual intelligence — collective intelligence that emerges
+            from shared situational memory.
+          </p>
+          <ul>
+            <li>Specialized agents with distinct roles</li>
+            <li>Coordinated through situational context</li>
+            <li>Shared memory enables collective reasoning</li>
+          </ul>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/bot-team.png" alt="Situation-aware agent teams">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Autonomous Enterprise -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-row reverse">
+        <div class="vision-text">
+          <span class="section-tag">The Future</span>
+          <h2>The Autonomous Enterprise</h2>
+          <p>
+            AI agents run digital operations. Humans supervise outcomes, not processes.
+            Delegation replaces automation.
+          </p>
+          <p>
+            The human-like AI coworker — a private, always-on situational assistant that manages
+            email, meetings, and planning. It escalates only when needed.
+          </p>
+        </div>
+        <div class="vision-media">
+          <img src="assets/images/autonomous-enterprise.jpeg" alt="The autonomous enterprise">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toward AGI -->
+  <section class="vision-centered">
+    <div class="container">
+      <span class="section-tag">Our Direction</span>
+      <h2>Toward Human-like Intelligence</h2>
+      <p>
+        Not bigger models — better cognition. Situational AI is a step toward
+        human-supervised autonomous intelligence that is explainable, teachable, and self-improving.
+      </p>
+      <ul style="list-style: none; padding: 0; max-width: 500px; margin: 24px auto; text-align: left;">
+        <li style="color: var(--color-text-muted); padding: 8px 0 8px 24px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--color-accent);">&#10003;</span> Self-describing and self-improving
+        </li>
+        <li style="color: var(--color-text-muted); padding: 8px 0 8px 24px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--color-accent);">&#10003;</span> Situation-driven cognition
+        </li>
+        <li style="color: var(--color-text-muted); padding: 8px 0 8px 24px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--color-accent);">&#10003;</span> Bounded, auditable autonomy
+        </li>
+        <li style="color: var(--color-text-muted); padding: 8px 0 8px 24px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--color-accent);">&#10003;</span> Situational memory + reasoning
+        </li>
+      </ul>
+      <img src="assets/images/human-ai-bridge.png" alt="Toward human-like intelligence">
+    </div>
+  </section>
+
+  <!-- Why Now -->
+  <section class="vision-centered" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <span class="section-tag">Why Now</span>
+      <h2>This Matters Now</h2>
+      <p>
+        LLMs unlocked reasoning, but lack cognition. Businesses need autonomy, not more tools.
+        The agent era has started, but <strong style="color: var(--color-text);">situational intelligence is the bottleneck</strong>.
+      </p>
+      <p>
+        Few are working on this layer. Foundational problems create leverage.
+        The opportunity to define how AI agents think is here — right now.
+      </p>
+    </div>
+  </section>
+
+  <!-- Join the Movement -->
+  <section class="vision-cta" id="join">
+    <div class="container">
+      <span class="section-tag">Join Us</span>
+      <h2>Join the <span class="gradient-text">Movement</span></h2>
+      <p>
+        We're building an open community around the frontier of context-aware AI.
+        Here's why people are joining:
+      </p>
+
+      <div class="cta-reasons">
+        <div class="cta-reason">
+          <h4>First-Principles AI Cognition</h4>
+          <p>Work on foundational problems in how AI agents think and reason.</p>
+        </div>
+        <div class="cta-reason">
+          <h4>Category-Defining Technology</h4>
+          <p>Help build something that doesn't exist yet — the cognitive layer for AI.</p>
+        </div>
+        <div class="cta-reason">
+          <h4>Shape How Agents Think</h4>
+          <p>Influence the architecture of situational awareness in autonomous systems.</p>
+        </div>
+        <div class="cta-reason">
+          <h4>Be Early in a New Frontier</h4>
+          <p>Go beyond the hype — deep systems thinking for people who want to build what matters.</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 40px;">
+        <strong style="color: var(--color-text);">Let's build Situational AI together.</strong>
+      </p>
+
+      <div class="cta-buttons">
+        <a href="https://github.com/MindspaceAICoE/situational-ai/discussions" class="btn btn-primary">Join the Discussion</a>
+        <a href="blog/" class="btn btn-outline">Read the Blog</a>
+        <a href="index.html#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-icon">&#9670;</span> Situational AI
+        </div>
+        <p class="footer-text">&copy; 2026 Mindspace LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
