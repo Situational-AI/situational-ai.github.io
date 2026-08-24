@@ -105,20 +105,99 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Nav follows the dark zone ---
-  // The dark run ends partway through .theme-fade; past that point the page
-  // is light and the nav goes back to its white bar.
-  const fade = document.querySelector('.theme-fade');
-  if (navbar && fade) {
-    const syncNavTheme = () => {
-      // Switch just before the ramp reaches mid-grey, so the bar never sits
-      // as a dark strip on an already-light background.
-      const switchAt = fade.offsetTop + fade.offsetHeight * 0.45;
-      navbar.classList.toggle('is-on-dark', window.scrollY + navbar.offsetHeight < switchAt);
+  // --- About section: scroll-driven dark -> light theme bridge ---
+  // Re-declares the same colour tokens .is-dark uses in style.css, but
+  // interpolated by scroll position instead of hard-toggled. Progress 0
+  // matches the dark Video section exactly (so About reads as its
+  // continuation); progress 1 matches the light page exactly (so there's
+  // no seam once Features is on screen). Only About's own tokens change —
+  // neighbouring sections are untouched.
+  const aboutEl = document.getElementById('about');
+  const aboutDarkBound = document.getElementById('video');
+  const aboutLightBound = document.getElementById('features');
+  if (aboutEl && aboutDarkBound && aboutLightBound) {
+    // [custom property, dark rgba, light rgba, group] — dark values copied
+    // from .is-dark, light values copied from :root, both in style.css.
+    // Group 'bg' rides the raw scroll progress across the whole section;
+    // group 'fg' (text/ink) rides a narrow eased band around the midpoint
+    // instead (see foregroundProgress below) — with both on the same
+    // linear ramp, text and its background are mirror curves that land on
+    // the same middling grey at the same instant, wiping out contrast for
+    // a visible stretch. Crossing foreground quickly keeps that instant
+    // brief rather than smeared across the section.
+    const ABOUT_TOKENS = [
+      ['--color-bg', [13, 16, 18, 1], [255, 255, 255, 1], 'bg'],
+      ['--color-bg-alt', [20, 24, 27, 1], [247, 248, 249, 1], 'bg'],
+      ['--color-canvas', [20, 24, 27, 1], [255, 255, 255, 1], 'bg'],
+      ['--color-surface', [255, 255, 255, 0.05], [255, 255, 255, 1], 'bg'],
+      ['--color-surface-solid', [20, 24, 27, 1], [255, 255, 255, 1], 'bg'],
+      ['--color-surface-hover', [255, 255, 255, 0.08], [255, 255, 255, 1], 'bg'],
+      ['--color-border', [255, 255, 255, 0.13], [220, 225, 230, 1], 'bg'],
+      ['--color-border-strong', [255, 255, 255, 0.24], [193, 198, 203, 1], 'bg'],
+      ['--color-text', [255, 255, 255, 1], [28, 31, 34, 1], 'fg'],
+      ['--color-text-soft', [255, 255, 255, 0.84], [65, 70, 76, 1], 'fg'],
+      ['--color-text-muted', [255, 255, 255, 0.62], [120, 127, 135, 1], 'fg'],
+      ['--color-text-faint', [255, 255, 255, 0.44], [166, 172, 178, 1], 'fg'],
+      ['--color-primary', [255, 255, 255, 1], [28, 31, 34, 1], 'fg'],
+      ['--color-primary-light', [255, 255, 255, 0.82], [65, 70, 76, 1], 'fg'],
+      ['--color-primary-deep', [255, 255, 255, 1], [0, 0, 0, 1], 'fg'],
+      // The tag pill stays white-tinted in both themes, just at a
+      // different opacity, so it can't be derived from --color-text.
+      ['--about-tag-bg', [255, 255, 255, 0.06], [255, 255, 255, 0.8], 'bg'],
+      ['--about-tag-border', [255, 255, 255, 0.18], [28, 31, 34, 0.2], 'fg'],
+    ];
+
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const smoothstep = (x) => x * x * (3 - 2 * x);
+    // Foreground crosses over inside a narrow window centred on the
+    // section's midpoint — pinned white before it, pinned ink after.
+    const FG_BAND_START = 0.49;
+    const FG_BAND_END = 0.51;
+    const foregroundProgress = (t) => {
+      if (t <= FG_BAND_START) return 0;
+      if (t >= FG_BAND_END) return 1;
+      return smoothstep((t - FG_BAND_START) / (FG_BAND_END - FG_BAND_START));
     };
-    window.addEventListener('scroll', syncNavTheme, { passive: true });
-    window.addEventListener('resize', syncNavTheme);
-    syncNavTheme();
+
+    const applyAboutProgress = (t) => {
+      const fgT = foregroundProgress(t);
+      ABOUT_TOKENS.forEach(([name, dark, light, group]) => {
+        const gt = group === 'fg' ? fgT : t;
+        const r = Math.round(lerp(dark[0], light[0], gt));
+        const g = Math.round(lerp(dark[1], light[1], gt));
+        const b = Math.round(lerp(dark[2], light[2], gt));
+        const a = lerp(dark[3], light[3], gt);
+        aboutEl.style.setProperty(name, `rgba(${r}, ${g}, ${b}, ${a})`);
+      });
+    };
+
+    const syncAboutTheme = () => {
+      // Tracks the viewport's top edge across About's own height: t=0 the
+      // instant Video's bottom edge (About's top) reaches it, t=1 the
+      // instant Features' top edge (About's bottom) reaches it. Tying it to
+      // About's own span — rather than the viewport height — keeps the
+      // ramp meaningful even when About is shorter than the viewport.
+      const start = aboutDarkBound.offsetTop + aboutDarkBound.offsetHeight;
+      const end = Math.max(aboutLightBound.offsetTop, start + 1);
+      let t = (window.scrollY - start) / (end - start);
+      t = Math.min(1, Math.max(0, t));
+
+      // The fixed navbar always sits over whatever is at the current
+      // scroll position, so its own dark/light bar tracks this same t —
+      // dark while the section behind it still reads darker than not
+      // (t < 0.5), including the whole Hero/Video run above where t is
+      // clamped to 0. Without this the bar would only flip once it drifts
+      // out of sync with what's actually behind it.
+      if (navbar) navbar.classList.toggle('is-on-dark', t < 0.5);
+
+      // Reduced motion: swap once instead of continuously animating with scroll.
+      if (calmMotion) t = t < 0.5 ? 0 : 1;
+      applyAboutProgress(t);
+    };
+
+    window.addEventListener('scroll', syncAboutTheme, { passive: true });
+    window.addEventListener('resize', syncAboutTheme);
+    syncAboutTheme();
   }
 
   // --- Hero background video ---

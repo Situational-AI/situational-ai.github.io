@@ -256,6 +256,9 @@ img[alt="Situational AI"] {
   transition: var(--transition);
 }
 
+.sai-preloader img[alt="Situational AI"] {
+  filter: brightness(0) invert(1);
+}
 a:hover > img[alt="Situational AI"],
 .nav-logo:hover img[alt="Situational AI"] {
   opacity: 1;
@@ -1132,6 +1135,46 @@ body[data-hero="media"] .navbar:not(.scrolled) .btn-nav:hover {
   font-size: 0.95rem;
   line-height: 1.68;
 }
+
+/* ============================================
+   About section — scroll-driven dark → light bridge
+   main.js re-declares the same colour tokens .is-dark uses (see above),
+   but interpolated by scroll position instead of hard-toggled: 0 matches
+   the dark video zone exactly, 1 matches the light page exactly, so the
+   section reads as one continuous fade with no seam at either edge.
+   Everything below just reads those tokens through var() the same way
+   the rest of the site already does — only the two hardcoded,
+   non-token pieces (the tag pill and the icon tile) need help.
+   ============================================ */
+#about {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+#about .about-card {
+  background: var(--color-surface-solid);
+}
+
+#about .about-icon {
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-text) 14%, transparent),
+    color-mix(in srgb, var(--color-text) 12%, transparent));
+  border-color: color-mix(in srgb, var(--color-text) 16%, transparent);
+}
+
+#about .section-tag {
+  background: var(--about-tag-bg, rgba(255, 255, 255, 0.8));
+  border-color: var(--about-tag-border, rgba(28, 31, 34, 0.2));
+}
+
+#about .section-subtitle a {
+  border-bottom-color: color-mix(in srgb, var(--color-text) 30%, transparent);
+}
+
+/* The colour tokens themselves change every scroll frame (see main.js),
+   so no transition is added here — animating on top of that would only
+   lag behind the scroll position instead of tracking it. */
 
 /* ============================================
    Video Section

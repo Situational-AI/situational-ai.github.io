@@ -61,7 +61,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #FFFFFF;
+      background: black;
       transition: opacity .6s ease, visibility .6s ease;
     }
 
@@ -131,7 +131,7 @@
     /* Wordmark asset is white artwork; flip it to ink like the rest of the site. */
     .sai-preloader__mark {
       height: 26px;
-      filter: brightness(0);
+      filter: brightness(0) invert(1);
       opacity: .88;
       animation: sai-breathe 2.4s ease-in-out infinite;
     }
@@ -147,7 +147,7 @@
       height: 2px;
       overflow: hidden;
       border-radius: 2px;
-      background: rgba(28, 31, 34, .10);
+      background: rgba(255, 255, 255, .22);
     }
 
     /* Determinate: scaleX is driven from JS by real asset progress. */
@@ -155,7 +155,7 @@
       position: absolute;
       inset: 0;
       border-radius: 2px;
-      background: linear-gradient(90deg, #C1C6CB, #A6ACB2, #787F87, #1C1F22);
+      background: linear-gradient(90deg, #FFFFFF, #D9E0E5, #FFFFFF);
       transform: scaleX(0);
       transform-origin: left center;
     }
@@ -165,7 +165,7 @@
     .sai-preloader__pct {
       font: 500 .7rem/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       letter-spacing: .14em;
-      color: #A6ACB2;
+      color: rgba(255, 255, 255, .78);
       font-variant-numeric: tabular-nums;
     }
 
@@ -456,7 +456,6 @@
 
   <!-- Bridges the dark block into the light page below. Decorative and
        content-free, so nothing has to change colour mid-scroll. -->
-  <div class="theme-fade" aria-hidden="true"></div>
 
   <!-- About Section -->
   <section class="section" id="about">
