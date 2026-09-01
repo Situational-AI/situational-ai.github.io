@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>Research — Situational AI</title>
+  <meta name="description" content="The Situational AI research program: definitions, situation representations, latent situation space, memory, architecture, evaluation, and open experiments.">
+  <meta property="og:title" content="Situational AI — Research Program">
+  <meta property="og:description" content="Can situation become a first-class computational primitive of intelligent systems?">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://situational-ai.org/assets/images/og-preview.png">
+  <link rel="icon" href="assets/images/situational-ai-logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/situational-ai-logo.png" alt="Situational AI"></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#definition">Definition</a></li>
+        <li><a href="#context">Context ≠ Situation</a></li>
+        <li><a href="#situation-space">Situation Space</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="blog/">Essays</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero research-hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Open Research Initiative</div>
+      <h1>A Research Program<br><span class="gradient-text">Built Around the Situation.</span></h1>
+      <p class="hero-subtitle">Our thesis is deliberately contestable: situation deserves to become a first-class computational primitive of intelligent systems. The work is to define it, represent it, compare it, remember it, and discover where it holds.</p>
+      <div class="hero-actions"><a href="#definition" class="btn btn-primary">Begin With the Definition</a><a href="#experiments" class="btn btn-outline">See the Experiments</a></div>
+    </div>
+  </header>
+
+  <main class="research-shell">
+    <section class="research-section" id="definition">
+      <span class="section-tag">01 · Definition</span>
+      <h2>What Is a Situation?</h2>
+      <p>A situation is the meaning of events and state, interpreted from the perspective of an observer, relative to goals, responsibilities, relationships, time, uncertainty, and possible action.</p>
+      <table class="concept-table">
+        <tbody>
+          <tr><th>Event</th><td>Something happened.</td></tr>
+          <tr><th>State</th><td>Something currently has a condition or configuration.</td></tr>
+          <tr><th>Context</th><td>Information is available for interpretation.</td></tr>
+          <tr><th>Intent</th><td>An actor wants an outcome.</td></tr>
+          <tr><th>Situation</th><td>Those conditions mean something to an observer and establish what response is appropriate.</td></tr>
+        </tbody>
+      </table>
+      <div class="formula">Events + State + Context + Goals + Observer + Time <strong>→ Situation → Response</strong></div>
+      <p>An unpaid invoice is one event and one state. For the customer it may be a temporary cash constraint. For the salesperson it may be a relationship risk. For accounts receivable it is a collection responsibility. For the CFO it may signal deteriorating receivables. The facts can be shared while the situations differ.</p>
+    </section>
+
+    <section class="research-section" id="context">
+      <span class="section-tag">02 · The Distinction</span>
+      <h2>Context Is Necessary. It Is Not Enough.</h2>
+      <p>Context engineering determines what information an AI system receives: prompts, memories, documents, tools, histories, and current state. This is indispensable. But the presence of relevant information does not itself establish what is happening or what responsibility follows.</p>
+      <div class="question-grid">
+        <article class="question-card"><h3>Context engineering asks</h3><p>What should the model know?</p></article>
+        <article class="question-card"><h3>Situational intelligence asks</h3><p>What is happening? To whom does it matter? Why now? What is expected next?</p></article>
+      </div>
+      <p>Context is material for cognition. Situation is its observer-relative organization into actionable meaning. Modern AI recognizes situations implicitly. Situational AI proposes making that recognition explicit.</p>
+    </section>
+
+    <section class="research-section" id="primitive">
+      <span class="section-tag">03 · Computational Primitive</span>
+      <h2>Make Situation a First-Class Object</h2>
+      <p>Language models operate over tokens. Reinforcement-learning systems often operate over states. Our hypothesis is that intelligent behavior needs a native unit that binds perception, goals, judgment, expectation, action, and outcome: the situation.</p>
+      <p>Situation is to intelligent behavior what the token is to language modeling. This is an analogy about computational role—not a claim that situations are literal text tokens.</p>
+      <h3>A situation object may contain</h3>
+      <ul>
+        <li>Observer, role, actors, and relationships</li>
+        <li>Events, current state, and relevant history</li>
+        <li>Goals, responsibilities, expectations, and constraints</li>
+        <li>Temporal stage, urgency, uncertainty, risk, and consequence</li>
+        <li>Available responses, selected response, outcome, and transition conditions</li>
+      </ul>
+    </section>
+
+    <section class="research-section" id="situation-space">
+      <span class="section-tag">04 · Representation</span>
+      <h2>From Semantic Space to Situation Space</h2>
+      <p>The proposal is not to replace embeddings. It is to change what gets embedded. Semantic embeddings capture similarity in language. A situation representation should capture similarity in underlying dynamics—even when the vocabulary, objects, and domains differ.</p>
+      <div class="formula">Events + roles + goals + stage + risk + constraints <strong>→ Situation representation → Analogous situations</strong></div>
+      <p>A patient disengaging from treatment and a prospect going silent during a sales process share little vocabulary. Yet both may express the same pattern: expected progression has been interrupted, timely intervention matters, and delay increases the probability of failure.</p>
+      <p>If a latent situation space can preserve such structure, experience may transfer across domains wherever the situational dynamics are analogous.</p>
+    </section>
+
+    <section class="research-section" id="architecture">
+      <span class="section-tag">05 · Architecture</span>
+      <h2>A Situation-Centric Cognitive Loop</h2>
+      <div class="formula"><strong>Sense → Detect → Interpret → Reason → Plan → Act · Ask · Wait · Observe → Evaluate → Learn</strong></div>
+      <p>Interpretation is essential. Detecting an event is not the same as recognizing the situation. A situation-centric architecture maintains an explicit hypothesis about what is occurring, revises that hypothesis as evidence changes, selects a response, and observes whether the response produced the expected transition.</p>
+      <h3>Situation memory</h3>
+      <p>Conventional memory remembers information. Situation memory remembers experience: what occurred, what was recognized, from whose perspective, what response was selected, why it was selected, what outcome followed, and whether the original interpretation was correct.</p>
+      <p>SCBCM—the Situation-Centric Bot Cognitive Model—is one proposed implementation of this larger thesis.</p>
+    </section>
+
+    <section class="research-section" id="experiments">
+      <span class="section-tag">06 · Questions & Experiments</span>
+      <h2>What We Need to Discover</h2>
+      <div class="question-grid">
+        <article class="question-card"><h3>Formalization</h3><p>What is the minimal situation representation? Which properties are invariant, temporal, observer-relative, or learned?</p></article>
+        <article class="question-card"><h3>Recognition</h3><p>Can a system detect emerging and overlapping situations—and recognize when its interpretation is wrong?</p></article>
+        <article class="question-card"><h3>Analogy</h3><p>Can situational retrieval find useful structural analogies that semantic retrieval misses?</p></article>
+        <article class="question-card"><h3>Memory</h3><p>Can a system accumulate situational experience and improve without merely accumulating more text?</p></article>
+        <article class="question-card"><h3>Evaluation</h3><p>Does an explicit situation layer improve timing, decision quality, coordination, adaptation, and explanation?</p></article>
+        <article class="question-card"><h3>Transfer</h3><p>Which situational patterns transfer across coding, operations, education, care, and collaboration?</p></article>
+      </div>
+      <h3>Initial experimental comparisons</h3>
+      <ul>
+        <li>Strong context-engineered agent versus situation-explicit agent</li>
+        <li>Semantic retrieval versus situational retrieval</li>
+        <li>Same event viewed by different observers</li>
+        <li>Same vocabulary describing different situations</li>
+        <li>Different domains expressing analogous situations</li>
+        <li>Recognition under changing goals, roles, and time pressure</li>
+      </ul>
+    </section>
+
+    <section class="research-section" id="community">
+      <span class="section-tag">07 · Community</span>
+      <h2>Help Build—and Challenge—the Idea</h2>
+      <p>Situational AI is an open research initiative. We invite researchers, engineers, cognitive scientists, designers, operators, and critics to contribute definitions, architectures, datasets, experiments, implementations, and counterarguments.</p>
+      <div class="hero-actions"><a href="https://github.com/Situational-AI/situational-ai.github.io/discussions" class="btn btn-primary">Join the Discussion</a><a href="blog/" class="btn btn-outline">Read the Essays</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-logo"><a href="index.html"><img src="assets/images/situational-ai-logo.png" alt="Situational AI" style="height:24px"></a></div><p class="footer-text">&copy; 2026 Mindspace LLC. All rights reserved.</p></div></div></footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

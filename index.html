@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#FFFFFF">
-  <title>Situational AI — The Perceptual Layer for Machines</title>
-  <meta name="description" content="We build the perceptual layer for AI — the technology that lets machines understand not just data, but situations — so they can work, decide, and collaborate the way humans do.">
+  <title>Situational AI — Intelligence Begins With the Situation</title>
+  <meta name="description" content="Situational AI is an open research initiative exploring situation as a first-class computational primitive — distinct from context, state, events, and intent.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://situational-ai.github.io/">
   <link rel="icon" type="image/png" href="assets/images/situational-ai-logo.png">
@@ -348,14 +348,13 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="vision.html">Vision</a></li>
-        <li><a href="#video">Intro</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="blog/">Blog</a></li>
+        <li><a href="#definition">Definition</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="vision.html">Architecture</a></li>
+        <li><a href="blog/">Essays</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-nav">Get in Touch</a>
+        <a href="#contact" class="btn btn-nav">Join the Inquiry</a>
       </div>
     </div>
   </nav>
@@ -393,15 +392,15 @@
     <div class="hero-inner">
       <div class="hero-foot">
         <div class="hero-lead">
-          <h1>Machines Learned to Think.<br><span class="gradient-text">We're Teaching Them to Perceive.</span></h1>
+          <h1>Intelligence Begins<br><span class="gradient-text">With the Situation.</span></h1>
           <p class="hero-subtitle">
-            AI knows more than any human ever will. But knowing isn't understanding.
-            We build the technology that lets machines read situations — not just process data.
+            AI has become remarkably good at reasoning once it is told what problem to solve.
+            The harder problem is recognizing what problem exists, for whom it matters, and what the moment calls for.
           </p>
         </div>
         <div class="hero-actions">
-          <a href="blog/" class="btn btn-ghost">Read the Blog</a>
-          <a href="#video" class="btn btn-primary">Watch the Demo</a>
+          <a href="research.html" class="btn btn-ghost">Explore the Research</a>
+          <a href="#definition" class="btn btn-primary">Read the Thesis</a>
         </div>
       </div>
     </div>
@@ -411,18 +410,18 @@
   <div class="hero-stats-band is-dark">
     <div class="container hero-stats">
       <div class="stat">
-        <span class="stat-number">Perceive</span>
-        <span class="stat-label">Read the situation</span>
+        <span class="stat-number">Recognize</span>
+        <span class="stat-label">What is happening?</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">Decide</span>
-        <span class="stat-label">Act or ask</span>
+        <span class="stat-number">Interpret</span>
+        <span class="stat-label">Why and to whom does it matter?</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">Collaborate</span>
-        <span class="stat-label">Work as a team</span>
+        <span class="stat-number">Respond</span>
+        <span class="stat-label">Act, ask, wait, or observe?</span>
       </div>
     </div>
   </div>
@@ -457,37 +456,36 @@
   <!-- Bridges the dark block into the light page below. Decorative and
        content-free, so nothing has to change colour mid-scroll. -->
 
-  <!-- About Section -->
-  <section class="section" id="about">
+  <!-- Definition Section -->
+  <section class="section" id="definition">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">About</span>
-        <h2>The Missing Layer</h2>
+        <span class="section-tag">The Definition</span>
+        <h2>What Is a Situation?</h2>
         <p class="section-subtitle">
-          AI has the intelligence. What it lacks is experience — the accumulated judgment of how
-          your world actually works. A brilliant new hire with a photographic memory still needs to
-          learn your business, your customers, your processes, your judgment calls.
-          We build the cognitive architecture that gives AI that experience.
-          <a href="blog/why-not-another-agent-framework.html" style="color: var(--color-primary);">Read why this matters &rarr;</a>
+          A situation is the meaning of events and state, interpreted from the perspective of an observer,
+          relative to goals, responsibilities, relationships, time, uncertainty, and possible action.
         </p>
       </div>
-      <div class="about-grid">
+      <div class="definition-grid">
         <div class="about-card">
-          <div class="about-icon">&#128161;</div>
-          <h3>Persistent Situation Memory</h3>
-          <p>Not per-session context that vanishes. Structured situation cards that encode how to recognize, respond, and coordinate — and persist across days, months, and teams.</p>
+          <div class="concept-label">Event</div><h3>What happened</h3><p>A payment failed. A message arrived. A build broke.</p>
         </div>
         <div class="about-card">
-          <div class="about-icon">&#9889;</div>
-          <h3>Pre-Encoded Judgment</h3>
-          <p>Your 20 years of "when X happens, do Y" — encoded as guardrails, risk levels, and action priorities. The AI doesn't discover judgment from scratch each time. It's already there.</p>
+          <div class="concept-label">State</div><h3>How things are</h3><p>The invoice is overdue. The customer is inactive. The branch is blocked.</p>
         </div>
         <div class="about-card">
-          <div class="about-icon">&#127919;</div>
-          <h3>Beyond Agent Frameworks</h3>
-          <p>We don't compete with LLMs — we use them. We don't wire agents together — they discover each other's services and coordinate autonomously. Not smarter AI. Operationally competent AI.</p>
+          <div class="concept-label">Context</div><h3>What is available to know</h3><p>History, documents, roles, relationships, constraints, and current signals.</p>
+        </div>
+        <div class="about-card">
+          <div class="concept-label">Intent</div><h3>What an actor wants</h3><p>Recover payment. Preserve trust. Ship safely. Learn the answer.</p>
+        </div>
+        <div class="about-card situation-definition">
+          <div class="concept-label">Situation</div><h3>What it means now</h3><p>The observer-relative interpretation that establishes what matters and what response is appropriate.</p>
         </div>
       </div>
+      <div class="thesis-callout"><p>The same event and state can produce different situations for different people. Situation is not another piece of context. It is the organized meaning formed from context.</p></div>
+      <div class="section-cta"><a href="research.html#definition" class="btn btn-outline">Explore the Full Definition</a></div>
     </div>
   </section>
 
@@ -495,39 +493,40 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">How It Works</span>
-        <h2>The Perception Gap</h2>
+        <span class="section-tag">The Distinction</span>
+        <h2>Context Is Necessary. It Is Not Enough.</h2>
+        <p class="section-subtitle">Context engineering asks what information the model should receive. Situational AI asks what that information means, for whom, and what it calls for.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-number">01</div>
-          <h3>Situations, Not Prompts</h3>
-          <p>Every human decision starts by reading the situation. Our cognitive model encodes situations as the fundamental unit — detection, judgment, and action in one structure.</p>
+          <h3>Situation as a Primitive</h3>
+          <p>Modern AI often infers situations implicitly inside a prompt. We propose making situation explicit: representable, comparable, memorable, testable, and revisable.</p>
         </div>
         <div class="feature-card">
           <div class="feature-number">02</div>
-          <h3>Continuous Detection</h3>
-          <p>Not waiting to be asked. Continuously sensing signals — from conversations, events, timers, data changes — and recognizing what situation is unfolding.</p>
+          <h3>Continuous Recognition</h3>
+          <p>Sense signals from conversations, events, timers, and changing data; detect which situations are emerging, evolving, overlapping, or ending.</p>
         </div>
         <div class="feature-card">
           <div class="feature-number">03</div>
-          <h3>Contextual Judgment</h3>
-          <p>The same event can mean different things in different contexts. A missed call from a new lead vs. a loyal customer triggers entirely different responses — automatically.</p>
+          <h3>Observer-Relative Meaning</h3>
+          <p>The same facts can mean different things to a customer, salesperson, operator, or system because their goals and responsibilities differ.</p>
         </div>
         <div class="feature-card">
           <div class="feature-number">04</div>
-          <h3>Act, Ask, or Wait</h3>
-          <p>Not every detection requires action. The model decides when to act autonomously, when to ask a human, and when to wait — based on risk, confidence, and context.</p>
+          <h3>Act, Ask, Wait, or Observe</h3>
+          <p>Recognition establishes what the moment calls for—including the judgment that no immediate action is appropriate.</p>
         </div>
         <div class="feature-card">
           <div class="feature-number">05</div>
-          <h3>Team Coordination</h3>
-          <p>Situations don't live in one agent. They span teams. Our service model lets agents discover each other's capabilities and coordinate — like employees who know who to call.</p>
+          <h3>Situation Memory</h3>
+          <p>Remember not merely facts and conversations, but what was recognized, what response was chosen, why it was chosen, and what outcome followed.</p>
         </div>
         <div class="feature-card">
           <div class="feature-number">06</div>
-          <h3>Learn From Every Situation</h3>
-          <p>Every situation detected, every action taken, every outcome observed feeds back. The model gets sharper over time — not through retraining, but through experience.</p>
+          <h3>Situational Embeddings</h3>
+          <p>Represent underlying dynamics so structurally analogous situations can be found across different vocabularies, workflows, and domains.</p>
         </div>
       </div>
     </div>
@@ -537,32 +536,32 @@
   <section class="section section-dark" id="blog-preview">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Blog</span>
-        <h2>Latest Insights</h2>
-        <p class="section-subtitle">Thoughts, research, and updates from the Situational AI team.</p>
+        <span class="section-tag">Research & Essays</span>
+        <h2>A Research Program, Not a Slogan</h2>
+        <p class="section-subtitle">Definitions, architectures, experiments, arguments, and open questions about situation as a computational primitive.</p>
       </div>
       <div class="blog-grid">
         <a href="blog/why-not-another-agent-framework.html" class="blog-card">
+          <div class="blog-card-tag">Definition</div>
+          <h3>What Is a Situation?</h3>
+          <p>Event, state, context, and intent are ingredients. Situation is their observer-relative, action-relevant meaning.</p>
+          <span class="blog-card-date">Read more &rarr;</span>
+        </a>
+        <a href="research.html#context" class="blog-card">
           <div class="blog-card-tag">Position</div>
-          <h3>Why Situational AI Isn't Another Agent Framework</h3>
-          <p>GPT is the smartest person in the room. But smart isn't the same as competent. Here's what's actually missing.</p>
+          <h3>Why Context Is Not Enough</h3>
+          <p>Context supplies information. Situation organizes it into meaning, expectation, and response.</p>
           <span class="blog-card-date">Read more &rarr;</span>
         </a>
-        <a href="blog/introducing-situational-ai.html" class="blog-card">
-          <div class="blog-card-tag">Announcement</div>
-          <h3>Introducing Situational AI</h3>
-          <p>Why we believe context-aware intelligence is the next frontier in AI — and what we're building to get there.</p>
-          <span class="blog-card-date">Read more &rarr;</span>
-        </a>
-        <a href="blog/context-is-everything.html" class="blog-card">
+        <a href="research.html#situation-space" class="blog-card">
           <div class="blog-card-tag">Research</div>
-          <h3>Context Is Everything</h3>
-          <p>How environmental awareness transforms AI from a tool into a true collaborator.</p>
+          <h3>From Semantic Space to Situation Space</h3>
+          <p>What changes when we embed the structure of a situation rather than the words used to describe it?</p>
           <span class="blog-card-date">Read more &rarr;</span>
         </a>
       </div>
       <div class="section-cta">
-        <a href="blog/" class="btn btn-outline">View All Posts</a>
+        <a href="research.html" class="btn btn-outline">Explore the Research Program</a>
       </div>
     </div>
   </section>
@@ -572,10 +571,10 @@
     <div class="container">
       <div class="contact-wrapper">
         <div class="section-header">
-          <span class="section-tag">Contact</span>
-          <h2>Get in Touch</h2>
+          <span class="section-tag">Open Research Initiative</span>
+          <h2>Join the Inquiry</h2>
           <p class="section-subtitle">
-            Interested in Situational AI? We'd love to hear from you.
+            Help define, build, test, challenge, and extend situation-centric intelligence. Researchers, engineers, cognitive scientists, designers, operators, and critics are welcome.
           </p>
         </div>
         <div class="contact-links">
