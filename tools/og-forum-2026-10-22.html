@@ -30,6 +30,7 @@
       border-radius: 50%; background: radial-gradient(circle, rgba(16,128,74,.32), transparent 62%);
     }
     .card > * { position: relative; z-index: 1; }
+    .card > .mascots { position: absolute; z-index: 0; }
     .top { display: flex; align-items: center; justify-content: space-between; }
     .top img { height: 34px; filter: brightness(0) invert(1); }
     .eyebrow {
@@ -38,7 +39,9 @@
       font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.82);
     }
     .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: #17A15C; }
-    h1 { margin: 0; color: #fff; font-weight: 500; font-size: 78px; line-height: 1.06; letter-spacing: -.025em; }
+    h1 { margin: 0; max-width: 560px; color: #fff; font-weight: 500; font-size: 64px; line-height: 1.06; letter-spacing: -.025em; }
+    /* The mascots from the site artwork, feathered into the ground on the right. */
+    .mascots { position: absolute; right: 20px; top: 96px; width: 600px; z-index: 0; }
     h1 .gradient-text {
       font-family: 'Corsiva', 'Monotype Corsiva', 'Britney', cursive, var(--font-family);
       font-weight: 400; font-size: 1.14em; display: block; padding-top: 4px;
@@ -57,7 +60,8 @@
       <img src="../assets/images/situational-ai-logo.png" alt="Situational AI">
       <span class="eyebrow"><i></i>Open Research &amp; Technology Forum</span>
     </div>
-    <h1>The World Does Not Arrive<span class="gradient-text">as Prompts.</span></h1>
+    <img class="mascots" src="og-forum-mascots.png" alt="">
+    <h1>The World Does<br>Not Arrive<span class="gradient-text">as Prompts.</span></h1>
     <div class="foot">
       <div>
         <div class="when">October 22, 2026 · 5 PM</div>
