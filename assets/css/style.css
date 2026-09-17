@@ -2227,10 +2227,17 @@ body .cta-reason:hover {
   100% { box-shadow: 0 0 0 8px rgba(23, 161, 92, 0); }
 }
 
+.hero-pill a { transition: var(--transition); }
+.hero-pill a:hover { color: #fff; }
+
 .hero-pill-cta {
   font-weight: 600;
   color: #fff;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
 }
+
+.hero-pill-cta:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-pill-dot { animation: none; }
