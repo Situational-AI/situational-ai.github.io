@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Source for assets/images/og-forum-2026-10-22.jpg (the event page's share
+     card). Render at 1200×630 with the site's stylesheet, then save as JPEG
+     under 300 KB so WhatsApp and iMessage show the preview. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    .card {
+      position: relative; width: 1200px; height: 630px; box-sizing: border-box;
+      padding: 56px 72px; background: #0D1012; color: #fff;
+      display: flex; flex-direction: column; justify-content: space-between;
+      font-family: var(--font-family);
+    }
+    /* The same blueprint grid and green glow the site's dark surfaces use. */
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 68px 68px;
+      -webkit-mask-image: radial-gradient(ellipse 110% 90% at 50% 50%, #000, transparent 80%);
+      mask-image: radial-gradient(ellipse 110% 90% at 50% 50%, #000, transparent 80%);
+    }
+    .card::after {
+      content: ''; position: absolute; right: -140px; top: -180px; width: 620px; height: 620px;
+      border-radius: 50%; background: radial-gradient(circle, rgba(16,128,74,.32), transparent 62%);
+    }
+    .card > * { position: relative; z-index: 1; }
+    .top { display: flex; align-items: center; justify-content: space-between; }
+    .top img { height: 34px; filter: brightness(0) invert(1); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.06);
+      font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.82);
+    }
+    .eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: #17A15C; }
+    h1 { margin: 0; color: #fff; font-weight: 500; font-size: 78px; line-height: 1.06; letter-spacing: -.025em; }
+    h1 .gradient-text {
+      font-family: 'Corsiva', 'Monotype Corsiva', 'Britney', cursive, var(--font-family);
+      font-weight: 400; font-size: 1.14em; display: block; padding-top: 4px;
+      background: none; -webkit-text-fill-color: #fff; color: #fff;
+    }
+    .foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+    .when { font-size: 26px; font-weight: 600; letter-spacing: -.01em; }
+    .where { margin-top: 8px; font-size: 20px; color: rgba(255,255,255,.66); }
+    .by { text-align: right; font-size: 16px; line-height: 1.5; color: rgba(255,255,255,.55); }
+    .by strong { display: block; color: rgba(255,255,255,.85); font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <img src="../assets/images/situational-ai-logo.png" alt="Situational AI">
+      <span class="eyebrow"><i></i>Open Research &amp; Technology Forum</span>
+    </div>
+    <h1>The World Does Not Arrive<span class="gradient-text">as Prompts.</span></h1>
+    <div class="foot">
+      <div>
+        <div class="when">October 22, 2026 · 5 PM</div>
+        <div class="where">Crow Museum of Asian Art · Edith and Peter O’Donnell Jr. Athenaeum · UT Dallas</div>
+      </div>
+      <div class="by"><strong>Presented by Mindspace AI</strong>in collaboration with UTD’s Jindal School of Management JURS program<br>situational-ai.org/events</div>
+    </div>
+  </div>
+</body>
+</html>
