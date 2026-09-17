@@ -1574,6 +1574,33 @@ body[data-hero="media"] .navbar:not(.scrolled) .btn-nav:hover {
   box-shadow: var(--shadow-md);
 }
 
+/* A channel that exists but is not open yet: same chip, held still and dimmed. */
+.contact-link.is-soon {
+  opacity: 0.55;
+  cursor: default;
+  border-style: dashed;
+}
+
+.contact-link.is-soon:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+  border-color: var(--color-border);
+  color: var(--color-text-soft);
+  background: var(--color-surface);
+}
+
+.soon-tag {
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  padding: 3px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+}
+
 /* ============================================
    Footer
    ============================================ */
@@ -2150,4 +2177,230 @@ body .cta-reason:hover {
     opacity: 1;
     transform: none;
   }
+}
+
+/* ============================================
+   Events
+   ============================================ */
+/* An event page carries both its registration content and its archive
+   content. Which set is visible is decided by data-event-mode on <html>,
+   set from assets/js/events.js — so the page keeps its URL after the event. */
+html[data-event-mode="register"] .event-archive-only,
+html[data-event-mode="archive"] .event-register-only {
+  display: none !important;
+}
+
+/* Narrow reading column inside a full-width section. */
+.event-prose {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.event-prose p {
+  color: var(--color-text-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.event-prose p:last-child { margin-bottom: 0; }
+
+/* People: a photo (or initials until one is supplied) plus a LinkedIn link.
+   The <img> removes itself on 404, so the initials underneath show through. */
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-soft);
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar::before { content: attr(data-initials); }
+
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar--sm { width: 34px; height: 34px; font-size: 0.66rem; }
+.avatar--lg { width: 72px; height: 72px; font-size: 1.1rem; }
+
+.person {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
+}
+
+.person-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.li-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--color-text-faint);
+  flex-shrink: 0;
+  transition: color var(--transition);
+}
+
+.person:hover .li-icon,
+.person-block-link:hover .li-icon { color: currentColor; }
+
+/* Presenter card: the title link is stretched over the whole card, and the
+   person link is lifted above it so LinkedIn stays its own click target. */
+.person-card .person {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+}
+
+.person-card h3 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.person-card:hover h3 a { color: var(--color-text); }
+
+/* Program rows: the same person link, one size down, with the note beneath. */
+.program-table .person { gap: 10px; }
+.program-table .person strong { display: inline-flex; }
+
+/* Student page "About" block. */
+.person-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 8px 0 20px;
+}
+
+.person-block p { margin: 0; }
+
+.person-block-name {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.person-block-meta {
+  font-size: 0.9rem;
+  margin-bottom: 12px !important;
+}
+
+.person-block-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.person-block-link .li-icon { color: currentColor; }
+
+/* One-line follow-up under a section's main action. */
+.event-note {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.event-note a {
+  color: var(--color-text);
+  border-bottom: 1px solid currentColor;
+}
+
+/* Cards that link out: same panel, plus the hover the other link-cards have. */
+a.question-card {
+  display: block;
+  color: inherit;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+a.question-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Program table: segment on the left, presenter on the right. */
+.program-table th {
+  width: 40%;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.program-table td { color: var(--color-text-muted); }
+
+/* Unsupplied content is shown as an explicit gap, never as filler copy. */
+.content-placeholder {
+  margin: 24px 0;
+  padding: 18px 22px;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.content-placeholder::before {
+  content: 'To be added';
+  display: block;
+  font-family: var(--font-label);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 6px;
+}
+
+.blog-card .content-placeholder { margin: 12px 0 0; }
+
+@media (max-width: 760px) {
+  .program-table th { width: 46%; }
+}
+
+.program-table td strong {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.program-table .program-note,
+.program-table .program-duration {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.program-table .program-duration {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
 }
