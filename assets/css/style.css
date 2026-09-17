@@ -2182,6 +2182,65 @@ body .cta-reason:hover {
 /* ============================================
    Events
    ============================================ */
+/* Announcement pill under the hero actions. Glass on the dark video, with the
+   one green accent as a live dot. Swapped or hidden by event mode. */
+.hero-pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 9px 16px 9px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  transition: var(--transition);
+}
+
+.hero-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #fff;
+}
+
+.hero-pill-dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 7px;
+  height: 7px;
+  margin: -2px 9px 0 0;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  animation: heroPillPulse 2.2s ease-out infinite;
+}
+
+@keyframes heroPillPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(23, 161, 92, 0.55); }
+  100% { box-shadow: 0 0 0 8px rgba(23, 161, 92, 0); }
+}
+
+.hero-pill-cta {
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pill-dot { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-pill { font-size: 0.72rem; padding: 8px 14px; }
+  .hero-pill-venue { display: none; }
+}
+
 /* An event page carries both its registration content and its archive
    content. Which set is visible is decided by data-event-mode on <html>,
    set from assets/js/events.js — so the page keeps its URL after the event. */
