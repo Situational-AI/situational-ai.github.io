@@ -26,11 +26,11 @@ layout: "layouts/base.njk"
   </header>
 
   {%- set groups = [
-    { "key": "founder",  "label": "Founder & Principal Architect", "note": "" },
-    { "key": "academic", "label": "Academic Collaborators", "note": "Professors collaborating with the work." },
     { "key": "student",  "label": "Student Researchers", "note": "Students doing actual projects and research." },
+    { "key": "academic", "label": "Academic Collaborators", "note": "Professors collaborating with the work." },
     { "key": "research", "label": "Research Collaborators", "note": "Other researchers and engineers contributing." },
-    { "key": "industry", "label": "Industry Collaborators", "note": "Where an actual collaboration exists." }
+    { "key": "industry", "label": "Industry Collaborators", "note": "Where an actual collaboration exists." },
+    { "key": "founder",  "label": "Initiated by", "note": "" }
   ] %}
   {%- for g in groups %}
   {%- set members = people | where("category", g.key) %}

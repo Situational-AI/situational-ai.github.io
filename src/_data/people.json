@@ -1,39 +1,114 @@
 [
   {
-    "slug": "prasad-pillai",
-    "name": "Prasad Pillai",
-    "initials": "PP",
-    "photo": "/assets/images/people/prasad.jpg",
-    "category": "founder",
-    "role": "Founder & Principal Architect, Situational AI",
-    "affiliations": ["Founder & CEO, Mindspace AI", "Founder, BotsWork"],
-    "linkedin": "https://www.linkedin.com/in/prasadppillai/",
-    "links": [
-      { "label": "Mindspace AI", "url": "https://mindspaceai.com/" },
-      { "label": "BotsWork", "url": "https://www.botswork.ai" }
+    "slug": "krishang-reddy-mandala",
+    "name": "Krishang Reddy Mandala",
+    "initials": "KM",
+    "photo": "/assets/images/people/krishang.jpg",
+    "category": "student",
+    "role": "Student Researcher, Situational AI",
+    "affiliations": [
+      "UT Dallas · JURS Independent Research Study"
     ],
-    "summary": "Initiated the Situational AI inquiry after two decades building software and, most recently, AI coworkers. Holds the hypothesis and is responsible for the research program.",
-    "sections": [
-      { "heading": "About",
-        "html": "<p>Prasad Pillai initiated Situational AI and is responsible for its hypothesis and research program. He is the founder and CEO of Mindspace AI, the organizational and engineering home of the work, and the founder of BotsWork, where situation-centric ideas are being tested in working AI coworker systems.</p>" },
-      { "heading": "Why I Started This Inquiry",
-        "html": "<p>The inquiry began with a practical frustration. Modern AI had become remarkably good at reasoning once it was told what problem to solve. Given the right prompt and the right context, it could write, plan, analyze and explain. And yet the systems we were building still failed in ordinary situations, not because they reasoned badly but because nobody had told them what was going on.</p><p>Real work does not arrive as prompts. A customer goes quiet. A payment fails for a long-standing account. A project drifts. Nobody asks anything; something changes. The harder problem was recognizing what problem exists, for whom it matters, and what the moment calls for. That question, once noticed, was hard to put down.</p>" },
-      { "heading": "From Building AI Coworkers to Situation Recognition",
-        "html": "<p>Building AI coworkers at BotsWork made the gap concrete. Giving an agent more context helped, up to a point. What it could not do was tell an ordinary card decline from a valuable customer being blocked by a temporary outage, or a cooling prospect from a resolved support ticket, when the underlying data looked the same. Smart was not the same as competent.</p><p>The pattern kept repeating: the missing capability was not more knowledge or better reasoning but recognition, an explicit account of the situation the system was in, from whose perspective, and what that implied. That led from context engineering to situation recognition, and from there to the question of whether situations should be first-class objects in the architecture rather than something inferred and forgotten inside each prompt.</p>" },
-      { "heading": "The Situational AI Hypothesis",
-        "html": "<p>Situation deserves to become a first-class computational primitive of intelligent systems: something a system detects, represents, compares, tracks, remembers and revises as evidence changes. Situation is to intelligent behavior what the token is to language modeling, an analogy about computational role, not a claim that the work is done. The <a href=\"/assets/documents/Situational_AI_Manifesto_v1.0.pdf\" target=\"_blank\" rel=\"noopener\">manifesto</a> sets the hypothesis out in full; the <a href=\"/research.html\">research program</a> is the attempt to test it.</p>" },
-      { "heading": "Current Research Questions",
-        "html": "<ul><li>Can a system recognize which situation is emerging from changing evidence, and notice when its interpretation is wrong?</li><li>Can experience be remembered as situations, responses and outcomes rather than as text?</li><li>Can structurally analogous situations be found across domains that share no vocabulary?</li><li>Does an explicit situation layer actually improve timing, decision quality, coordination and explanation?</li></ul><p>These are the open questions of the <a href=\"/research.html#experiments\">program</a>, not settled results.</p>" },
-      { "heading": "Professional Background",
-        "html": "<p>Over two decades of building technology to solve real-world problems, including roles at Microsoft and co-founding Elsys Intelligent Devices. Founder and CEO of Mindspace AI, which conducts applied AI research, proofs of concept and engineering around emerging AI architectures; founder of BotsWork. Speaker, including a TEDx talk, with coverage in The Better India, Manorama News, Crazy Engineers, Mathrubhumi News and Raksha Net.</p>" }
+    "linkedin": "https://www.linkedin.com/in/krishang-mandala/",
+    "projects": [
+      "krishang-situation-awareness"
+    ],
+    "placeholders": [
+      "About",
+      "Research interests"
     ],
     "eventRoles": {
-      "2026-02-02-jurs-introduction": "Introductory address",
-      "2026-04-20-jurs-presentations-day-1": "Host and mentor",
-      "2026-04-27-jurs-presentations-day-2": "Host and mentor",
-      "2026-05-04-jurs-meetup-recognition": "Recognized for mentoring JURS scholars",
-      "2026-08-05-jsom-mba-class": "Guest lecture",
-      "october-22-2026": "The Hypothesis · The Real World"
+      "october-22-2026": "The Foundations"
+    }
+  },
+  {
+    "slug": "sabareesh-dinakaran",
+    "name": "Sabareesh Dinakaran",
+    "initials": "SD",
+    "photo": "/assets/images/people/sabareesh.jpg",
+    "category": "student",
+    "role": "Student Researcher, Situational AI",
+    "affiliations": [
+      "UT Dallas · JURS Independent Research Study",
+      "Summer Intern, Mindspace AI"
+    ],
+    "linkedin": "https://www.linkedin.com/in/sabareesh-dinakaran-1a5692283/",
+    "projects": [
+      "sabareesh-efficient-ai"
+    ],
+    "placeholders": [
+      "About",
+      "Research interests"
+    ],
+    "eventRoles": {
+      "october-22-2026": "The Computation"
+    }
+  },
+  {
+    "slug": "sai-jagadish-manchikanti",
+    "name": "Sai Jagadish Manchikanti",
+    "initials": "SM",
+    "photo": "/assets/images/people/sai.jpg",
+    "category": "student",
+    "role": "Student Researcher, Situational AI",
+    "affiliations": [
+      "UT Dallas · JURS Independent Research Study"
+    ],
+    "linkedin": "https://www.linkedin.com/in/saijagadishkumarmanchikanti/",
+    "projects": [
+      "sai-riskpulse"
+    ],
+    "placeholders": [
+      "About",
+      "Research interests"
+    ],
+    "eventRoles": {
+      "october-22-2026": "The Experiments · RiskPulse live demo"
+    }
+  },
+  {
+    "slug": "yuvan-muruganandham",
+    "name": "Yuvan Muruganandham",
+    "initials": "YM",
+    "photo": "/assets/images/people/yuvan.jpg",
+    "category": "student",
+    "role": "Student Researcher, Situational AI",
+    "affiliations": [
+      "UT Dallas · JURS Independent Research Study"
+    ],
+    "linkedin": "https://www.linkedin.com/in/yuvan-muruganandham/",
+    "projects": [
+      "yuvan-project"
+    ],
+    "placeholders": [
+      "About",
+      "Research interests"
+    ],
+    "eventRoles": {
+      "october-22-2026": "The Experiments · live demo"
+    }
+  },
+  {
+    "slug": "avani-tripathi",
+    "name": "Avani Tripathi",
+    "initials": "AT",
+    "photo": "/assets/images/people/avani.jpg",
+    "category": "student",
+    "role": "Student Researcher, Situational AI",
+    "affiliations": [
+      "UT Dallas · JURS Independent Research Study",
+      "Summer Intern, Mindspace AI"
+    ],
+    "linkedin": "https://www.linkedin.com/in/avanitripathi/",
+    "projects": [
+      "avani-student-exploration"
+    ],
+    "placeholders": [
+      "About",
+      "Research interests"
+    ],
+    "eventRoles": {
+      "october-22-2026": "Welcome · Student Perspective"
     }
   },
   {
@@ -47,78 +122,77 @@
     "linkedin": "https://www.linkedin.com/in/ramesh-subramoniam-a905bb8/",
     "summary": "Directs the Jindal Undergraduate Research Scholars (JURS) program through which the Situational AI student research has been carried out.",
     "sections": [
-      { "heading": "Collaboration with Situational AI",
-        "html": "<p>As Director of Undergraduate Research at the Naveen Jindal School of Management, Prof. Subramoniam directs the Jindal Undergraduate Research Scholars (JURS) program through which five UT Dallas students carried out independent research studies on Situational AI in 2026. He opens the October 22 forum and is recognized in its closing segment.</p>" }
+      {
+        "heading": "Collaboration with Situational AI",
+        "html": "<p>As Director of Undergraduate Research at the Naveen Jindal School of Management, Prof. Subramoniam directs the Jindal Undergraduate Research Scholars (JURS) program through which five UT Dallas students carried out independent research studies on Situational AI in 2026. He opens the October 22 forum and is recognized in its closing segment.</p>"
+      }
     ],
-    "placeholders": ["Biography", "Academic interests", "Academic profile"],
+    "placeholders": [
+      "Biography",
+      "Academic interests",
+      "Academic profile"
+    ],
     "eventRoles": {
       "2026-05-04-jurs-meetup-recognition": "Presented the Certificate of Excellence",
       "october-22-2026": "Opening remarks · Recognition & thanks"
     }
   },
   {
-    "slug": "krishang-reddy-mandala",
-    "name": "Krishang Reddy Mandala",
-    "initials": "KM",
-    "photo": "/assets/images/people/krishang.jpg",
-    "category": "student",
-    "role": "Student Researcher, Situational AI",
-    "affiliations": ["UT Dallas · JURS Independent Research Study"],
-    "linkedin": "https://www.linkedin.com/in/krishang-mandala/",
-    "projects": ["krishang-situation-awareness"],
-    "placeholders": ["About", "Research interests"],
-    "eventRoles": { "october-22-2026": "The Foundations" }
-  },
-  {
-    "slug": "sabareesh-dinakaran",
-    "name": "Sabareesh Dinakaran",
-    "initials": "SD",
-    "photo": "/assets/images/people/sabareesh.jpg",
-    "category": "student",
-    "role": "Student Researcher, Situational AI",
-    "affiliations": ["UT Dallas · JURS Independent Research Study", "Summer Intern, Mindspace AI"],
-    "linkedin": "https://www.linkedin.com/in/sabareesh-dinakaran-1a5692283/",
-    "projects": ["sabareesh-efficient-ai"],
-    "placeholders": ["About", "Research interests"],
-    "eventRoles": { "october-22-2026": "The Computation" }
-  },
-  {
-    "slug": "sai-jagadish-manchikanti",
-    "name": "Sai Jagadish Manchikanti",
-    "initials": "SM",
-    "photo": "/assets/images/people/sai.jpg",
-    "category": "student",
-    "role": "Student Researcher, Situational AI",
-    "affiliations": ["UT Dallas · JURS Independent Research Study"],
-    "linkedin": "https://www.linkedin.com/in/saijagadishkumarmanchikanti/",
-    "projects": ["sai-riskpulse"],
-    "placeholders": ["About", "Research interests"],
-    "eventRoles": { "october-22-2026": "The Experiments · RiskPulse live demo" }
-  },
-  {
-    "slug": "yuvan-muruganandham",
-    "name": "Yuvan Muruganandham",
-    "initials": "YM",
-    "photo": "/assets/images/people/yuvan.jpg",
-    "category": "student",
-    "role": "Student Researcher, Situational AI",
-    "affiliations": ["UT Dallas · JURS Independent Research Study"],
-    "linkedin": "https://www.linkedin.com/in/yuvan-muruganandham/",
-    "projects": ["yuvan-project"],
-    "placeholders": ["About", "Research interests"],
-    "eventRoles": { "october-22-2026": "The Experiments · live demo" }
-  },
-  {
-    "slug": "avani-tripathi",
-    "name": "Avani Tripathi",
-    "initials": "AT",
-    "photo": "/assets/images/people/avani.jpg",
-    "category": "student",
-    "role": "Student Researcher, Situational AI",
-    "affiliations": ["UT Dallas · JURS Independent Research Study", "Summer Intern, Mindspace AI"],
-    "linkedin": "https://www.linkedin.com/in/avanitripathi/",
-    "projects": ["avani-student-exploration"],
-    "placeholders": ["About", "Research interests"],
-    "eventRoles": { "october-22-2026": "Welcome · Student Perspective" }
+    "slug": "prasad-pillai",
+    "name": "Prasad Pillai",
+    "initials": "PP",
+    "photo": "/assets/images/people/prasad.jpg",
+    "category": "founder",
+    "role": "Founder, Situational AI",
+    "affiliations": [
+      "Founder & CEO, Mindspace AI",
+      "Founder, BotsWork"
+    ],
+    "linkedin": "https://www.linkedin.com/in/prasadppillai/",
+    "links": [
+      {
+        "label": "Mindspace AI",
+        "url": "https://mindspaceai.com/"
+      },
+      {
+        "label": "BotsWork",
+        "url": "https://www.botswork.ai"
+      }
+    ],
+    "summary": "Initiated the Situational AI inquiry after two decades building software and, most recently, AI coworkers. Responsible for the hypothesis and the research program.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Prasad Pillai initiated Situational AI and is responsible for its hypothesis and research program. He is the founder and CEO of Mindspace AI, the organizational and engineering home of the work, and the founder of BotsWork, where situation-centric ideas are being tested in working AI coworker systems.</p>"
+      },
+      {
+        "heading": "Why I Started This Inquiry",
+        "html": "<p>The inquiry began with a practical frustration. Modern AI had become remarkably good at reasoning once it was told what problem to solve. Given the right prompt and the right context, it could write, plan, analyze and explain. And yet the systems we were building still failed in ordinary situations, not because they reasoned badly but because nobody had told them what was going on.</p><p>Real work does not arrive as prompts. A customer goes quiet. A payment fails for a long-standing account. A project drifts. Nobody asks anything; something changes. The harder problem was recognizing what problem exists, for whom it matters, and what the moment calls for. That question, once noticed, was hard to put down.</p>"
+      },
+      {
+        "heading": "From Building AI Coworkers to Situation Recognition",
+        "html": "<p>Building AI coworkers at BotsWork made the gap concrete. Giving an agent more context helped, up to a point. What it could not do was tell an ordinary card decline from a valuable customer being blocked by a temporary outage, or a cooling prospect from a resolved support ticket, when the underlying data looked the same. Smart was not the same as competent.</p><p>The pattern kept repeating: the missing capability was not more knowledge or better reasoning but recognition, an explicit account of the situation the system was in, from whose perspective, and what that implied. That led from context engineering to situation recognition, and from there to the question of whether situations should be first-class objects in the architecture rather than something inferred and forgotten inside each prompt.</p>"
+      },
+      {
+        "heading": "The Situational AI Hypothesis",
+        "html": "<p>Situation deserves to become a first-class computational primitive of intelligent systems: something a system detects, represents, compares, tracks, remembers and revises as evidence changes. Situation is to intelligent behavior what the token is to language modeling, an analogy about computational role, not a claim that the work is done. The <a href=\"/assets/documents/Situational_AI_Manifesto_v1.0.pdf\" target=\"_blank\" rel=\"noopener\">manifesto</a> sets the hypothesis out in full; the <a href=\"/research.html\">research program</a> is the attempt to test it.</p>"
+      },
+      {
+        "heading": "Current Research Questions",
+        "html": "<ul><li>Can a system recognize which situation is emerging from changing evidence, and notice when its interpretation is wrong?</li><li>Can experience be remembered as situations, responses and outcomes rather than as text?</li><li>Can structurally analogous situations be found across domains that share no vocabulary?</li><li>Does an explicit situation layer actually improve timing, decision quality, coordination and explanation?</li></ul><p>These are the open questions of the <a href=\"/research.html#experiments\">program</a>, not settled results.</p>"
+      },
+      {
+        "heading": "Professional Background",
+        "html": "<p>Over two decades of building technology to solve real-world problems, including roles at Microsoft and co-founding Elsys Intelligent Devices. Founder and CEO of Mindspace AI, which conducts applied AI research, proofs of concept and engineering around emerging AI architectures; founder of BotsWork. Speaker, including a TEDx talk, with coverage in The Better India, Manorama News, Crazy Engineers, Mathrubhumi News and Raksha Net.</p>"
+      }
+    ],
+    "eventRoles": {
+      "2026-02-02-jurs-introduction": "Introductory address",
+      "2026-04-20-jurs-presentations-day-1": "Host and mentor",
+      "2026-04-27-jurs-presentations-day-2": "Host and mentor",
+      "2026-05-04-jurs-meetup-recognition": "Recognized for mentoring JURS scholars",
+      "2026-08-05-jsom-mba-class": "Guest lecture",
+      "october-22-2026": "The Hypothesis · The Real World"
+    }
   }
 ]
