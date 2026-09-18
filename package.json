@@ -1,0 +1,13 @@
+{
+  "name": "situational-ai-site",
+  "private": true,
+  "description": "situational-ai.org — built with Eleventy from src/ into _site/",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "check": "node tools/check-links.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

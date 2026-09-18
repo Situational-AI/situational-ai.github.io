@@ -2,7 +2,7 @@ const puppeteer=require('puppeteer-core');
 const fs=require('fs');
 
 // Content images only — logos/icons stay crisp and are too small to matter.
-const SKIP=new Set(['situational-ai-logo.png','botswork-icon.png','mindspace-ai-icon.png','mindspace-ai-wordmark.png','og-preview.png']);
+const SKIP=new Set(['situational-ai-logo.png','botswork-icon.png','mindspace-ai-icon.png','mindspace-ai-wordmark.png','og-preview.jpg']);
 const files=fs.readdirSync('D:/Situational AI website/assets/images').filter(f=>!SKIP.has(f));
 
 (async()=>{
