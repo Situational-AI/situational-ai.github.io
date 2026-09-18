@@ -5,6 +5,16 @@
         <a href="/"><img src="/assets/images/situational-ai-logo.png" alt="Situational AI" style="height:24px; border-radius:4px;"></a>
         <p class="footer-attribution">{{ site.attribution }}</p>
         <p class="footer-note">{{ site.affiliationNote }}</p>
+        <div class="footer-follow" id="follow">
+          <p class="footer-follow-label">Follow the Inquiry</p>
+          <p class="footer-follow-text">New essays, experiments, research questions, student work and gatherings. No marketing.</p>
+          <form class="follow-form follow-form--footer" action="{{ forms.follow.action }}" method="POST" data-google-form data-success="footerFollowSuccess">
+            <label for="footer-follow-email" class="visually-hidden">Email</label>
+            <input id="footer-follow-email" name="{{ forms.follow.fields.email }}" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit" class="btn btn-outline btn-sm">Follow</button>
+          </form>
+          <p class="form-success form-success--small" id="footerFollowSuccess" hidden>You’re following. We’ll write when there is something worth reading.</p>
+        </div>
       </div>
       <ul class="footer-links">
         {%- for item in site.footerNav %}

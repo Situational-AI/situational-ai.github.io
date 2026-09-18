@@ -12,4 +12,12 @@
       <a href="{{ site.manifesto }}" class="btn btn-nav" target="_blank" rel="noopener">Manifesto</a>
     </div>
   </div>
+  {%- set current = events | bySlug(site.currentEvent) %}
+  {%- if current and not hideAnnounce %}
+  {#- One line under the bar, on every page that has no RSVP of its own. Hidden by events.js once the event is archived. -#}
+  <div class="nav-announce event-register-only">
+    <a href="{{ current.url }}" class="nav-announce-label"><span class="hero-pill-dot" aria-hidden="true"></span><span class="nav-announce-full">{{ current.title }} · {{ current.dateLabel }}</span><span class="nav-announce-short">{{ current.kind }} · {{ current.dateLabel }}</span></a>
+    <a href="https://luma.com/7jhkvaz2" data-rsvp="{{ current.slug }}" class="nav-announce-cta" target="_blank" rel="noopener">RSVP &rarr;</a>
+  </div>
+  {%- endif %}
 </nav>

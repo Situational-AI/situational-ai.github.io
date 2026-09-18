@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"{% if htmlAttrs %} {{ htmlAttrs | safe }}{% endif %}>
+<html lang="en" data-event="{{ site.currentEvent }}" data-event-mode="register"{% if htmlAttrs %} {{ htmlAttrs | safe }}{% endif %}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +39,7 @@
   {%- if pageStyles %}
 {% include "partials/" + pageStyles + "-styles.njk" %}
   {%- endif %}
+  <script src="/assets/js/events.js"></script>
   {%- for src in headScripts %}
   <script src="{{ src }}"></script>
   {%- endfor %}
@@ -54,5 +55,6 @@
   <script src="{{ src }}"></script>
   {%- endfor %}
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/forms.js"></script>
 </body>
 </html>
