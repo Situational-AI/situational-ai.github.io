@@ -1,0 +1,69 @@
+---
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/research/{{ project.slug }}.html"
+eleventyComputed:
+  title: "{{ project.title }} — Situational AI Research"
+  description: "{{ project.lede }} A student research project on Situational AI."
+  ogTitle: "{{ project.title }}"
+  ogDescription: "{{ project.lede }}"
+  ogType: "article"
+nav: "research"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+{%- set researchers = people | bySlugs(project.people) -%}
+{%- set academics = people | bySlugs(project.academic) -%}
+{%- set shown = events | bySlugs(project.events) -%}
+<article class="blog-post">
+  <div class="blog-post-header">
+    <a href="/research/projects.html" class="blog-post-back">&larr; All research projects</a>
+    <div class="blog-card-tag">{{ project.kind }} · Student research</div>
+    <h1>{{ project.title }}</h1>
+    <p class="blog-post-subtitle">{{ project.lede }}</p>
+    <p class="blog-post-meta"><span class="status-label">{{ project.status }}</span> {% for r in researchers %}<a href="/people/{{ r.slug }}.html">{{ r.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %} · UT Dallas · JURS Independent Research Study · 2026</p>
+  </div>
+
+  <div class="blog-post-content">
+    <p>{{ project.intro }}</p>
+
+    <h2>Research Question</h2>
+    <blockquote><p><strong>{{ project.question }}</strong></p></blockquote>
+    <p class="status-line">A working question, drawn from the programme description. The student’s own framing will replace it.</p>
+
+    {%- for s in project.sections %}
+    <h2>{{ s[0] }}</h2>
+    <div class="content-placeholder">{{ s[1] }}</div>
+    {%- endfor %}
+
+    <h2>Researchers</h2>
+    <ul class="event-people">
+      {%- for r in researchers %}
+      <li><a href="/people/{{ r.slug }}.html" class="person"><span class="avatar avatar--sm" data-initials="{{ r.initials }}"><img src="{{ r.photo }}" alt="" loading="lazy" onerror="this.remove()"></span><span class="person-name">{{ r.name }}</span></a> <span class="event-list-meta">· {{ r.role }}</span></li>
+      {%- endfor %}
+      {%- for a in academics %}
+      <li><a href="/people/{{ a.slug }}.html" class="person"><span class="avatar avatar--sm" data-initials="{{ a.initials }}"><img src="{{ a.photo }}" alt="" loading="lazy" onerror="this.remove()"></span><span class="person-name">{{ a.name }}</span></a> <span class="event-list-meta">· {{ a.role }}</span></li>
+      {%- endfor %}
+      <li><a href="/people/prasad-pillai.html" class="person"><span class="avatar avatar--sm" data-initials="PP"><img src="/assets/images/people/prasad.jpg" alt="" loading="lazy" onerror="this.remove()"></span><span class="person-name">Prasad Pillai</span></a> <span class="event-list-meta">· Founder &amp; Principal Architect, Situational AI</span></li>
+    </ul>
+
+    <h2>Manuscript</h2>
+    {%- if project.manuscript %}
+    <p><a href="{{ project.manuscript }}">Read the manuscript (PDF)</a></p>
+    {%- else %}
+    <div class="content-placeholder">Research manuscript: HTML version and PDF download, once supplied.</div>
+    {%- endif %}
+
+    <h2>Presentations</h2>
+    <ul class="event-list">
+      {%- for ev in shown %}
+      <li><a href="{{ ev.url or ('/events/' + ev.slug + '.html') }}">{{ ev.title }}</a> <span class="event-list-meta">{{ ev.dateLabel }}{% if project.presentation %} · {{ project.presentation }}{% endif %}{% if ev.status == "upcoming" %} · upcoming{% endif %}</span></li>
+      {%- endfor %}
+    </ul>
+
+    <h2>Related Situational AI Concepts</h2>
+    <p>{% for c in project.concepts %}<a href="/research/open-questions.html#{{ c | lower | replace(' ', '-') }}" class="status-label">{{ c }}</a> {% endfor %}</p>
+  </div>
+</article>

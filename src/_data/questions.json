@@ -1,0 +1,66 @@
+[
+  { "theme": "Definition", "slug": "definition",
+    "intro": "Before anything can be recognized, it has to be sayable what a situation is.",
+    "questions": [
+      "What is the minimal representation of a situation? Which of its properties are invariant, temporal, observer-relative, or learned?",
+      "Where does a situation begin and end? Is it best treated as an object, a process, or a relation between events and an observer?",
+      "How should event, state, context, intent and situation be distinguished operationally, not just conceptually?"
+    ], "projects": ["krishang-situation-awareness", "avani-student-exploration"] },
+  { "theme": "Recognition", "slug": "recognition",
+    "intro": "The capability the whole program turns on.",
+    "questions": [
+      "Can a system detect emerging and overlapping situations from changing evidence, and recognize when its own interpretation is wrong?",
+      "What is the earliest point at which a situation can be recognized reliably, and what does a false early recognition cost?",
+      "Does explicit situation recognition reduce the context and prompting a model needs, and does that let smaller models do the work?"
+    ], "projects": ["sabareesh-efficient-ai", "sai-riskpulse", "yuvan-project"] },
+  { "theme": "Representation", "slug": "representation",
+    "intro": "What a situation object should hold, and how.",
+    "questions": [
+      "What belongs in a situation object: observer, roles, events, goals, stage, urgency, uncertainty, available responses, outcome, transition conditions?",
+      "Can situations be represented so that they are comparable across vocabularies and domains, rather than only within one?"
+    ], "projects": [] },
+  { "theme": "Perspective", "slug": "perspective",
+    "intro": "The same facts, different situations.",
+    "questions": [
+      "Can competing interpretations of the same events coexist, for different observers, or within a single system that serves several parties?",
+      "How do existing models of situation awareness, built around a single human operator, transfer to systems that hold situations for many observers at once?"
+    ], "projects": ["krishang-situation-awareness"] },
+  { "theme": "Memory", "slug": "memory",
+    "intro": "Remembering experience rather than information.",
+    "questions": [
+      "Can a system accumulate situational experience, what was recognized, what was chosen, what followed, and improve without merely accumulating more text?",
+      "How should a wrong interpretation be remembered so that it is not repeated?",
+      "What should a situation memory forget?"
+    ], "projects": [] },
+  { "theme": "Dynamics", "slug": "dynamics",
+    "intro": "Situations move.",
+    "questions": [
+      "How do situations emerge, develop, intensify, weaken, merge, divide and resolve, and can those transitions be detected rather than assumed?",
+      "Can a system anticipate the situations a current one may become, and act on the anticipation without over-reacting?"
+    ], "projects": ["sai-riskpulse"] },
+  { "theme": "Situation Space", "slug": "situation-space",
+    "intro": "Analogy across domains that share no words.",
+    "questions": [
+      "Can a latent situation space preserve underlying dynamics so that structurally analogous situations are found across different vocabularies, workflows and domains?",
+      "Can situational retrieval find useful analogies that semantic retrieval misses, and can that be shown rather than argued?"
+    ], "projects": [] },
+  { "theme": "Architecture", "slug": "architecture",
+    "intro": "Where the situation layer lives.",
+    "questions": [
+      "What does a situation-centric cognitive loop look like in practice: sense, detect, interpret, reason, plan, act or ask or wait or observe, evaluate, learn?",
+      "Where should an explicit situation layer sit relative to models, tools, memory and the people in the loop?"
+    ], "projects": ["yuvan-project", "sai-riskpulse"] },
+  { "theme": "Evaluation", "slug": "evaluation",
+    "intro": "What would settle it.",
+    "questions": [
+      "Does an explicit situation layer actually improve timing, decision quality, coordination, adaptation and explanation, measured against a strong context-engineered baseline?",
+      "What result would falsify the hypothesis? If nothing would, it is not a hypothesis."
+    ], "projects": ["sabareesh-efficient-ai"] },
+  { "theme": "Human correction and governance", "slug": "human-correction-and-governance",
+    "intro": "Interpretation is never only the machine’s.",
+    "questions": [
+      "How does a person correct a system’s reading of a situation, and how does that correction persist and generalize?",
+      "Who decides what a situation means when observers disagree, and how is that authority represented in the system?",
+      "What must a system disclose about its interpretation for a person to trust it, or override it?"
+    ], "projects": ["avani-student-exploration"] }
+]

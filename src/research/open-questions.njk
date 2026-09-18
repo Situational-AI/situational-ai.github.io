@@ -1,0 +1,55 @@
+---
+title: "Open Questions — What We Don’t Know — Situational AI"
+description: "Situational AI is a research hypothesis, not a finished theory. The open questions, by theme: definition, recognition, representation, perspective, memory, dynamics, situation space, architecture, evaluation, and human correction."
+ogTitle: "What We Don’t Know — Situational AI"
+nav: "research"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+  <header class="blog-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Open questions</span>
+        <h1>What We Don’t Know</h1>
+        <p class="section-subtitle">Situational AI is a research hypothesis, not a finished theory. Some of these questions have projects attached. Some are deliberately left unanswered. All of them are the work.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="research-shell">
+        <nav class="question-index" aria-label="Themes">
+          {%- for q in questions %}<a href="#{{ q.slug }}">{{ q.theme }}</a>{% endfor %}
+        </nav>
+        {%- for q in questions %}
+        <section class="question-theme" id="{{ q.slug }}">
+          <span class="section-tag">{% if loop.index < 10 %}0{% endif %}{{ loop.index }} · {{ q.theme }}</span>
+          <h2>{{ q.intro }}</h2>
+          <ol class="question-list">
+            {%- for text in q.questions %}<li>{{ text }}</li>{% endfor %}
+          </ol>
+          {%- set related = projects | bySlugs(q.projects) %}
+          {%- if related.length %}
+          <p class="event-list-meta">Being worked on in: {% for pr in related %}<a href="{{ pr.url }}">{{ pr.title }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+          {%- else %}
+          <p class="event-list-meta">No project on this yet.</p>
+          {%- endif %}
+        </section>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark is-dark">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 32px;">
+        <span class="section-tag">Working on something related?</span>
+        <h2>Talk with us.</h2>
+      </div>
+      <div class="hero-actions" style="margin-bottom:0;">
+        <a href="/participate.html#inquiry" class="btn btn-primary">Start a Conversation</a>
+        <a href="/research/projects.html" class="btn btn-ghost">See the Projects</a>
+      </div>
+    </div>
+  </section>

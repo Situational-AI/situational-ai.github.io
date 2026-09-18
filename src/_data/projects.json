@@ -1,7 +1,232 @@
 [
-  { "slug": "krishang-situation-awareness", "url": "/research/krishang-situation-awareness.html", "title": "Situational AI & Situation Awareness", "question": "How does Situational AI relate to existing models of situation awareness, including Endsley’s framework, and where does it depart from them?", "status": "Research in Progress", "kind": "Foundations", "people": ["krishang-reddy-mandala"], "academic": ["ramesh-subramoniam"], "events": ["october-22-2026"] },
-  { "slug": "sabareesh-efficient-ai", "url": "/research/sabareesh-efficient-ai.html", "title": "Can Situations Make AI More Efficient?", "question": "Can situation recognition reduce context and prompt needs and enable smaller, efficient models?", "status": "Research in Progress", "kind": "Computation", "people": ["sabareesh-dinakaran"], "academic": ["ramesh-subramoniam"], "events": ["october-22-2026"] },
-  { "slug": "sai-riskpulse", "url": "/research/sai-riskpulse.html", "title": "RiskPulse + Situational AI", "question": "Can situation recognition be applied to emerging organizational risk?", "status": "Experiment", "kind": "Experiment", "people": ["sai-jagadish-manchikanti"], "academic": ["ramesh-subramoniam"], "events": ["october-22-2026"] },
-  { "slug": "yuvan-project", "url": "/research/yuvan-project.html", "title": "Exploratory Situational AI Application", "question": "What does an application built on situation-centric concepts look like in practice?", "status": "Experiment", "kind": "Experiment", "people": ["yuvan-muruganandham"], "academic": ["ramesh-subramoniam"], "events": ["october-22-2026"] },
-  { "slug": "avani-student-exploration", "url": "/research/avani-student-exploration.html", "title": "The Student Exploration", "question": "What did the student exploration of Situational AI reveal: the journey, the questions and the lessons?", "status": "Research in Progress", "kind": "Perspective", "people": ["avani-tripathi"], "academic": ["ramesh-subramoniam"], "events": ["october-22-2026"] }
+  {
+    "slug": "krishang-situation-awareness",
+    "url": "/research/krishang-situation-awareness.html",
+    "title": "Situational AI & Situation Awareness",
+    "question": "How does Situational AI relate to existing models of situation awareness, including Endsley’s framework, and where does it depart from them?",
+    "status": "Research in Progress",
+    "kind": "Foundations",
+    "people": [
+      "krishang-reddy-mandala"
+    ],
+    "academic": [
+      "ramesh-subramoniam"
+    ],
+    "events": [
+      "october-22-2026"
+    ],
+    "lede": "Evolution of the idea, related models and Endsley’s Situation Awareness framework.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one traces the evolution of the idea, the models related to it, and how it relates to Endsley’s Situation Awareness framework.",
+    "concepts": [
+      "Definition",
+      "Perspective",
+      "Recognition"
+    ],
+    "presentation": "The Foundations",
+    "sections": [
+      [
+        "Hypothesis",
+        "What this exploration expected to find about the relationship between Situational AI and prior models of situation awareness."
+      ],
+      [
+        "Background",
+        "The models examined, and how the comparison with Endsley’s framework was structured."
+      ],
+      [
+        "Approach",
+        "Sources, comparison method, and criteria."
+      ],
+      [
+        "Preliminary Findings",
+        "What the comparison found, and where Situational AI departs from prior models."
+      ],
+      [
+        "Open Problems",
+        "What the comparison could not resolve, and what it suggests next."
+      ]
+    ],
+    "manuscript": null
+  },
+  {
+    "slug": "sabareesh-efficient-ai",
+    "url": "/research/sabareesh-efficient-ai.html",
+    "title": "Can Situations Make AI More Efficient?",
+    "question": "Can situation recognition reduce context and prompt needs and enable smaller, efficient models?",
+    "status": "Research in Progress",
+    "kind": "Computation",
+    "people": [
+      "sabareesh-dinakaran"
+    ],
+    "academic": [
+      "ramesh-subramoniam"
+    ],
+    "events": [
+      "october-22-2026"
+    ],
+    "lede": "Situation recognition, context reduction and smaller models.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one investigates whether explicit situation recognition can reduce the context a model needs, and whether that lets smaller models do the work.",
+    "concepts": [
+      "Recognition",
+      "Architecture",
+      "Evaluation"
+    ],
+    "presentation": "The Computation",
+    "sections": [
+      [
+        "Hypothesis",
+        "What this exploration expected: how much context an explicit situation layer could remove, and at what cost."
+      ],
+      [
+        "Background",
+        "Why context size matters, and what prior work says about reduction."
+      ],
+      [
+        "Approach",
+        "Experimental setup: tasks, models compared, how context was reduced, and what was measured."
+      ],
+      [
+        "Preliminary Findings",
+        "What the experiments showed, and where efficiency gains held or failed."
+      ],
+      [
+        "Open Problems",
+        "What remains unresolved."
+      ]
+    ],
+    "manuscript": null
+  },
+  {
+    "slug": "sai-riskpulse",
+    "url": "/research/sai-riskpulse.html",
+    "title": "RiskPulse + Situational AI",
+    "question": "Can situation recognition be applied to emerging organizational risk?",
+    "status": "Experiment",
+    "kind": "Experiment",
+    "people": [
+      "sai-jagadish-manchikanti"
+    ],
+    "academic": [
+      "ramesh-subramoniam"
+    ],
+    "events": [
+      "october-22-2026"
+    ],
+    "lede": "Applying situation recognition to emerging organizational risk.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one is a working application: RiskPulse, which applies situation recognition to emerging organizational risk.",
+    "concepts": [
+      "Recognition",
+      "Dynamics",
+      "Evaluation"
+    ],
+    "presentation": "The Experiments · live demo",
+    "sections": [
+      [
+        "Hypothesis",
+        "What RiskPulse expected situation recognition to add over signal monitoring alone."
+      ],
+      [
+        "Background",
+        "The problem: risks that only mean something together, and only for a particular observer."
+      ],
+      [
+        "Approach",
+        "Architecture, the situations it recognizes, the signals it uses, and how a recognized situation shapes the response."
+      ],
+      [
+        "Experiments and Preliminary Findings",
+        "What the demonstration shows and what was observed."
+      ],
+      [
+        "Open Problems",
+        "What remains unresolved."
+      ]
+    ],
+    "manuscript": null
+  },
+  {
+    "slug": "yuvan-project",
+    "url": "/research/yuvan-project.html",
+    "title": "Exploratory Situational AI Application",
+    "question": "What does an application built on situation-centric concepts look like in practice?",
+    "status": "Experiment",
+    "kind": "Experiment",
+    "people": [
+      "yuvan-muruganandham"
+    ],
+    "academic": [
+      "ramesh-subramoniam"
+    ],
+    "events": [
+      "october-22-2026"
+    ],
+    "lede": "Exploratory application and live demo.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one is an exploratory application of Situational AI, presented with a live demo.",
+    "concepts": [
+      "Recognition",
+      "Architecture"
+    ],
+    "presentation": "The Experiments · live demo",
+    "sections": [
+      [
+        "Hypothesis",
+        "What the application expected situation-centric concepts to change."
+      ],
+      [
+        "Background",
+        "The problem the application addresses."
+      ],
+      [
+        "Approach",
+        "Architecture, the situations it recognizes, the signals it uses, and how a recognized situation shapes the response."
+      ],
+      [
+        "Experiments and Preliminary Findings",
+        "What the demonstration shows and what was observed."
+      ],
+      [
+        "Open Problems",
+        "What remains unresolved."
+      ]
+    ],
+    "manuscript": null
+  },
+  {
+    "slug": "avani-student-exploration",
+    "url": "/research/avani-student-exploration.html",
+    "title": "The Student Exploration",
+    "question": "What did the student exploration of Situational AI reveal: the journey, the questions and the lessons?",
+    "status": "Research in Progress",
+    "kind": "Perspective",
+    "people": [
+      "avani-tripathi"
+    ],
+    "academic": [
+      "ramesh-subramoniam"
+    ],
+    "events": [
+      "october-22-2026"
+    ],
+    "lede": "The journey, questions and lessons emerging from the summer work.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one steps back from any single project to describe the journey itself: the questions the students brought, the ones the work raised, and the lessons that emerged.",
+    "concepts": [
+      "Definition",
+      "Human correction and governance"
+    ],
+    "presentation": "Welcome · Student Perspective",
+    "sections": [
+      [
+        "The Journey",
+        "How the summer unfolded: what the students started with and how the work took shape."
+      ],
+      [
+        "The Questions",
+        "The questions that emerged across the five explorations, including the ones the summer did not answer."
+      ],
+      [
+        "The Lessons",
+        "What the students learned about Situational AI, about research, and about building with an idea that is still being defined."
+      ]
+    ],
+    "manuscript": null
+  }
 ]

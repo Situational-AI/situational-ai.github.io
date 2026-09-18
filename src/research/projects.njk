@@ -1,0 +1,56 @@
+---
+title: "Research Projects — Situational AI"
+description: "Student and collaborator research projects on Situational AI: the question, the status, the people, and the manuscript when there is one."
+ogTitle: "Research Projects — Situational AI"
+nav: "research"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+  <header class="blog-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Research projects</span>
+        <h1>Visible Work, Not a Downloads Page</h1>
+        <p class="section-subtitle">Each project is a question, the people pursuing it, and where it stands. Manuscripts appear here as they are supplied.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="blog-list">
+        {%- for pr in projects %}
+        {%- set researchers = people | bySlugs(pr.people) %}
+        {%- set academics = people | bySlugs(pr.academic) %}
+        <a href="{{ pr.url }}" class="blog-list-card project-card">
+          <div>
+            <div class="blog-card-tag">{{ pr.kind }}</div>
+            <h3>{{ pr.title }}</h3>
+            <p class="project-question">{{ pr.question }}</p>
+            <p>{{ pr.lede }}</p>
+            <div class="project-meta">
+              <span class="status-label">{{ pr.status }}</span>
+              <span class="event-list-meta">{% for r in researchers %}{{ r.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% if academics.length %} · with {% for a in academics %}{{ a.name }}{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}{% if not pr.manuscript %} · manuscript pending{% endif %}</span>
+            </div>
+            <span class="blog-list-date">View research &rarr;</span>
+          </div>
+        </a>
+        {%- endfor %}
+      </div>
+      <p class="event-list-meta" style="text-align:center; margin-top: 32px;">Status labels: Open Question · Hypothesis · Research in Progress · Experiment · Preliminary · Manuscript · Published · Needs Replication · Archived.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Take one on</span>
+        <h2>The Questions Are the Work</h2>
+        <p class="section-subtitle">Every project here began as an open question. There are more of those than there are people.</p>
+      </div>
+      <div class="hero-actions" style="margin-bottom:0;">
+        <a href="/research/open-questions.html" class="btn btn-primary">See the Open Questions</a>
+        <a href="/participate.html" class="btn btn-outline">Participate</a>
+      </div>
+    </div>
+  </section>

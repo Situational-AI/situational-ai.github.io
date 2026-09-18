@@ -119,17 +119,26 @@ bodyScripts: ["/assets/js/side-rays.js"]
   <!-- Bridges the dark block into the light page below. Decorative and
        content-free, so nothing has to change colour mid-scroll. -->
 
-  <!-- Definition Section -->
+  <!-- The Distinction -->
   <section class="section" id="definition">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">The Definition</span>
-        <h2>What Is a Situation?</h2>
-        <p class="section-subtitle">
-          A situation is the meaning of events and state, interpreted from the perspective of an observer,
-          relative to goals, responsibilities, relationships, time, uncertainty, and possible action.
-        </p>
+        <span class="section-tag">The Distinction</span>
+        <h2>Context Is Not Situation</h2>
       </div>
+      <div class="distinction">
+        <div class="distinction-col">
+          <span class="concept-label">Context</span>
+          <h3>What information is available?</h3>
+          <p>History, documents, roles, relationships, constraints, memories, tools, and current signals. Indispensable, and not enough.</p>
+        </div>
+        <div class="distinction-col distinction-col--situation">
+          <span class="concept-label">Situation</span>
+          <h3>What does that information mean now?</h3>
+          <p>For a particular observer, relative to goals, responsibilities, relationships, time, and the responses actually available.</p>
+        </div>
+      </div>
+      <p class="distinction-line">Events happen. States persist. Context informs. Intents aim. <strong>Situations mean.</strong></p>
       <div class="definition-grid">
         <div class="about-card">
           <div class="concept-label">Event</div><h3>What happened</h3><p>A payment failed. A message arrived. A build broke.</p>
@@ -147,91 +156,112 @@ bodyScripts: ["/assets/js/side-rays.js"]
           <div class="concept-label">Situation</div><h3>What it means now</h3><p>The observer-relative interpretation that establishes what matters and what response is appropriate.</p>
         </div>
       </div>
-      <div class="thesis-callout"><p>The same event and state can produce different situations for different people. Situation is not another piece of context. It is the organized meaning formed from context.</p></div>
-      <div class="section-cta"><a href="research.html#definition" class="btn btn-outline">Explore the Full Definition</a></div>
+      <div class="section-cta"><a href="/start-here.html" class="btn btn-outline">Understand the Idea &rarr;</a></div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="section" id="features">
+  <!-- The Hypothesis -->
+  <section class="section section-dark" id="hypothesis">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">The Distinction</span>
-        <h2>Context Is Necessary. It Is Not Enough.</h2>
-        <p class="section-subtitle">Context engineering asks what information the model should receive. Situational AI asks what that information means, for whom, and what it calls for.</p>
+        <span class="section-tag">The Hypothesis</span>
+        <h2>What if Situation Became a Computational Primitive?</h2>
+        <p class="section-subtitle">Modern AI may recognize situations implicitly, inside a prompt, and forget them when the inference ends. Situational AI asks what changes when situations become explicit, representable computational objects that a system can:</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-number">01</div>
-          <h3>Situation as a Primitive</h3>
-          <p>Modern AI often infers situations implicitly inside a prompt. We propose making situation explicit: representable, comparable, memorable, testable, and revisable.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-number">02</div>
-          <h3>Continuous Recognition</h3>
-          <p>Sense signals from conversations, events, timers, and changing data; detect which situations are emerging, evolving, overlapping, or ending.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-number">03</div>
-          <h3>Observer-Relative Meaning</h3>
-          <p>The same facts can mean different things to a customer, salesperson, operator, or system because their goals and responsibilities differ.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-number">04</div>
-          <h3>Act, Ask, Wait, or Observe</h3>
-          <p>Recognition establishes what the moment calls for—including the judgment that no immediate action is appropriate.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-number">05</div>
-          <h3>Situation Memory</h3>
-          <p>Remember not merely facts and conversations, but what was recognized, what response was chosen, why it was chosen, and what outcome followed.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-number">06</div>
-          <h3>Situational Embeddings</h3>
-          <p>Represent underlying dynamics so structurally analogous situations can be found across different vocabularies, workflows, and domains.</p>
-        </div>
+        <div class="feature-card"><div class="feature-number">01</div><h3>Recognize</h3><p>Detect which situation is emerging, evolving, overlapping, or ending, from changing evidence.</p></div>
+        <div class="feature-card"><div class="feature-number">02</div><h3>Represent</h3><p>Hold observer, roles, events, goals, stage, urgency, uncertainty, and available responses as one object.</p></div>
+        <div class="feature-card"><div class="feature-number">03</div><h3>Compare</h3><p>Find structurally analogous situations across vocabularies, workflows, and domains.</p></div>
+        <div class="feature-card"><div class="feature-number">04</div><h3>Remember</h3><p>Keep what was recognized, what was chosen, why, and what followed, as experience rather than text.</p></div>
+        <div class="feature-card"><div class="feature-number">05</div><h3>Track</h3><p>Follow a situation as it intensifies, weakens, merges, divides, or resolves over time.</p></div>
+        <div class="feature-card"><div class="feature-number">06</div><h3>Learn</h3><p>Revise interpretations and responses from outcomes, including the interpretations that were wrong.</p></div>
       </div>
+      <div class="section-cta"><a href="/research.html" class="btn btn-outline">Explore the Research &rarr;</a></div>
     </div>
   </section>
 
-  <!-- Blog Preview Section -->
-  <section class="section section-dark" id="blog-preview">
+  <!-- Active Research -->
+  <section class="section" id="investigating">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Research & Essays</span>
-        <h2>A Research Program, Not a Slogan</h2>
-        <p class="section-subtitle">Definitions, architectures, experiments, arguments, and open questions about situation as a computational primitive.</p>
+        <span class="section-tag">Active research</span>
+        <h2>What We’re Investigating</h2>
+      </div>
+      <div class="research-shell">
+        <div class="question-grid">
+          <a href="/research/open-questions.html#recognition" class="question-card"><h3>Situation Recognition</h3><p>How can a system recognize which situation is emerging from changing evidence?</p></a>
+          <a href="/research/open-questions.html#memory" class="question-card"><h3>Situation Memory</h3><p>Can an intelligent system remember experience as situations, responses and outcomes rather than merely information?</p></a>
+          <a href="/research/open-questions.html#situation-space" class="question-card"><h3>Situation Space</h3><p>Can structurally analogous situations be discovered across different domains?</p></a>
+          <a href="/research/open-questions.html#dynamics" class="question-card"><h3>Situation Dynamics</h3><p>How do situations emerge, develop, intensify, weaken, merge, divide and resolve?</p></a>
+        </div>
+      </div>
+      <div class="section-cta"><a href="/research/projects.html" class="btn btn-outline">See the Research Projects &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- What We Don't Know -->
+  <section class="section section-dark is-dark" id="open-questions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What we don’t know</span>
+        <h2>Situational AI Is a Research Hypothesis,<br>Not a Finished Theory.</h2>
+      </div>
+      <ol class="unknowns">
+        <li>Can situations be formally represented?</li>
+        <li>Can they be reliably recognized?</li>
+        <li>Can competing interpretations coexist?</li>
+        <li>Can experience transfer between analogous situations?</li>
+        <li>Does an explicit situation layer actually improve intelligent systems?</li>
+      </ol>
+      <p class="unknowns-line">These questions are the work.</p>
+      <div class="section-cta"><a href="/research/open-questions.html" class="btn btn-primary">Explore Open Questions &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- People -->
+  <section class="section" id="people">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">People</span>
+        <h2>Real Names Attached to Real Work</h2>
+        <p class="section-subtitle">Founder, academic collaborators and student researchers exploring, building, testing and challenging the idea.</p>
+      </div>
+      <ul class="people-strip">
+        {%- for person in people %}
+        <li><a href="/people/{{ person.slug }}.html" class="people-strip-item"><span class="avatar avatar--lg" data-initials="{{ person.initials }}"><img src="{{ person.photo }}" alt="" loading="lazy" onerror="this.remove()"></span><span class="people-strip-name">{{ person.name }}</span><span class="people-strip-role">{{ person.role | replace(", Situational AI", "") }}</span></a></li>
+        {%- endfor %}
+      </ul>
+      <div class="section-cta"><a href="/people/" class="btn btn-outline">Meet the People &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- Evidence of activity -->
+  <section class="section section-dark" id="events">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Something is developing here</span>
+        <h2>Gatherings, So Far</h2>
+        <p class="section-subtitle">Situational AI is developing through conversations, experiments and encounters across disciplines.</p>
       </div>
       <div class="blog-grid">
-        <a href="blog/why-not-another-agent-framework.html" class="blog-card">
-          <div class="blog-card-tag">Definition</div>
-          <h3>What Is a Situation?</h3>
-          <p>Event, state, context, and intent are ingredients. Situation is their observer-relative, action-relevant meaning.</p>
-          <span class="blog-card-date">Read more &rarr;</span>
+        {%- for ev in events | where("status", "upcoming") %}
+        <a href="{{ ev.url }}" class="blog-card">
+          <div class="blog-card-tag">Upcoming · {{ ev.kind }}</div>
+          <h3>{{ ev.title }}</h3>
+          <p>{{ ev.dateLabel }} · {{ ev.location }}</p>
+          <span class="blog-card-date">Details &amp; RSVP &rarr;</span>
         </a>
-        <a href="research.html#context" class="blog-card">
-          <div class="blog-card-tag">Position</div>
-          <h3>Why Context Is Not Enough</h3>
-          <p>Context supplies information. Situation organizes it into meaning, expectation, and response.</p>
-          <span class="blog-card-date">Read more &rarr;</span>
+        {%- endfor %}
+        {%- for ev in (events | where("status", "past") | sort(true, false, 'date')).slice(0, 2) %}
+        <a href="/events/{{ ev.slug }}.html" class="blog-card">
+          <div class="blog-card-tag">{{ ev.kind }}</div>
+          <h3>{{ ev.title }}</h3>
+          <p>{{ ev.dateLabel }} · {{ ev.location }}</p>
+          <span class="blog-card-date">What happened &rarr;</span>
         </a>
-        <a href="blog/situation-is-not-context.html" class="blog-card">
-          <div class="blog-card-tag">Thesis</div>
-          <h3>Situation Is Not Context</h3>
-          <p>Why context engineering is necessary for intelligent systems—but isn't enough.</p>
-          <span class="blog-card-date">Read more &rarr;</span>
-        </a>
-        <a href="research.html#situation-space" class="blog-card">
-          <div class="blog-card-tag">Research</div>
-          <h3>From Semantic Space to Situation Space</h3>
-          <p>What changes when we embed the structure of a situation rather than the words used to describe it?</p>
-          <span class="blog-card-date">Read more &rarr;</span>
-        </a>
+        {%- endfor %}
       </div>
-      <div class="section-cta">
-        <a href="research.html" class="btn btn-outline">Explore the Research Program</a>
-      </div>
+      <div class="section-cta"><a href="/events/" class="btn btn-outline">All Events &rarr;</a></div>
     </div>
   </section>
 
@@ -246,6 +276,7 @@ bodyScripts: ["/assets/js/side-rays.js"]
             Help define, build, test, challenge, and extend situation-centric intelligence. Researchers, engineers, cognitive scientists, designers, operators, and critics are welcome.
           </p>
         </div>
+        <div class="section-cta" style="margin: 0 0 36px;"><a href="/participate.html" class="btn btn-primary">Participate &rarr;</a></div>
         <div class="contact-links">
           <a href="https://github.com/Situational-AI" class="contact-link" target="_blank" rel="noopener">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
