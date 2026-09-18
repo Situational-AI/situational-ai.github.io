@@ -34,7 +34,9 @@ for (const page of pages) {
     checked++;
     const [rawPath, hash] = url.split("#");
     const decoded = decodeURIComponent(rawPath.split("?")[0]);
-    let target = decoded ? path.resolve(path.dirname(page), decoded) : page;
+    let target = !decoded ? page
+      : decoded.startsWith("/") ? path.join(ROOT, decoded)          // site-root-relative
+      : path.resolve(path.dirname(page), decoded);                   // page-relative
     if (fs.existsSync(target) && fs.statSync(target).isDirectory()) target = path.join(target, "index.html");
     if (!fs.existsSync(target)) { problems.push(`${path.relative(ROOT, page)} → ${url} (missing)`); continue; }
     if (hash && target.endsWith(".html") && !idsOf(target).has(hash)) problems.push(`${path.relative(ROOT, page)} → ${url} (no #${hash})`);

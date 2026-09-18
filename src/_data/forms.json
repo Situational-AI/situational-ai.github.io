@@ -1,0 +1,29 @@
+{
+  "_comment": "Google Forms behind the site's own styled forms. Field IDs come from each form's public page; dropdown values must match the form's options exactly.",
+  "inquiry": {
+    "action": "https://docs.google.com/forms/d/e/1FAIpQLSfntm61Hs32ZSi9N8i2-8T47DbJpAjw7-CIIDgaAZRdpxZAVQ/formResponse",
+    "fields": {
+      "name": "entry.1687420049",
+      "email": "entry.931999625",
+      "organization": "entry.197741517",
+      "role": "entry.1157420277",
+      "interest": "entry.916313750",
+      "message": "entry.1335707536"
+    },
+    "interests": [
+      "Research collaboration",
+      "Academic collaboration",
+      "Student research",
+      "Engineering",
+      "Industry research problem",
+      "Technology contribution",
+      "Research support",
+      "Speak at Gathering / event",
+      "General interest"
+    ]
+  },
+  "follow": {
+    "action": "https://docs.google.com/forms/d/e/1FAIpQLSfIhiY1FGCj8tXkr_zXdPO4NZ4feVvmfb7CjBWPQ_u5giFh3g/formResponse",
+    "fields": { "email": "entry.1502075265" }
+  }
+}

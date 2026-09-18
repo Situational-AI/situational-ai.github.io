@@ -1,0 +1,28 @@
+{
+  "name": "Situational AI",
+  "url": "https://situational-ai.org",
+  "year": 2026,
+  "manifesto": "/assets/documents/Situational_AI_Manifesto_v1.0.pdf",
+  "defaultDescription": "Situational AI is an open research program investigating whether situation can become a first-class computational primitive of intelligent systems.",
+  "defaultOgImage": { "url": "/assets/images/og-preview.jpg", "type": "image/jpeg", "width": 1280, "height": 720, "alt": "Situational AI — The Missing Piece of human-like Agentic AI Cognition" },
+  "twitter": "@prasadpillai",
+  "attribution": "An open research program initiated by Prasad Pillai and developed through Mindspace AI LLC with academic, student, engineering and industry collaborators.",
+  "affiliationNote": "Institutional affiliations are provided for identification. Individual participation does not necessarily imply institutional endorsement of Situational AI.",
+  "nav": [
+    { "key": "start",        "label": "Start Here",   "url": "/start-here.html" },
+    { "key": "research",     "label": "Research",     "url": "/research.html" },
+    { "key": "architecture", "label": "Architecture", "url": "/vision.html" },
+    { "key": "essays",       "label": "Essays",       "url": "/blog/" },
+    { "key": "events",       "label": "Events",       "url": "/events/" },
+    { "key": "participate",  "label": "Participate",  "url": "/participate.html" }
+  ],
+  "footerNav": [
+    { "label": "Start Here",   "url": "/start-here.html" },
+    { "label": "Research",     "url": "/research.html" },
+    { "label": "Architecture", "url": "/vision.html" },
+    { "label": "Essays",       "url": "/blog/" },
+    { "label": "Events",       "url": "/events/" },
+    { "label": "Participate",  "url": "/participate.html" },
+    { "label": "Manifesto",    "url": "/assets/documents/Situational_AI_Manifesto_v1.0.pdf", "external": true }
+  ]
+}

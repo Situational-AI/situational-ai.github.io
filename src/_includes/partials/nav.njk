@@ -1,0 +1,15 @@
+{#- Site navigation. `nav` in a page's front matter names the active item. -#}
+<nav class="navbar{% if navbarScrolled %} scrolled{% endif %}" id="navbar">
+  <div class="container nav-container">
+    <a href="/" class="nav-logo"><img src="/assets/images/situational-ai-logo.png" alt="Situational AI"></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      {%- for item in site.nav %}
+      <li><a href="{{ item.url }}"{% if nav == item.key %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      {%- endfor %}
+    </ul>
+    <div class="nav-actions">
+      <a href="{{ site.manifesto }}" class="btn btn-nav" target="_blank" rel="noopener">Manifesto</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"{% if htmlAttrs %} {{ htmlAttrs | safe }}{% endif %}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="author" content="{{ author or site.name }}">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description or site.defaultDescription }}">
+  <meta name="robots" content="{{ robots or 'index, follow' }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- set og = ogImage or site.defaultOgImage %}
+  <meta property="og:title" content="{{ ogTitle or title }}">
+  <meta property="og:description" content="{{ ogDescription or description or site.defaultDescription }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ og.url }}">
+  <meta property="og:image:secure_url" content="{{ site.url }}{{ og.url }}">
+  <meta property="og:image:type" content="{{ og.type }}">
+  <meta property="og:image:width" content="{{ og.width }}">
+  <meta property="og:image:height" content="{{ og.height }}">
+  <meta property="og:image:alt" content="{{ og.alt }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle or title }}">
+  <meta name="twitter:description" content="{{ ogDescription or description or site.defaultDescription }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ og.url }}">
+  <meta name="twitter:image:alt" content="{{ og.alt }}">
+  <meta name="twitter:site" content="{{ site.twitter }}">
+  <link rel="icon" type="image/png" href="/assets/images/situational-ai-logo.png">
+  {%- if preloader %}
+{% include "partials/preloader-head.njk" %}
+  {%- endif %}
+  <link rel="stylesheet" href="/assets/css/style.css?v={{ cssVersion }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  {%- if pageStyles %}
+{% include "partials/" + pageStyles + "-styles.njk" %}
+  {%- endif %}
+  {%- for src in headScripts %}
+  <script src="{{ src }}"></script>
+  {%- endfor %}
+</head>
+<body{% if bodyAttrs %} {{ bodyAttrs | safe }}{% endif %}>
+{%- if preloader %}
+{% include "partials/preloader-body.njk" %}
+{%- endif %}
+{% include "partials/nav.njk" %}
+{{ content | safe }}
+{% include "partials/footer.njk" %}
+  {%- for src in bodyScripts %}
+  <script src="{{ src }}"></script>
+  {%- endfor %}
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -836,6 +836,15 @@ body[data-hero="media"] .navbar:not(.scrolled) .btn-nav:hover {
   color: #fff;
 }
 
+/* The one line the hero must carry, between the headline and the explanation. */
+.hero--media .hero-lede {
+  margin: 0 auto 14px;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
 .hero--media .hero-subtitle {
   margin: 0 auto;
   max-width: 54ch;
@@ -1643,6 +1652,70 @@ body[data-hero="media"] .navbar:not(.scrolled) .btn-nav:hover {
   color: var(--color-text-faint);
 }
 
+/* Program footer: who is behind the work on the left, the site map on the
+   right, the legal line beneath. */
+.footer-content--program {
+  align-items: flex-start;
+  gap: 48px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-brand { max-width: 520px; }
+
+.footer-brand img { opacity: 0.85; transition: var(--transition); }
+.footer-brand a:hover img { opacity: 1; }
+
+.footer-attribution {
+  margin-top: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.footer-note {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--color-text-faint);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.footer-links a {
+  font-family: var(--font-label);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-soft);
+  transition: var(--transition);
+}
+
+.footer-links a:hover { color: var(--color-primary); }
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+
+.footer-secondary a { color: var(--color-text-faint); transition: var(--transition); }
+.footer-secondary a:hover { color: var(--color-primary); }
+
+@media (max-width: 768px) {
+  .footer-content--program { flex-direction: column; gap: 28px; }
+  .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+}
+
 /* ============================================
    Blog listing page
    ============================================ */
@@ -1981,7 +2054,9 @@ body .cta-reason:hover {
 /* ============================================
    Responsive
    ============================================ */
-@media (max-width: 768px) {
+/* The bar holds six items plus the Manifesto button, so the drawer takes
+   over well before phone width — a tablet cannot fit the row. */
+@media (max-width: 1000px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -2008,6 +2083,33 @@ body .cta-reason:hover {
     display: flex;
     z-index: 1001;
   }
+
+  /* The link list becomes a fixed drawer and leaves the flow, so the bar is
+     just logo | CTA | toggle. The CTA was moved out of the <ul>, so it must
+     stay visible here — hiding it would drop it from mobile entirely. */
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .nav-actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .nav-toggle { order: 3; }
+
+  .nav-actions .btn-nav {
+    padding: 7px 14px;
+    font-size: .78rem;
+  }
+
+  .nav-logo img { height: 22px; }
+}
+
+@media (max-width: 768px) {
 
   .section {
     padding: 80px 0;
@@ -2058,30 +2160,6 @@ body .cta-reason:hover {
   .hero--media .hero-subtitle {
     font-size: .95rem;
   }
-
-  /* The link list becomes a fixed drawer and leaves the flow, so the bar is
-     just logo | CTA | toggle. The CTA was moved out of the <ul>, so it must
-     stay visible here — hiding it would drop it from mobile entirely. */
-  .nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .nav-actions {
-    order: 2;
-    margin-left: auto;
-  }
-
-  .nav-toggle { order: 3; }
-
-  .nav-actions .btn-nav {
-    padding: 7px 14px;
-    font-size: .78rem;
-  }
-
-  .nav-logo img { height: 22px; }
 
   .stat-divider {
     width: 60%;
@@ -2491,4 +2569,188 @@ a.question-card:hover {
   font-weight: 500;
   letter-spacing: 0.06em;
   color: var(--color-text-faint);
+}
+
+/* ============================================
+   Start Here — the ten-step journey
+   ============================================ */
+.journey {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.journey-step {
+  position: relative;
+  padding: 0 0 56px 88px;
+}
+
+/* The thread between steps. */
+.journey-step::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 60px;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.journey-step:last-child { padding-bottom: 0; }
+.journey-step:last-child::before { display: none; }
+
+.journey-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-soft);
+}
+
+.journey-step h2 {
+  margin: 12px 0 12px;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.journey-step p {
+  color: var(--color-text-muted);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+.journey-teaser { text-align: center; }
+.journey-teaser .section-tag { margin-bottom: 14px; }
+
+@media (max-width: 640px) {
+  .journey-step { padding: 0 0 44px 64px; }
+  .journey-step::before { left: 21px; top: 50px; }
+  .journey-num { width: 44px; height: 44px; font-size: 0.72rem; }
+}
+
+/* ============================================
+   Forms (inquiry + follow), posting into Google Forms
+   ============================================ */
+.inquiry-form {
+  display: grid;
+  gap: 18px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.follow-form input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-solid);
+  font: inherit;
+  font-size: 0.98rem;
+  color: var(--color-text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-field select { appearance: auto; }
+
+.form-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+.follow-form input:focus {
+  outline: none;
+  border-color: var(--color-text);
+  box-shadow: 0 0 0 4px rgba(28, 31, 34, 0.06);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  font-size: 0.88rem;
+  color: var(--color-text-faint);
+}
+
+.form-success {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(23, 161, 92, 0.07);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.follow-form {
+  display: flex;
+  gap: 12px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.follow-form input { flex: 1; }
+
+.is-dark .follow-form input {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.is-dark .follow-form input:focus { border-color: #fff; box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08); }
+.is-dark .form-success { background: rgba(23, 161, 92, 0.14); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; }
+  .follow-form { flex-direction: column; }
 }

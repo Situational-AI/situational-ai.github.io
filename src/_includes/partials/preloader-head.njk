@@ -1,0 +1,138 @@
+  <!-- preloader:start -->
+  <style>
+    /* Critical, inlined so the loader paints on the first frame — before the
+       stylesheet and webfonts arrive. Background matches --color-bg exactly so
+       lifting the curtain is a crossfade, not a flash. */
+    .sai-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: black;
+      transition: opacity .6s ease, visibility .6s ease;
+    }
+
+    .sai-preloader.is-done {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Same blueprint grid as the page, so the loader reads as the site
+       assembling itself rather than as a separate screen. */
+    .sai-preloader::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(28, 31, 34, .05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(28, 31, 34, .05) 1px, transparent 1px);
+      background-size: 68px 68px;
+      -webkit-mask-image: radial-gradient(ellipse 120% 80% at 50% 50%, #000, transparent 78%);
+      mask-image: radial-gradient(ellipse 120% 80% at 50% 50%, #000, transparent 78%);
+    }
+
+    /* Vertical falloff. Without it the beams are full-height curtains that
+       flood the screen; masked to a band they read as a wave crossing it. */
+    .sai-wave {
+      position: absolute;
+      inset: 0;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 74%, transparent 100%);
+    }
+
+    /* Three offset beams travelling left to right. The stagger is what makes
+       it read as a wave of light rather than a single moving bar — kept tight
+       so the crest and its pale trail are on screen together. */
+    .sai-beam {
+      position: absolute;
+      top: -25%;
+      bottom: -25%;
+      left: 0;
+      width: 34%;
+      filter: blur(56px);
+      will-change: transform;
+      transform: translate3d(-115%, 0, 0);
+      /* Linear on purpose: an eased sweep loiters off-screen at both ends and
+         leaves the loader visibly blank for a third of every cycle. */
+      animation: sai-sweep 2.4s linear infinite;
+    }
+
+    .sai-beam--1 { background: linear-gradient(90deg, transparent, rgba(193, 198, 203, .85) 30%, rgba(120, 127, 135, .70) 66%, transparent); }
+    .sai-beam--2 { background: linear-gradient(90deg, transparent, rgba(166, 172, 178, .55) 34%, rgba(65, 70, 76, .35) 70%, transparent); animation-delay: .14s; opacity: .8; }
+    .sai-beam--3 { background: linear-gradient(90deg, transparent, rgba(236, 239, 241, .95) 40%, rgba(16, 128, 74, .22) 74%, transparent); animation-delay: .28s; opacity: .85; }
+
+    @keyframes sai-sweep {
+      from { transform: translate3d(-115%, 0, 0); }
+      to   { transform: translate3d(300%, 0, 0); }
+    }
+
+    .sai-preloader__inner {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    /* Wordmark asset is white artwork; flip it to ink like the rest of the site. */
+    .sai-preloader__mark {
+      height: 26px;
+      filter: brightness(0) invert(1);
+      opacity: .88;
+      animation: sai-breathe 2.4s ease-in-out infinite;
+    }
+
+    @keyframes sai-breathe {
+      0%, 100% { opacity: .60; }
+      50%      { opacity: .95; }
+    }
+
+    .sai-preloader__track {
+      position: relative;
+      width: 188px;
+      height: 2px;
+      overflow: hidden;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, .22);
+    }
+
+    /* Determinate: scaleX is driven from JS by real asset progress. */
+    .sai-preloader__track span {
+      position: absolute;
+      inset: 0;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #FFFFFF, #D9E0E5, #FFFFFF);
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    /* System sans: Inter has not downloaded yet at this point, and the
+       counter must not swap face or reflow mid-count. */
+    .sai-preloader__pct {
+      font: 500 .7rem/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      letter-spacing: .14em;
+      color: rgba(255, 255, 255, .78);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Motion-sensitive visitors get the same colours, held still. */
+    @media (prefers-reduced-motion: reduce) {
+      .sai-beam {
+        left: 0;
+        width: 100%;
+        opacity: .22;
+        filter: blur(80px);
+        transform: none;
+        animation: none;
+      }
+      .sai-preloader__mark { animation: none; opacity: .88; }
+    }
+  </style>
+  <noscript>
+    <style>.sai-preloader { display: none; }</style>
+  </noscript>
+  <!-- preloader:end -->

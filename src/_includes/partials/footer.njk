@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content footer-content--program">
+      <div class="footer-brand">
+        <a href="/"><img src="/assets/images/situational-ai-logo.png" alt="Situational AI" style="height:24px; border-radius:4px;"></a>
+        <p class="footer-attribution">{{ site.attribution }}</p>
+        <p class="footer-note">{{ site.affiliationNote }}</p>
+      </div>
+      <ul class="footer-links">
+        {%- for item in site.footerNav %}
+        <li><a href="{{ item.url }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div class="footer-meta">
+      <p class="footer-text">&copy; {{ site.year }} Mindspace AI LLC. All rights reserved.</p>
+      <p class="footer-text footer-secondary"><a href="https://mindspaceai.com/" target="_blank" rel="noopener">Mindspace AI</a> · <a href="https://www.botswork.ai" target="_blank" rel="noopener">BotsWork</a></p>
+    </div>
+  </div>
+</footer>

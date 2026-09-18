@@ -1,0 +1,106 @@
+---
+title: "Participate — Situational AI"
+description: "Help build Situational AI, or break it. Paths for researchers, professors, students, engineers, companies, technology organizations and research supporters, plus one inquiry form."
+ogTitle: "Participate — Help Us Build It, or Break It"
+nav: "participate"
+navbarScrolled: true
+bodyScripts: ["/assets/js/forms.js"]
+layout: "layouts/base.njk"
+---
+  <header class="blog-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Participate</span>
+        <h1>Help Us Build It—or Break It</h1>
+        <p class="section-subtitle">You don’t have to agree with the Situational AI hypothesis to participate. We are looking for people willing to build it, test it, challenge it and discover its limits.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 0;" id="paths">
+    <div class="container">
+      <div class="research-shell">
+        <div class="question-grid">
+          <article class="question-card"><h3>Researcher</h3><p>Explore an open question: formalization, recognition, representation, memory, analogy, evaluation.</p></article>
+          <article class="question-card"><h3>Professor</h3><p>Academic collaboration, or student research you would supervise or co-supervise.</p></article>
+          <article class="question-card"><h3>Student</h3><p>Take on a research problem for a semester, a summer, or a thesis.</p></article>
+          <article class="question-card"><h3>Engineer</h3><p>Build recognition, memory, representation or evaluation systems, and publish what worked and what didn’t.</p></article>
+          <article class="question-card"><h3>Company</h3><p>Bring a difficult real-world AI problem where conditions change and recognizing the situation is the hard part.</p></article>
+          <article class="question-card"><h3>Technology Organization</h3><p>Contribute infrastructure, compute, hardware or engineering time.</p></article>
+          <article class="question-card"><h3>Research Supporter</h3><p>Support student research, experiments or gatherings.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="real-situation">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Collaborate with industry</span>
+        <h2>Bring Us a Real Situation</h2>
+        <p class="section-subtitle">Some of the most important research questions emerge from real operational environments. Organizations can collaborate with Mindspace AI and Situational AI researchers around problems involving changing conditions, situation recognition, memory, coordination and intelligent response.</p>
+      </div>
+      <div class="research-shell">
+        <div class="question-grid">
+          <article class="question-card"><h3>Customer disengagement</h3><p>A relationship going quiet before anyone has called it a problem.</p></article>
+          <article class="question-card"><h3>Document and workflow breakdown</h3><p>A process that is still “running” while the situation it serves has changed.</p></article>
+          <article class="question-card"><h3>Emerging operational risk</h3><p>Signals that only mean something together, and only for a particular observer.</p></article>
+          <article class="question-card"><h3>Changing customer intent</h3><p>The same words carrying a different situation than they did last week.</p></article>
+          <article class="question-card"><h3>Escalation recognition</h3><p>Knowing when to act, ask, wait, or hand off to a person.</p></article>
+          <article class="question-card"><h3>Multi-party coordination</h3><p>One event, several observers, several situations at once.</p></article>
+        </div>
+      </div>
+      <div class="section-cta"><a href="#inquiry" class="btn btn-primary">Propose a Research Problem</a></div>
+    </div>
+  </section>
+
+  <section class="section" id="inquiry">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">One form for everything</span>
+        <h2>Talk With Us</h2>
+        <p class="section-subtitle">Research or academic collaboration, student research, engineering, an industry problem, a technology contribution, research support, a gathering, or plain curiosity.</p>
+      </div>
+      <form class="inquiry-form" action="{{ forms.inquiry.action }}" method="POST" data-google-form data-success="inquirySuccess">
+        <div class="form-row">
+          <div class="form-field"><label for="f-name">Name</label><input id="f-name" name="{{ forms.inquiry.fields.name }}" type="text" autocomplete="name" required></div>
+          <div class="form-field"><label for="f-email">Email</label><input id="f-email" name="{{ forms.inquiry.fields.email }}" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label for="f-org">Institution / Company</label><input id="f-org" name="{{ forms.inquiry.fields.organization }}" type="text" autocomplete="organization"></div>
+          <div class="form-field"><label for="f-role">Role</label><input id="f-role" name="{{ forms.inquiry.fields.role }}" type="text" autocomplete="organization-title"></div>
+        </div>
+        <div class="form-field">
+          <label for="f-interest">Interest</label>
+          <select id="f-interest" name="{{ forms.inquiry.fields.interest }}" required>
+            <option value="" disabled selected>Choose one</option>
+            {%- for opt in forms.inquiry.interests %}
+            <option value="{{ opt }}">{{ opt }}</option>
+            {%- endfor %}
+          </select>
+        </div>
+        <div class="form-field"><label for="f-message">Message</label><textarea id="f-message" name="{{ forms.inquiry.fields.message }}" required></textarea></div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send</button>
+          <span class="form-status">Goes to Prasad Pillai and the research team.</span>
+        </div>
+      </form>
+      <p class="form-success" id="inquirySuccess" hidden>Thank you. Your message is in, and we read every one. You’ll hear back from a person, not an autoresponder.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark is-dark" id="follow">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 32px;">
+        <span class="section-tag">Follow the Inquiry</span>
+        <h2>Watch the Idea Develop</h2>
+        <p class="section-subtitle">New essays, experiments, research questions, student work and gatherings. No marketing.</p>
+      </div>
+      <form class="follow-form" action="{{ forms.follow.action }}" method="POST" data-google-form data-success="followSuccess">
+        <label for="f-follow" class="visually-hidden">Email</label>
+        <input id="f-follow" name="{{ forms.follow.fields.email }}" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" class="btn btn-primary">Follow</button>
+      </form>
+      <p class="form-success" id="followSuccess" hidden>You’re following. We’ll write when there is something worth reading.</p>
+    </div>
+  </section>
