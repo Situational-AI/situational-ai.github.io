@@ -1,0 +1,108 @@
+---
+pagination:
+  data: people
+  size: 1
+  alias: person
+permalink: "/people/{{ person.slug }}.html"
+eleventyComputed:
+  title: "{{ person.name }} — People — Situational AI"
+  description: "{{ person.name }}, {{ person.role }}.{% if person.summary %} {{ person.summary }}{% endif %}"
+  ogTitle: "{{ person.name }} — {{ person.role }}"
+  ogType: "profile"
+nav: "people"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+{%- set myProjects = projects | bySlugs(person.projects) -%}
+{%- set mentored = projects | linkedTo("academic", person.slug) -%}
+{%- set myEvents = events | linkedTo("people", person.slug) -%}
+<article class="blog-post person-page">
+  <div class="blog-post-header">
+    <a href="/people/" class="blog-post-back">&larr; All people</a>
+    <div class="person-hero">
+      <span class="avatar avatar--xl" data-initials="{{ person.initials }}"><img src="{{ person.photo }}" alt="" onerror="this.remove()"></span>
+      <div>
+        <h1>{{ person.name }}</h1>
+        <p class="person-role">{{ person.role }}</p>
+        {%- if person.title %}<p class="person-title">{{ person.title }}</p>{% endif %}
+        {%- for a in person.affiliations %}<p class="person-title">{{ a }}</p>{% endfor %}
+        <div class="person-links">
+          {%- if person.linkedin %}<a href="{{ person.linkedin }}" class="btn btn-outline btn-sm person-block-link" target="_blank" rel="noopener"><svg class="li-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>{% endif %}
+          {%- for l in person.links %}<a href="{{ l.url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-post-content">
+    {%- if person.summary %}<p>{{ person.summary }}</p>{% endif %}
+
+    {%- for s in person.sections %}
+    <h2>{{ s.heading }}</h2>
+    {{ s.html | safe }}
+    {%- endfor %}
+
+    {%- for ph in person.placeholders %}
+    <h2>{{ ph }}</h2>
+    <div class="content-placeholder">{{ ph }}, in {{ person.name.split(' ')[0] }}’s own words.</div>
+    {%- endfor %}
+
+    {%- if myProjects.length %}
+    <h2>Research question{% if myProjects.length > 1 %}s{% endif %}</h2>
+    {%- for pr in myProjects %}
+    <blockquote><p><strong>{{ pr.question }}</strong></p></blockquote>
+    <p class="status-line"><span class="status-label">{{ pr.status }}</span> Working question for <a href="{{ pr.url }}">{{ pr.title }}</a>; the student’s own framing is on the project page.</p>
+    {%- endfor %}
+
+    <h2>Project{% if myProjects.length > 1 %}s{% endif %}</h2>
+    <div class="blog-grid blog-grid--narrow">
+      {%- for pr in myProjects %}
+      <a href="{{ pr.url }}" class="blog-card">
+        <div class="blog-card-tag">{{ pr.kind }}</div>
+        <h3>{{ pr.title }}</h3>
+        <p>{{ pr.question }}</p>
+        <span class="blog-card-date">View research &rarr;</span>
+      </a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
+    {%- if mentored.length %}
+    <h2>Student research supported</h2>
+    <ul>
+      {%- for pr in mentored %}
+      <li><a href="{{ pr.url }}">{{ pr.title }}</a> — {% for st in people | bySlugs(pr.people) %}{{ st.name }}{% if not loop.last %}, {% endif %}{% endfor %}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if person.category == "student" %}
+    <h2>Manuscript</h2>
+    <div class="content-placeholder">Research manuscript: HTML version and PDF download, once supplied.</div>
+    {%- endif %}
+
+    {%- if myEvents.length %}
+    <h2>Events</h2>
+    <ul class="event-list">
+      {%- for ev in myEvents | sort(true, false, 'date') %}
+      <li>
+        <a href="{{ ev.url or ('/events/' + ev.slug + '.html') }}">{{ ev.title }}</a>
+        <span class="event-list-meta">{{ ev.dateLabel }}{% if person.eventRoles and person.eventRoles[ev.slug] %} · {{ person.eventRoles[ev.slug] }}{% endif %}{% if ev.status == "upcoming" %} · upcoming{% endif %}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if person.category == "founder" %}
+    <h2>Essays</h2>
+    <ul>
+      <li><a href="/blog/situation-is-not-context.html">Situation Is Not Context</a></li>
+      <li><a href="/blog/why-not-another-agent-framework.html">Why Situational AI Isn’t Another Agent Framework</a></li>
+      <li><a href="/blog/introducing-situational-ai.html">Introducing Situational AI</a></li>
+      <li><a href="/blog/">All essays &rarr;</a></li>
+    </ul>
+    <h2>Research</h2>
+    <p><a href="/research.html">The research program</a> · <a href="{{ site.manifesto }}" target="_blank" rel="noopener">The manifesto</a> · <a href="/vision.html">The architecture</a></p>
+    {%- endif %}
+  </div>
+</article>

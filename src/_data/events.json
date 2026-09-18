@@ -1,0 +1,111 @@
+[
+  {
+    "slug": "october-22-2026",
+    "url": "/events/october-22-2026.html",
+    "custom": true,
+    "title": "Situational AI Open Research & Technology Forum",
+    "subtitle": "The World Does Not Arrive as Prompts",
+    "date": "2026-10-22",
+    "dateLabel": "October 22, 2026 · 5 PM",
+    "location": "Crow Museum of Asian Art, Edith and Peter O’Donnell Jr. Athenaeum, UT Dallas",
+    "status": "upcoming",
+    "kind": "Forum",
+    "summary": "The first public Situational AI forum, presented by Mindspace AI in collaboration with UTD’s Jindal School of Management JURS program. One hypothesis, five student explorations, a BotsWork demo, and an open discussion.",
+    "people": ["prasad-pillai", "ramesh-subramoniam", "krishang-reddy-mandala", "sabareesh-dinakaran", "sai-jagadish-manchikanti", "yuvan-muruganandham", "avani-tripathi"],
+    "projects": ["krishang-situation-awareness", "sabareesh-efficient-ai", "sai-riskpulse", "yuvan-project", "avani-student-exploration"],
+    "image": "/assets/images/og-forum-2026-10-22.jpg"
+  },
+  {
+    "slug": "2026-08-05-jsom-mba-class",
+    "title": "Introduction to Situational AI for the JSOM MBA Class",
+    "date": "2026-08-05",
+    "dateLabel": "August 5, 2026",
+    "location": "Naveen Jindal School of Management, UT Dallas",
+    "status": "past",
+    "kind": "Guest lecture",
+    "summary": "An introduction to Situational AI for MBA students at the Jindal School of Management, and an invitation to join the research community.",
+    "why": "To introduce the Situational AI hypothesis to a business-school audience — people who will run the operational environments where situations actually arise — and to invite them into the inquiry.",
+    "people": ["prasad-pillai"],
+    "projects": [],
+    "photos": [
+      { "file": "01.jpg", "caption": "A thank-you exchange at the close of the session, beneath the introductory slide." },
+      { "file": "02.jpg", "caption": "The MBA class at the Jindal School of Management." },
+      { "file": "03.jpg", "caption": "The class during the session." }
+    ]
+  },
+  {
+    "slug": "2026-05-04-jurs-meetup-recognition",
+    "title": "JURS Students Meetup and Recognition",
+    "date": "2026-05-04",
+    "dateLabel": "May 4, 2026",
+    "location": "Naveen Jindal School of Management, UT Dallas",
+    "status": "past",
+    "kind": "Meetup",
+    "summary": "The spring meetup of the Jindal Undergraduate Research Scholars, where the Situational AI student research and its mentoring were recognized.",
+    "why": "To bring the JURS scholars together at the end of the spring term, and to recognize the research carried out through the program.",
+    "people": ["prasad-pillai", "ramesh-subramoniam"],
+    "projects": [],
+    "photos": [
+      { "file": "01.jpg", "caption": "The JURS meetup at the Jindal School of Management." },
+      { "file": "02.jpg", "caption": "Introducing the Situational AI work to the scholars." },
+      { "file": "03.jpg", "caption": "Certificate of Excellence awarded to Prasad Pillai for mentoring and supporting Jindal Undergraduate Research Scholars in industry projects, Spring 2026 — signed by Dean Hasan Pirkul and Ramesh Subramoniam." },
+      { "file": "04.jpg", "caption": "The certificate presentation." },
+      { "file": "05.jpg", "caption": "Prasad Pillai speaking at the meetup." }
+    ]
+  },
+  {
+    "slug": "2026-04-27-jurs-presentations-day-2",
+    "title": "JURS Student Presentations on Situational AI — Day 2",
+    "date": "2026-04-27",
+    "dateLabel": "April 27, 2026",
+    "location": "Naveen Jindal School of Management, UT Dallas",
+    "status": "past",
+    "kind": "Student presentations",
+    "summary": "The second day of student presentations on Situational AI: situation-awareness levels mapped onto LLM agent architecture, what the literature has not yet answered, and the background of the idea.",
+    "why": "For the JURS scholars to present their independent research studies on Situational AI to the group, and to test the ideas against questions from the room.",
+    "people": ["prasad-pillai"],
+    "projects": [],
+    "photos": [
+      { "file": "01.jpg", "caption": "Presenting a mapping of situation-awareness levels onto LLM agent architecture." },
+      { "file": "02.jpg", "caption": "“What the literature has not yet answered.”" },
+      { "file": "03.jpg", "caption": "Background: what is Situational AI?" },
+      { "file": "04.jpg", "caption": "The presenters and the group after the session." },
+      { "file": "05.jpg", "caption": "Day 2 group photo." }
+    ]
+  },
+  {
+    "slug": "2026-04-20-jurs-presentations-day-1",
+    "title": "JURS Student Presentations on Situational AI — Day 1",
+    "date": "2026-04-20",
+    "dateLabel": "April 20, 2026",
+    "location": "Naveen Jindal School of Management, UT Dallas",
+    "status": "past",
+    "kind": "Student presentations",
+    "summary": "The first day of student presentations on Situational AI from the Jindal Undergraduate Research Scholars.",
+    "why": "For the JURS scholars to present their independent research studies on Situational AI to the group, and to test the ideas against questions from the room.",
+    "people": ["prasad-pillai"],
+    "projects": [],
+    "photos": [
+      { "file": "01.jpg", "caption": "Before the Day 1 presentations." },
+      { "file": "02.jpg", "caption": "Presenters and mentors after the session." }
+    ]
+  },
+  {
+    "slug": "2026-02-02-jurs-introduction",
+    "title": "Introductory Address to the JURS Students",
+    "date": "2026-02-02",
+    "dateLabel": "February 2, 2026",
+    "location": "Naveen Jindal School of Management, UT Dallas",
+    "status": "past",
+    "kind": "Address",
+    "summary": "The introductory address to the Jindal Undergraduate Research Scholars, and the invitation to take up research on Situational AI.",
+    "why": "To put the Situational AI hypothesis in front of the JURS cohort at the start of the spring term and invite students to take on a research problem. The five student explorations began here.",
+    "people": ["prasad-pillai"],
+    "projects": [],
+    "photos": [
+      { "file": "01.jpg", "caption": "The JURS cohort at the introductory address." },
+      { "file": "02.jpg", "caption": "With the cohort at the Jindal School of Management." },
+      { "file": "03.jpg", "caption": "From the Office of the Dean, Naveen Jindal School of Management." }
+    ]
+  }
+]

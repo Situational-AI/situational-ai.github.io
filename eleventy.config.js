@@ -18,6 +18,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
+  // Relations between people, projects and events are resolved by slug.
+  eleventyConfig.addFilter("bySlug", (list, slug) => (list || []).find((x) => x.slug === slug));
+  eleventyConfig.addFilter("bySlugs", (list, slugs) => (slugs || []).map((s) => (list || []).find((x) => x.slug === s)).filter(Boolean));
+  eleventyConfig.addFilter("where", (list, key, value) => (list || []).filter((x) => x[key] === value));
+  eleventyConfig.addFilter("linkedTo", (list, key, slug) => (list || []).filter((x) => (x[key] || []).includes(slug)));
+  eleventyConfig.addFilter("hasKey", (list, key, slug) => (list || []).filter((x) => x[key] && x[key][slug]));
+
   // URL shape (.html kept) is set in src/_data/eleventyComputed.js.
 
   return {

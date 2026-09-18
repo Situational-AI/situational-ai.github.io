@@ -1,0 +1,88 @@
+---
+pagination:
+  data: pastEvents
+  size: 1
+  alias: event
+permalink: "/events/{{ event.slug }}.html"
+eleventyComputed:
+  title: "{{ event.title }} — {{ event.dateLabel }} — Situational AI Events"
+  description: "{{ event.summary }}"
+  ogTitle: "{{ event.title }}"
+  ogImage:
+    url: "/assets/images/events/{{ event.slug }}/{{ event.photos[0].file }}"
+    type: "image/jpeg"
+    width: 1600
+    height: 1200
+    alt: "{{ event.photos[0].caption }}"
+nav: "events"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+{%- set attendees = people | bySlugs(event.people) -%}
+{%- set related = projects | bySlugs(event.projects) -%}
+{%- set later = [] -%}
+{%- for ev in events | sort(false, false, 'date') %}{% if ev.date > event.date %}{% set later = (later.push(ev), later) %}{% endif %}{% endfor -%}
+<article class="blog-post event-page">
+  <div class="blog-post-header">
+    <a href="/events/" class="blog-post-back">&larr; All events</a>
+    <div class="blog-card-tag">{{ event.kind }}</div>
+    <h1>{{ event.title }}</h1>
+    <p class="blog-post-meta">{{ event.dateLabel }} · {{ event.location }}</p>
+  </div>
+
+  <figure class="event-hero-photo">
+    <img src="/assets/images/events/{{ event.slug }}/{{ event.photos[0].file }}" alt="{{ event.photos[0].caption }}">
+    <figcaption>{{ event.photos[0].caption }}</figcaption>
+  </figure>
+
+  <div class="blog-post-content">
+    <p>{{ event.summary }}</p>
+
+    <h2>Why We Gathered</h2>
+    <p>{{ event.why }}</p>
+
+    <h2>What We Discussed</h2>
+    <div class="content-placeholder">What was presented and discussed, and the questions that came from the room.</div>
+
+    {%- if attendees.length %}
+    <h2>People</h2>
+    <ul class="event-people">
+      {%- for person in attendees %}
+      <li><a href="/people/{{ person.slug }}.html" class="person"><span class="avatar avatar--sm" data-initials="{{ person.initials }}"><img src="{{ person.photo }}" alt="" loading="lazy" onerror="this.remove()"></span><span class="person-name">{{ person.name }}</span></a>{% if person.eventRoles and person.eventRoles[event.slug] %} <span class="event-list-meta">· {{ person.eventRoles[event.slug] }}</span>{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    <p class="event-list-meta">Others who took part will be added as they are confirmed.</p>
+    {%- endif %}
+
+    {%- if related.length %}
+    <h2>Student Research</h2>
+    <ul>{% for pr in related %}<li><a href="{{ pr.url }}">{{ pr.title }}</a></li>{% endfor %}</ul>
+    {%- endif %}
+
+    <h2>What Emerged</h2>
+    <div class="content-placeholder">Ideas and questions that resulted from the conversation.</div>
+
+    <h2>Photos</h2>
+  </div>
+  <div class="event-gallery">
+    {%- for ph in event.photos %}
+    <figure>
+      <a href="/assets/images/events/{{ event.slug }}/{{ ph.file }}" target="_blank" rel="noopener"><img src="/assets/images/events/{{ event.slug }}/{{ ph.file }}" alt="{{ ph.caption }}" loading="lazy"></a>
+      <figcaption>{{ ph.caption }}</figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+  <div class="blog-post-content">
+    <h2>Presentations &amp; Resources</h2>
+    <div class="content-placeholder">Slides, manuscripts, video and related research from this gathering.</div>
+
+    {%- if later.length %}
+    <h2>Where This Led</h2>
+    <ul class="event-list">
+      {%- for ev in later %}
+      <li><a href="{{ ev.url or ('/events/' + ev.slug + '.html') }}">{{ ev.title }}</a> <span class="event-list-meta">{{ ev.dateLabel }}{% if ev.status == "upcoming" %} · upcoming{% endif %}</span></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+  </div>
+</article>

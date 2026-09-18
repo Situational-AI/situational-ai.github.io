@@ -2754,3 +2754,105 @@ a.question-card:hover {
   .form-row { grid-template-columns: 1fr; }
   .follow-form { flex-direction: column; }
 }
+
+/* ============================================
+   People
+   ============================================ */
+.section-header--left { text-align: left; margin-bottom: 36px; }
+.section-header--left .section-subtitle { margin-left: 0; }
+
+.people-card { text-align: left; }
+.people-card .avatar { margin-bottom: 18px; }
+.people-card h3 { margin-bottom: 4px; }
+.people-card-role { font-weight: 500; color: var(--color-text) !important; margin-bottom: 6px !important; }
+
+.avatar--xl { width: 112px; height: 112px; font-size: 1.5rem; }
+
+.person-hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.person-hero h1 { margin-bottom: 8px; }
+.person-role { font-weight: 600; color: var(--color-text); margin-bottom: 6px; }
+.person-title { color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.5; }
+.person-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+
+.blog-grid--narrow { grid-template-columns: 1fr; margin: 8px 0 8px; }
+
+.status-line { font-size: 0.92rem !important; }
+
+.status-label {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-right: 8px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-label);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  vertical-align: middle;
+}
+
+.event-list, .event-people { list-style: none; margin: 0 0 22px; padding: 0; }
+.event-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+.event-list li a { color: var(--color-text); }
+.event-list-meta { color: var(--color-text-faint); font-size: 0.88rem; }
+.event-people li { display: flex; align-items: center; gap: 8px; padding: 8px 0; flex-wrap: wrap; }
+
+@media (max-width: 640px) {
+  .person-hero { flex-direction: column; align-items: flex-start; gap: 18px; }
+}
+
+/* ============================================
+   Events (index cards, event page, gallery)
+   ============================================ */
+.event-card { flex-direction: row; align-items: stretch; gap: 24px; padding: 20px; }
+.event-card-image {
+  width: 200px;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-alt);
+}
+
+.event-hero-photo { margin: 0 0 40px; }
+.event-hero-photo img { width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+.event-hero-photo figcaption, .event-gallery figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-faint);
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 20px;
+  margin: 8px 0 44px;
+}
+.event-gallery figure { margin: 0; }
+.event-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+.event-gallery a:hover img { border-color: var(--color-border-strong); box-shadow: var(--shadow-lg); }
+
+@media (max-width: 640px) {
+  .event-card { flex-direction: column; }
+  .event-card-image { width: 100%; }
+  .event-gallery { grid-template-columns: 1fr; }
+}
+
+/* LinkedIn mark beside a person link on the event page. */
+.li-link { display: inline-flex; margin-left: 6px; vertical-align: middle; }
+.li-link .li-icon { color: var(--color-text-faint); }
+.li-link:hover .li-icon { color: var(--color-text); }

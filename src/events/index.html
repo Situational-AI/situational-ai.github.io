@@ -1,6 +1,6 @@
 ---
 title: "Events — Situational AI"
-description: "Forums, workshops, showcases, and experiments organized around the open questions of Situational AI. First: October 22, 2026 at the Crow Museum of Asian Art, UT Dallas."
+description: "Situational AI is developing through conversations, experiments and encounters across disciplines. Upcoming and past events, from the first JURS address to the October 22 forum."
 ogTitle: "Situational AI — Events"
 ogDescription: "Forums, workshops, showcases, and experiments organized around the open questions of Situational AI."
 ogImage: {"url": "/assets/images/og-forum-2026-10-22.jpg", "type": "image/jpeg", "width": 1200, "height": 630, "alt": "Situational AI Open Research & Technology Forum — The World Does Not Arrive as Prompts — October 22, 2026, 5 PM, Crow Museum of Asian Art, UT Dallas"}
@@ -14,47 +14,47 @@ layout: "layouts/base.njk"
       <div class="section-header">
         <span class="section-tag">Events</span>
         <h1>Where the Research Meets the Room</h1>
-        <p class="section-subtitle">Forums, workshops, showcases, and experiments organized around the open questions of Situational AI. This page is the record.</p>
+        <p class="section-subtitle">Situational AI is developing through conversations, experiments and encounters across disciplines. This page is the record.</p>
       </div>
     </div>
   </header>
 
-  <section class="section" style="padding-top: 0;">
+  {%- set upcoming = events | where("status", "upcoming") %}
+  {%- set past = events | where("status", "past") %}
+  <section class="section" style="padding-top: 0;" id="upcoming">
     <div class="container">
+      <div class="section-header section-header--left"><h2>Upcoming</h2></div>
       <div class="blog-list">
-
-        <a href="october-22-2026.html" class="blog-list-card">
+        {%- for ev in upcoming %}
+        <a href="{{ ev.url }}" class="blog-list-card event-card">
+          {%- if ev.image %}<img class="event-card-image" src="{{ ev.image }}" alt="">{% endif %}
           <div>
-            <div class="blog-card-tag">Open Research &amp; Technology Forum</div>
-            <h3>Situational AI: The World Does Not Arrive as Prompts</h3>
-            <p>The first public Situational AI forum, presented by Mindspace AI in collaboration with UTD’s Jindal School of Management JURS program. One hypothesis, five UT Dallas student explorations from the summer of 2026, a BotsWork demo, and an open discussion.</p>
-            <span class="blog-list-date">October 22, 2026 · 5 PM · Crow Museum of Asian Art at UT Dallas</span>
+            <div class="blog-card-tag">{{ ev.kind }}</div>
+            <h3>{{ ev.title }}{% if ev.subtitle %}: {{ ev.subtitle }}{% endif %}</h3>
+            <p>{{ ev.summary }}</p>
+            <span class="blog-list-date">{{ ev.dateLabel }} · {{ ev.location }}</span>
           </div>
         </a>
-
+        {%- endfor %}
       </div>
     </div>
   </section>
 
-  <section class="section section-dark" id="next">
+  <section class="section section-dark" id="past">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">An Ongoing Initiative</span>
-        <h2>What This Record Will Grow to Include</h2>
-        <p class="section-subtitle">Situational AI is a research program, not a slogan. Its gatherings organize around the same open questions the program does: formalization, recognition, analogy, memory, evaluation, and transfer.</p>
-      </div>
-      <div class="research-shell">
-        <div class="question-grid">
-          <article class="question-card"><h3>Research workshops</h3><p>Working sessions on definitions, representations, and architectures.</p></article>
-          <article class="question-card"><h3>Student showcases</h3><p>Explorations and implementations presented by the students who built them.</p></article>
-          <article class="question-card"><h3>Webinars &amp; roundtables</h3><p>Open conversations with researchers, builders, and critics.</p></article>
-          <article class="question-card"><h3>Experiments</h3><p>Public comparisons designed to prove, disprove, or refine the thesis.</p></article>
-        </div>
-      </div>
-      <div class="section-cta">
-        <a href="../research.html#experiments" class="btn btn-outline">See the Open Questions</a>
+      <div class="section-header section-header--left"><h2>Past</h2><p class="section-subtitle">Each gathering has its own page: why we met, who was there, what emerged, and the photographs.</p></div>
+      <div class="blog-list">
+        {%- for ev in past | sort(true, false, 'date') %}
+        <a href="/events/{{ ev.slug }}.html" class="blog-list-card event-card">
+          <img class="event-card-image" src="/assets/images/events/{{ ev.slug }}/{{ ev.photos[0].file }}" alt="" loading="lazy">
+          <div>
+            <div class="blog-card-tag">{{ ev.kind }}</div>
+            <h3>{{ ev.title }}</h3>
+            <p>{{ ev.summary }}</p>
+            <span class="blog-list-date">{{ ev.dateLabel }} · {{ ev.location }}</span>
+          </div>
+        </a>
+        {%- endfor %}
       </div>
     </div>
   </section>
-
-  

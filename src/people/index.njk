@@ -1,0 +1,64 @@
+---
+title: "People — Situational AI"
+description: "People exploring, building, testing and challenging Situational AI: founder, academic collaborators and student researchers."
+ogTitle: "People — Situational AI"
+nav: "people"
+navbarScrolled: true
+layout: "layouts/base.njk"
+---
+{%- macro card(person) -%}
+<a href="/people/{{ person.slug }}.html" class="blog-card people-card">
+  <span class="avatar avatar--lg" data-initials="{{ person.initials }}"><img src="{{ person.photo }}" alt="" loading="lazy" onerror="this.remove()"></span>
+  <h3>{{ person.name }}</h3>
+  <p class="people-card-role">{{ person.role }}</p>
+  {%- if person.title %}<p>{{ person.title }}</p>{% elif person.affiliations %}<p>{{ person.affiliations | join(' · ') }}</p>{% endif %}
+  <span class="blog-card-date">Profile &rarr;</span>
+</a>
+{%- endmacro -%}
+  <header class="blog-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">People</span>
+        <h1>People</h1>
+        <p class="section-subtitle">People exploring, building, testing and challenging Situational AI.</p>
+      </div>
+    </div>
+  </header>
+
+  {%- set groups = [
+    { "key": "founder",  "label": "Founder & Principal Architect", "note": "" },
+    { "key": "academic", "label": "Academic Collaborators", "note": "Professors collaborating with the work." },
+    { "key": "student",  "label": "Student Researchers", "note": "Students doing actual projects and research." },
+    { "key": "research", "label": "Research Collaborators", "note": "Other researchers and engineers contributing." },
+    { "key": "industry", "label": "Industry Collaborators", "note": "Where an actual collaboration exists." }
+  ] %}
+  {%- for g in groups %}
+  {%- set members = people | where("category", g.key) %}
+  {%- if members.length %}
+  <section class="section people-section{% if loop.index0 % 2 == 1 %} section-dark{% endif %}" id="{{ g.key }}">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <h2>{{ g.label }}</h2>
+        {%- if g.note %}<p class="section-subtitle">{{ g.note }}</p>{% endif %}
+      </div>
+      <div class="blog-grid">
+        {%- for person in members %}
+        {{ card(person) }}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+  {%- endfor %}
+
+  <section class="section section-dark" id="organizational-home">
+    <div class="container">
+      <div class="research-shell">
+        <span class="section-tag">Organizational home</span>
+        <h2 style="margin: 16px 0 14px;">Mindspace AI</h2>
+        <p style="color: var(--color-text-muted); font-size: 1.06rem; line-height: 1.7;">Mindspace AI LLC is the organizational and engineering home of Situational AI. Mindspace AI conducts applied AI research, proofs of concept and engineering work around emerging AI architectures and real-world intelligent systems. Some Situational AI concepts are explored in real-world AI coworker systems being developed through BotsWork.</p>
+        <p style="margin-top: 16px;"><a href="https://mindspaceai.com/" target="_blank" rel="noopener">mindspaceai.com &rarr;</a></p>
+        <p class="footer-note" style="margin-top: 28px;">{{ site.affiliationNote }}</p>
+      </div>
+    </div>
+  </section>
