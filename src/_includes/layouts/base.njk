@@ -51,6 +51,7 @@
 {% include "partials/nav.njk" %}
 {{ content | safe }}
 {% include "partials/footer.njk" %}
+{% include "partials/rsvp-float.njk" %}
   {%- for src in bodyScripts %}
   <script src="{{ src }}"></script>
   {%- endfor %}

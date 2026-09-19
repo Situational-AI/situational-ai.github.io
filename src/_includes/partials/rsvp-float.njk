@@ -1,0 +1,11 @@
+{#- Floating RSVP for pages whose in-flow RSVP scrolls away (the homepage hero,
+    the event page). events.js shows it once the element marked
+    data-rsvp-inflow has left the viewport, and hides it in archive mode. -#}
+{%- set current = events | bySlug(site.currentEvent) %}
+{%- if current and rsvpFloat %}
+<div class="rsvp-float event-register-only" data-rsvp-float hidden>
+  <a href="{{ current.url }}" class="rsvp-float-label"><span class="rsvp-float-full">{{ current.kind }} · {{ current.dateLabel }}</span><span class="rsvp-float-short">{{ current.dateLabel }}</span></a>
+  <a href="https://luma.com/7jhkvaz2" data-rsvp="{{ current.slug }}" class="rsvp-float-cta" target="_blank" rel="noopener">RSVP &rarr;</a>
+  <button type="button" class="rsvp-float-close" aria-label="Dismiss">&times;</button>
+</div>
+{%- endif %}

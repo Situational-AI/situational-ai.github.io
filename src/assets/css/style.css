@@ -3016,3 +3016,62 @@ a.question-card:hover {
 .follow-form--footer { margin: 0; max-width: none; }
 .follow-form--footer input { padding: 10px 14px; font-size: 0.9rem; }
 .form-success--small { padding: 12px 16px; font-size: 0.9rem; margin: 0; max-width: none; }
+
+/* ============================================
+   Floating RSVP (homepage, event page)
+   ============================================ */
+.rsvp-float {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100% - 32px);
+  padding: 9px 8px 9px 18px;
+  border-radius: 100px;
+  background: var(--color-primary);
+  color: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 40px -16px rgba(28, 31, 34, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transform: translate(-50%, 140%);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+.rsvp-float.is-visible { transform: translate(-50%, 0); opacity: 1; }
+.rsvp-float-label { color: inherit; }
+.rsvp-float-label:hover { color: #fff; }
+.rsvp-float-short { display: none; }
+.rsvp-float-cta {
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: #fff;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: var(--transition);
+}
+.rsvp-float-cta:hover { background: var(--color-accent-light); color: #fff; }
+.rsvp-float-close {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.rsvp-float-close:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+
+@media (prefers-reduced-motion: reduce) { .rsvp-float { transition: opacity 0.2s ease; } }
+@media (max-width: 640px) {
+  .rsvp-float { bottom: 14px; font-size: 0.72rem; gap: 8px; padding: 8px 6px 8px 14px; }
+  .rsvp-float-full { display: none; }
+  .rsvp-float-short { display: inline; }
+}
