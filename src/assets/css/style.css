@@ -2967,7 +2967,7 @@ a.question-card:hover {
   align-items: center;
   gap: 12px;
   max-width: calc(100% - 32px);
-  padding: 9px 8px 9px 18px;
+  padding: 12px 10px 12px 18px;
   border-radius: 100px;
   background: var(--color-primary);
   color: rgba(255, 255, 255, 0.82);
@@ -2981,11 +2981,12 @@ a.question-card:hover {
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
 }
 .rsvp-float.is-visible { transform: translate(-50%, 0); opacity: 1; }
-.rsvp-float-label { color: inherit; }
+.rsvp-float-label { display: inline-flex; align-items: center; line-height: 1; color: inherit; }
 .rsvp-float-label:hover { color: #fff; }
 .rsvp-float-short { display: none; }
 .rsvp-float-cta {
-  padding: 7px 14px;
+  padding: 9px 15px;
+  line-height: 1;
   border-radius: 100px;
   background: #fff;
   color: var(--color-primary);
@@ -3009,7 +3010,7 @@ a.question-card:hover {
 
 @media (prefers-reduced-motion: reduce) { .rsvp-float { transition: opacity 0.2s ease; } }
 @media (max-width: 640px) {
-  .rsvp-float { bottom: 14px; font-size: 0.72rem; gap: 8px; padding: 8px 6px 8px 14px; }
+  .rsvp-float { bottom: 14px; font-size: 0.72rem; gap: 8px; padding: 10px 8px 10px 14px; }
   .rsvp-float-full { display: none; }
   .rsvp-float-short { display: inline; }
 }
