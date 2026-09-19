@@ -2260,54 +2260,7 @@ body .cta-reason:hover {
 /* ============================================
    Events
    ============================================ */
-/* Announcement anchored to the bottom edge of the hero, clear of the action
-   cluster. The hero's bottom padding already reserves the room. */
-.hero-announce {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: clamp(22px, 3.5vh, 36px);
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  padding: 0 16px;
-  pointer-events: none;
-}
-
-.hero-announce .hero-pill {
-  margin-top: 0;
-  pointer-events: auto;
-}
-
-/* Glass pill on the dark video, with the one green accent as a live dot.
-   Swapped or hidden by event mode. */
-.hero-pill {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px 10px;
-  max-width: 100%;
-  margin-top: 22px;
-  padding: 9px 16px 9px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.06);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.78);
-  font-family: var(--font-label);
-  font-size: 0.78rem;
-  letter-spacing: 0.03em;
-  transition: var(--transition);
-}
-
-.hero-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.42);
-  color: #fff;
-}
-
+/* Live dot used by the announcement row and the floating RSVP. */
 .hero-pill-dot {
   display: inline-block;
   vertical-align: middle;
@@ -2324,28 +2277,13 @@ body .cta-reason:hover {
   100% { box-shadow: 0 0 0 8px rgba(23, 161, 92, 0); }
 }
 
-.hero-pill a { transition: var(--transition); }
-.hero-pill a:hover { color: #fff; }
-
-.hero-pill-cta {
-  font-weight: 600;
-  color: #fff;
-  padding-left: 10px;
-  border-left: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.hero-pill-cta:hover { text-decoration: underline; text-underline-offset: 3px; }
-
 @media (prefers-reduced-motion: reduce) {
   .hero-pill-dot { animation: none; }
 }
 
 @media (max-width: 640px) {
-  /* Room for a two-line pill beneath the stacked buttons. */
+  /* Room beneath the stacked buttons for the floating RSVP. */
   .hero--media { padding-bottom: 128px; }
-  .hero-announce { bottom: 18px; }
-  .hero-pill { font-size: 0.72rem; padding: 8px 14px; }
-  .hero-pill-venue { display: none; }
 }
 
 /* An event page carries both its registration content and its archive
@@ -3075,3 +3013,15 @@ a.question-card:hover {
   .rsvp-float-full { display: none; }
   .rsvp-float-short { display: inline; }
 }
+
+/* Over the dark hero the floating RSVP is glass, like the buttons beside it. */
+.rsvp-float--glass {
+  background: rgba(255, 255, 255, 0.07);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+}
+.rsvp-float--glass .rsvp-float-cta { background: transparent; color: #fff; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.38) inset; }
+.rsvp-float--glass .rsvp-float-cta:hover { background: #fff; color: var(--color-primary); }
+.rsvp-float { transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, background 0.35s ease, box-shadow 0.35s ease; }
+.rsvp-float .hero-pill-dot { margin: -2px 8px 0 0; }

@@ -57,7 +57,16 @@ window.SAI_EVENTS = {
       try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
     });
 
-    if (inflow && 'IntersectionObserver' in window) {
+    var hero = document.querySelector('[data-rsvp-hero]');
+    if (float.hasAttribute('data-rsvp-always')) {
+      // Always floating; glass while it sits over the dark hero, ink below it.
+      show();
+      if (hero && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          float.classList.toggle('rsvp-float--glass', entries[0].isIntersecting);
+        }, { threshold: 0, rootMargin: '0px 0px -60px 0px' }).observe(hero);
+      }
+    } else if (inflow && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries[0].isIntersecting ? hide() : show();
       }, { threshold: 0 }).observe(inflow);

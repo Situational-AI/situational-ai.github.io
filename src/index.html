@@ -6,11 +6,12 @@ ogDescription: "An open research initiative exploring situation as a first-class
 preloader: true
 hideAnnounce: true
 rsvpFloat: true
+rsvpFloatAlways: true
 layout: "layouts/base.njk"
 bodyScripts: ["/assets/js/side-rays.js"]
 ---
   <!-- Hero Section -->
-  <header class="hero hero--media" id="home">
+  <header class="hero hero--media" id="home" data-rsvp-hero>
     <div class="hero-media">
       <!-- Decorative: muted+playsinline are what make autoplay permitted at
            all, and the poster carries the frame until the file streams in. -->
@@ -54,18 +55,6 @@ bodyScripts: ["/assets/js/side-rays.js"]
           <a href="/assets/documents/Situational_AI_Manifesto_v1.0.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Read the Manifesto</a>
         </div>
       </div>
-    </div>
-    <!-- Announcement, anchored to the hero's bottom edge so it reads as news
-         rather than a fourth action. Variant decided by assets/js/events.js. -->
-    <div class="hero-announce" data-rsvp-inflow>
-      <span class="hero-pill event-register-only">
-        <a href="events/october-22-2026.html"><span class="hero-pill-dot" aria-hidden="true"></span>Situational AI Open Research &amp; Technology Forum · October 22, 2026<span class="hero-pill-venue"> · Crow Museum of Asian Art, UT Dallas</span></a>
-        <a href="https://luma.com/7jhkvaz2" data-rsvp="october-22-2026" class="hero-pill-cta" target="_blank" rel="noopener">RSVP &rarr;</a>
-      </span>
-      <a href="events/october-22-2026.html#archive" class="hero-pill event-archive-only">
-        <span>Situational AI Open Research &amp; Technology Forum · October 22, 2026</span>
-        <span class="hero-pill-cta">Watch the recording &rarr;</span>
-      </a>
     </div>
   </header>
 
