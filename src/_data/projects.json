@@ -45,7 +45,8 @@
         "What the comparison could not resolve, and what it suggests next."
       ]
     ],
-    "manuscript": null
+    "manuscript": null,
+    "questionConfirmed": false
   },
   {
     "slug": "sabareesh-efficient-ai",
@@ -93,7 +94,8 @@
         "What remains unresolved."
       ]
     ],
-    "manuscript": null
+    "manuscript": null,
+    "questionConfirmed": false
   },
   {
     "slug": "sai-riskpulse",
@@ -141,7 +143,8 @@
         "What remains unresolved."
       ]
     ],
-    "manuscript": null
+    "manuscript": null,
+    "questionConfirmed": false
   },
   {
     "slug": "yuvan-project",
@@ -188,15 +191,16 @@
         "What remains unresolved."
       ]
     ],
-    "manuscript": null
+    "manuscript": null,
+    "questionConfirmed": false
   },
   {
     "slug": "avani-student-exploration",
     "url": "/research/avani-student-exploration.html",
-    "title": "The Student Exploration",
-    "question": "What did the student exploration of Situational AI reveal: the journey, the questions and the lessons?",
-    "status": "Research in Progress",
-    "kind": "Perspective",
+    "title": "Does Situational AI Represent an Emerging Programming Paradigm?",
+    "question": "Does Situational AI represent an emerging programming paradigm in which situations, rather than prompts, tasks, or workflows, serve as the core abstraction for AI reasoning and execution?",
+    "status": "Manuscript",
+    "kind": "Literature review",
     "people": [
       "avani-tripathi"
     ],
@@ -206,27 +210,49 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "The journey, questions and lessons emerging from the summer work.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one steps back from any single project to describe the journey itself: the questions the students brought, the ones the work raised, and the lessons that emerged.",
+    "lede": "A review of the literature on programming paradigms, ML-enabled systems, agentic AI and situational awareness, asking whether situation is becoming a new core abstraction.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one reviews the literature across traditional paradigms, ML-enabled systems, agentic and AI-native architectures and the situational awareness tradition, and asks whether Situational AI constitutes an emerging programming paradigm in its own right.",
     "concepts": [
       "Definition",
-      "Human correction and governance"
+      "Architecture",
+      "Evaluation"
     ],
     "presentation": null,
     "sections": [
       [
-        "The Journey",
-        "How the summer unfolded: what the students started with and how the work took shape."
+        "Background",
+        "Where the review places Situational AI: procedural and object-oriented programming, ML-enabled systems, agentic architectures, and Endsley's situational awareness tradition as intellectual lineage."
       ],
       [
-        "The Questions",
-        "The questions that emerged across the five explorations, including the ones the summer did not answer."
+        "Findings",
+        "The paradigm progression the review traces, and the structural gap it identifies between what a system can infer and what a human must maintain on its behalf."
       ],
       [
-        "The Lessons",
-        "What the students learned about Situational AI, about research, and about building with an idea that is still being defined."
+        "Limitations",
+        "The review's own stated limits, including the absence of empirical validation and the recency of the core sources."
+      ],
+      [
+        "Proposed Empirical Work",
+        "The methodology the review proposes: a prototype against an agentic baseline, on matched tasks of increasing novelty."
       ]
     ],
-    "manuscript": null
+    "manuscript": null,
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Does Situational AI Represent an Emerging Programming Paradigm?",
+        "meta": "Situations as the Core Abstraction for Reasoning, Decision-Making, and Execution · Avani Tripathi · UT Dallas · JURS Independent Research Study, 2026",
+        "file": "/assets/documents/people/avani-tripathi/situational-ai-emerging-programming-paradigm.pdf",
+        "pages": 12
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situational AI: An Emerging Programming Paradigm",
+        "meta": "Slides accompanying the literature review · 13 slides",
+        "file": "/assets/documents/people/avani-tripathi/situational-ai-emerging-programming-paradigm-slides.pdf",
+        "pages": 13
+      }
+    ],
+    "questionConfirmed": true
   }
 ]

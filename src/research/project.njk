@@ -31,7 +31,11 @@ layout: "layouts/base.njk"
 
     <h2>Research Question</h2>
     <blockquote><p><strong>{{ project.question }}</strong></p></blockquote>
+    {%- if project.questionConfirmed %}
+    <p class="status-line">The researcher’s own question, as stated in the manuscript below.</p>
+    {%- else %}
     <p class="status-line">A working question, drawn from the programme description. The student’s own framing will replace it.</p>
+    {%- endif %}
 
     {%- for s in project.sections %}
     <h2>{{ s[0] }}</h2>
@@ -50,7 +54,9 @@ layout: "layouts/base.njk"
     </ul>
 
     <h2>Manuscript</h2>
-    {%- if project.manuscript %}
+    {%- if project.documents %}
+    {% set documents = project.documents %}{% include "partials/documents.njk" %}
+    {%- elif project.manuscript %}
     <p><a href="{{ project.manuscript }}">Read the manuscript (PDF)</a></p>
     {%- else %}
     <div class="content-placeholder">Research manuscript: HTML version and PDF download, once supplied.</div>

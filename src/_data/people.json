@@ -109,7 +109,24 @@
     ],
     "eventRoles": {
       "october-22-2026": "The Idea"
-    }
+    },
+    "documentsHeading": "Paper &amp; Presentation",
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Does Situational AI Represent an Emerging Programming Paradigm?",
+        "meta": "Situations as the Core Abstraction for Reasoning, Decision-Making, and Execution · Avani Tripathi · UT Dallas · JURS Independent Research Study, 2026",
+        "file": "/assets/documents/people/avani-tripathi/situational-ai-emerging-programming-paradigm.pdf",
+        "pages": 12
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situational AI: An Emerging Programming Paradigm",
+        "meta": "Slides accompanying the literature review · 13 slides",
+        "file": "/assets/documents/people/avani-tripathi/situational-ai-emerging-programming-paradigm-slides.pdf",
+        "pages": 13
+      }
+    ]
   },
   {
     "slug": "ramesh-subramoniam",
