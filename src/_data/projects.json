@@ -5,7 +5,7 @@
     "title": "Situational AI & Situation Awareness",
     "question": "How does Situational AI relate to existing models of situation awareness, including Endsley’s framework, and where does it depart from them?",
     "status": "Research in Progress",
-    "kind": "Foundations",
+    "kind": "Evolution",
     "people": [
       "krishang-reddy-mandala"
     ],
@@ -22,7 +22,7 @@
       "Perspective",
       "Recognition"
     ],
-    "presentation": "The Foundations",
+    "presentation": "The Evolution",
     "sections": [
       [
         "Hypothesis",
