@@ -115,7 +115,7 @@
       }
     ],
     "manuscript": null,
-    "questionConfirmed": true
+    "questionConfirmed": false
   },
   {
     "slug": "sai-riskpulse",
@@ -232,7 +232,7 @@
       }
     ],
     "manuscript": null,
-    "questionConfirmed": true
+    "questionConfirmed": false
   },
   {
     "slug": "avani-student-exploration",
