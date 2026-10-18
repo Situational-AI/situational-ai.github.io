@@ -197,10 +197,10 @@
   {
     "slug": "avani-student-exploration",
     "url": "/research/avani-student-exploration.html",
-    "title": "Does Situational AI Represent an Emerging Programming Paradigm?",
+    "title": "The Student Exploration",
     "question": "Does Situational AI represent an emerging programming paradigm in which situations, rather than prompts, tasks, or workflows, serve as the core abstraction for AI reasoning and execution?",
     "status": "Manuscript",
-    "kind": "Literature review",
+    "kind": "Exploration",
     "people": [
       "avani-tripathi"
     ],
@@ -210,8 +210,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "A review of the literature on programming paradigms, ML-enabled systems, agentic AI and situational awareness, asking whether situation is becoming a new core abstraction.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one reviews the literature across traditional paradigms, ML-enabled systems, agentic and AI-native architectures and the situational awareness tradition, and asks whether Situational AI constitutes an emerging programming paradigm in its own right.",
+    "lede": "Avani Tripathi's ongoing exploration of Situational AI. Its first output is a literature review asking whether situation is becoming a new core abstraction.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This page is the home of Avani Tripathi's exploration and will grow as the work does. Its first output is the literature review below, which surveys traditional paradigms, ML-enabled systems, agentic and AI-native architectures and the situational awareness tradition, and asks whether Situational AI constitutes an emerging programming paradigm in its own right.",
     "concepts": [
       "Definition",
       "Architecture",
@@ -253,6 +253,7 @@
         "pages": 13
       }
     ],
-    "questionConfirmed": true
+    "questionConfirmed": true,
+    "questionLabel": "Current Research Question"
   }
 ]

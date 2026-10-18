@@ -29,10 +29,10 @@ layout: "layouts/base.njk"
   <div class="blog-post-content">
     <p>{{ project.intro }}</p>
 
-    <h2>Research Question</h2>
+    <h2>{{ project.questionLabel or "Research Question" }}</h2>
     <blockquote><p><strong>{{ project.question }}</strong></p></blockquote>
     {%- if project.questionConfirmed %}
-    <p class="status-line">The researcher’s own question, as stated in the manuscript below.</p>
+    <p class="status-line">The researcher’s own question, as stated in the manuscript below. It may change as the exploration continues.</p>
     {%- else %}
     <p class="status-line">A working question, drawn from the programme description. The student’s own framing will replace it.</p>
     {%- endif %}
