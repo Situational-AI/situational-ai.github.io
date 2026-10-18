@@ -13,13 +13,20 @@
     "projects": [
       "krishang-situation-awareness"
     ],
-    "placeholders": [
-      "About",
-      "Research interests"
-    ],
     "eventRoles": {
       "october-22-2026": "The Evolution"
-    }
+    },
+    "summary": "Undergraduate computer science researcher at UT Dallas, tracing the lineage of Situational AI and how Endsley's model of situation awareness shows up in AI systems.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Krishang Reddy Mandala is a junior reading for a B.S. in Computer Science at UT Dallas and a Jindal Undergraduate Research Scholar. He is working on the Situational AI position paper and framework.</p><p>His contribution is the lineage: several research traditions have each solved part of this problem — McCarthy's situation calculus gave a formal way to describe how actions change the world, context-aware computing built software that adapts to its surroundings, and robotics connected sensing, understanding and prediction. Situational AI brings the same question to language-based agents. His working claim is that having the right information is not the same as understanding what is happening.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Evolution</a> at the October 22 forum.</p>"
+      },
+      {
+        "heading": "Research interests",
+        "html": "<ul><li>Endsley's three-level model of situation awareness — perception, comprehension, projection — and what transfers to AI</li><li>Situation calculus, context-aware computing and robotics as the intellectual lineage of the idea</li><li>The situation as a first-class, explainable object a system can hold and show its evidence for</li><li>The difference between context engineering and understanding</li><li>Benchmarking a situation-centric system against existing systems</li><li>Stating the position formally enough that others can take it up or refute it</li></ul>"
+      }
+    ]
   },
   {
     "slug": "sabareesh-dinakaran",
@@ -36,13 +43,20 @@
     "projects": [
       "sabareesh-efficient-ai"
     ],
-    "placeholders": [
-      "About",
-      "Research interests"
-    ],
     "eventRoles": {
       "october-22-2026": "The Computation"
-    }
+    },
+    "summary": "Undergraduate researcher at UT Dallas asking whether recognizing the situation first lets an AI system spend far less computation.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Sabareesh Dinakaran is a student at UT Dallas, a Jindal Undergraduate Research Scholar, and spent the summer as an intern at Mindspace AI.</p><p>His work treats the hypothesis as an efficiency question. Tokens are the meter: cost and energy track token count, and an agentic multi-step task can consume anywhere from fifteen thousand to over a million tokens where a chat reply uses two hundred. Because models are stateless, every prompt regenerates the same context, producing redundant processing and runaway loops. His argument is that a stored situation object allows incremental updates instead of full-sequence inference — which is what would make small, local, specialized models viable.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Computation</a> at the October 22 forum.</p>"
+      },
+      {
+        "heading": "Research interests",
+        "html": "<ul><li>Token consumption as the practical meter of cost and energy in AI systems</li><li>What stateless inference costs when every prompt regenerates its own context</li><li>Situation memory as an alternative to re-reading context, and incremental updates over full-sequence inference</li><li>Whether an explicit situation layer makes small, local and specialized models viable</li><li>The energy and water footprint of data-centre inference against local hardware</li><li>Deciding whether computation is warranted before spending it</li></ul>"
+      }
+    ]
   },
   {
     "slug": "sai-jagadish-manchikanti",
@@ -58,13 +72,20 @@
     "projects": [
       "sai-riskpulse"
     ],
-    "placeholders": [
-      "About",
-      "Research interests"
-    ],
     "eventRoles": {
       "october-22-2026": "The Experiments · RiskPulse live demo"
-    }
+    },
+    "summary": "Undergraduate researcher at UT Dallas building RiskPulse, which asks whether situation recognition can improve risk decisions in small and mid-sized businesses.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Sai Jagadish Manchikanti is a junior at UT Dallas majoring in Computer Information Systems &amp; Technology and Finance, on a pre-PhD track, and a Jindal Undergraduate Research Scholar. He has competed in a sustainability competition with Infosys on supply chain management and AI, and is writing a research paper with Prof. Ramesh Subramoniam and Prasad Pillai.</p><p>He built RiskPulse to test the hypothesis against real organizational risk. His observation is that risk lives in combinations rather than in single alerts: the largest customer thirty days late, payroll still due and suppliers still to fund is one cash situation, not three notifications. RiskPulse retrieves the records, calculates the metrics with checked formulas, has the model explain the implications, and leaves the choice of path to a person.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Experiments</a>, with a live demo, at the October 22 forum.</p>"
+      },
+      {
+        "heading": "Research interests",
+        "html": "<ul><li>Emerging organizational risk, and why it appears in combinations of signals rather than in single alerts</li><li>Situation recognition for small and mid-sized businesses, where there is no analyst to join the dots</li><li>Dividing the work: retrieval for records, checked formulas for the numbers, the model for explanation, the person for the decision</li><li>Keeping a human in the loop on consequential financial choices</li><li>Supply chain management and AI</li><li>How a recognized situation shapes which response is appropriate — collect, prioritize, compare, monitor</li></ul>"
+      }
+    ]
   },
   {
     "slug": "yuvan-muruganandham",
@@ -80,13 +101,26 @@
     "projects": [
       "yuvan-project"
     ],
-    "placeholders": [
-      "About",
-      "Research interests"
-    ],
     "eventRoles": {
       "october-22-2026": "The Experiments · live demo"
-    }
+    },
+    "summary": "Honors computer science student at UT Dallas and the creator of Sentinel, which turns a fraud alert into an inspectable situation rather than a verdict.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Yuvan Muruganandham is an honors computer science student at UT Dallas, a Jindal Undergraduate Research Scholar, and a machine learning engineering intern at Mindspace AI. He is the creator of Sentinel.</p><p>Sentinel applies situation recognition to card-not-present fraud triage, on the principle that an alert is an event and not yet an answer. It turns an alert into candidate situation types and shows the evidence for and against each one; the optional local language model writes narrative only and cannot choose a label, a prediction set or an action. Unresolved cases route to senior review rather than being called benign, a person decides, and every step lands in a hash-chained audit trail.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Experiments</a>, with a live demo, at the October 22 forum.</p>"
+      },
+      {
+        "heading": "Research interests",
+        "html": "<ul><li>Turning alerts into inspectable situations, with the evidence for and against each candidate made visible</li><li>Keeping language generation outside the decision path — narration without decision authority</li><li>Prediction sets and policy as the route from a recognized situation to a proposed action</li><li>Restraint as a design feature: routing the unresolved to human review rather than resolving it</li><li>Auditability, so an assessment and the analyst's disposition can be reconstructed afterwards</li><li>Reporting negative results honestly, and treating evidence quality as the thing to fix before automation</li></ul>"
+      }
+    ],
+    "links": [
+      {
+        "label": "Sentinel on GitHub",
+        "url": "https://github.com/yuvanmuru-dev/sentinel"
+      }
+    ]
   },
   {
     "slug": "avani-tripathi",

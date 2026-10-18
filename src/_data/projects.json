@@ -3,7 +3,7 @@
     "slug": "krishang-situation-awareness",
     "url": "/research/krishang-situation-awareness.html",
     "title": "Situational AI & Situation Awareness",
-    "question": "How does Situational AI relate to existing models of situation awareness, including Endsley’s framework, and where does it depart from them?",
+    "question": "As AI takes on more work, can it recognize the moments that need attention, explain its understanding, and choose an appropriate response?",
     "status": "Research in Progress",
     "kind": "Evolution",
     "people": [
@@ -15,8 +15,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Evolution of the idea, related models and Endsley’s Situation Awareness framework.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one traces the evolution of the idea, the models related to it, and how it relates to Endsley’s Situation Awareness framework.",
+    "lede": "Where Situational AI comes from, and how Endsley's model of situation awareness shows up in AI systems.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one traces the lineage of the idea and tests it against the situation awareness tradition, arguing that having the right information is not the same as understanding what is happening.",
     "concepts": [
       "Definition",
       "Perspective",
@@ -24,35 +24,31 @@
     ],
     "presentation": "The Evolution",
     "sections": [
-      [
-        "Hypothesis",
-        "What this exploration expected to find about the relationship between Situational AI and prior models of situation awareness."
-      ],
-      [
-        "Background",
-        "The models examined, and how the comparison with Endsley’s framework was structured."
-      ],
-      [
-        "Approach",
-        "Sources, comparison method, and criteria."
-      ],
-      [
-        "Preliminary Findings",
-        "What the comparison found, and where Situational AI departs from prior models."
-      ],
-      [
-        "Open Problems",
-        "What the comparison could not resolve, and what it suggests next."
-      ]
+      {
+        "heading": "Endsley's three-level model",
+        "html": "<p>Situation awareness came out of aviation psychology, where one small misjudgement carries very large consequences. Endsley's model has three levels: <strong>perception</strong> of the elements in the environment — objects, state, conditions; <strong>comprehension</strong> of what those elements mean; and <strong>projection</strong> of the future state from the previous two.</p><p class=\"status-line\">Endsley, M. R. (1995). <em>Toward a Theory of Situation Awareness in Dynamic Systems.</em></p>"
+      },
+      {
+        "heading": "The lineage",
+        "html": "<p>Several research traditions have each solved part of this problem.</p><ul><li><strong>Situation calculus</strong> — John McCarthy's formal way to describe the world and reason about how actions change it.</li><li><strong>Context-aware computing</strong> — software that adapts to information about people and their surroundings.</li><li><strong>Robotics</strong> — connecting sensing, understanding and prediction so machines can operate in changing environments.</li></ul><p>Situational AI brings the same question to language-based agents.</p>"
+      },
+      {
+        "heading": "The gap it identifies",
+        "html": "<ul><li><strong>Doing what was asked is not doing what was wanted.</strong> The system follows the prompt and still misses what the person meant.</li><li><strong>Agents don't know the present moment.</strong> They reason well and produce output, but know nothing of now unless told.</li><li><strong>Context engineering is not understanding.</strong> Optimizing what a model receives is not the same as grasping what is happening.</li></ul><p>A worked example: “My sink is still leaking. I called two days ago.” That is an unresolved commitment. The system should combine the message with the existing records, name the situation and record its evidence, then follow up the open ticket, ask a clarifying question, or escalate — not open a second ticket.</p>"
+      },
+      {
+        "heading": "Next",
+        "html": "<ul><li>Benchmark the system against others</li><li>Evaluate the experiments — RiskPulse and Sentinel</li><li>A position paper stating the claim and inviting others to take it up</li><li>A more technical paper on the framework</li></ul>"
+      }
     ],
     "manuscript": null,
-    "questionConfirmed": false
+    "questionConfirmed": true
   },
   {
     "slug": "sabareesh-efficient-ai",
     "url": "/research/sabareesh-efficient-ai.html",
     "title": "Can Situations Make AI More Efficient?",
-    "question": "Can situation recognition reduce context and prompt needs and enable smaller, efficient models?",
+    "question": "How much context can an explicit situation layer remove, and at what cost?",
     "status": "Research in Progress",
     "kind": "Computation",
     "people": [
@@ -64,8 +60,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Situation recognition, context reduction and smaller models.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one investigates whether explicit situation recognition can reduce the context a model needs, and whether that lets smaller models do the work.",
+    "lede": "Recognize the situation first, and spend computation only when it is warranted.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one treats the hypothesis as an efficiency question: whether recognizing the situation first lets a system use less context, fewer tokens and smaller models.",
     "concepts": [
       "Recognition",
       "Architecture",
@@ -73,35 +69,31 @@
     ],
     "presentation": "The Computation",
     "sections": [
-      [
-        "Hypothesis",
-        "What this exploration expected: how much context an explicit situation layer could remove, and at what cost."
-      ],
-      [
-        "Background",
-        "Why context size matters, and what prior work says about reduction."
-      ],
-      [
-        "Approach",
-        "Experimental setup: tasks, models compared, how context was reduced, and what was measured."
-      ],
-      [
-        "Preliminary Findings",
-        "What the experiments showed, and where efficiency gains held or failed."
-      ],
-      [
-        "Open Problems",
-        "What remains unresolved."
-      ]
+      {
+        "heading": "Tokens are the meter",
+        "html": "<p>Cost and energy track token count, and the spread between workloads is enormous.</p><table class=\"concept-table\"><tbody><tr><th>Single-turn chat reply</th><td>200–2,000 tokens</td></tr><tr><th>RAG question with retrieved context</th><td>2,000–12,000 tokens</td></tr><tr><th>Multi-page document summary</th><td>10,000–100,000+ tokens</td></tr><tr><th>Agentic, multi-step task</th><td>15,000–1,000,000+ tokens</td></tr></tbody></table><p>Recent per-query energy estimates run from roughly 0.24–0.34 Wh for a short text query to about 40 Wh for a long one. Multiplied by the millions of prompts processed daily, the question of what computation is warranted stops being academic.</p>"
+      },
+      {
+        "heading": "Why stateless models waste it",
+        "html": "<p>With no persistent memory, every prompt regenerates its context. That produces redundant processing, runaway loops and inference spent re-reading what the system already knew. The cost compounds with repeated use.</p>"
+      },
+      {
+        "heading": "Situation memory instead of re-reading",
+        "html": "<p>Storing and retrieving situation objects directly lets a system make incremental updates rather than running full-sequence inference each time. A traditional agent reprocesses the same context again and again; a situational agent keeps persistent situation memory and cuts the repeated token-level computation.</p><p>That is also what makes small models interesting: local, specialized models that operate within a context you dictate, without the data-centre dependency — though local hardware is slower, so the trade-off needs measuring rather than assuming.</p>"
+      },
+      {
+        "heading": "What remains unresolved",
+        "placeholder": "The measurement itself: how much context an explicit situation layer actually removes on matched tasks, and what accuracy it costs."
+      }
     ],
     "manuscript": null,
-    "questionConfirmed": false
+    "questionConfirmed": true
   },
   {
     "slug": "sai-riskpulse",
     "url": "/research/sai-riskpulse.html",
     "title": "RiskPulse + Situational AI",
-    "question": "Can situation recognition be applied to emerging organizational risk?",
+    "question": "How can Situational AI use organizational context to improve risk assessment and decisions for small and mid-sized businesses?",
     "status": "Experiment",
     "kind": "Experiment",
     "people": [
@@ -113,8 +105,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Applying situation recognition to emerging organizational risk.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one is a working application: RiskPulse, which applies situation recognition to emerging organizational risk.",
+    "lede": "Turning business context into better decisions — a working application of situation recognition to emerging organizational risk.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. RiskPulse is a working application that applies situation recognition to the risks a small or mid-sized business faces, where there is rarely an analyst to join the dots.",
     "concepts": [
       "Recognition",
       "Dynamics",
@@ -122,36 +114,32 @@
     ],
     "presentation": "The Experiments · live demo",
     "sections": [
-      [
-        "Hypothesis",
-        "What RiskPulse expected situation recognition to add over signal monitoring alone."
-      ],
-      [
-        "Background",
-        "The problem: risks that only mean something together, and only for a particular observer."
-      ],
-      [
-        "Approach",
-        "Architecture, the situations it recognizes, the signals it uses, and how a recognized situation shapes the response."
-      ],
-      [
-        "Experiments and Preliminary Findings",
-        "What the demonstration shows and what was observed."
-      ],
-      [
-        "Open Problems",
-        "What remains unresolved."
-      ]
+      {
+        "heading": "Risk lives in combinations",
+        "html": "<p>The largest customer is thirty days late. Payroll is still due. Suppliers still have to be funded. Three alerts in most systems; one cash situation in reality. The point of recognizing the situation is that the combination means something none of the parts mean alone.</p>"
+      },
+      {
+        "heading": "How it works",
+        "html": "<p>Situational, here, means context plus checked analysis plus a person:</p><ul><li>Records are retrieved with RAG</li><li>Checked formulas calculate the metrics, rather than the model doing arithmetic</li><li>The model explains the implications</li><li>People choose the path</li></ul><p>The response is then shaped by the business: collect, prioritize, compare, monitor. A $6k partial receipt plus $4k of deferred spending closes a $10k gap.</p>"
+      },
+      {
+        "heading": "Demonstration",
+        "placeholder": "What the live demo shows, what was observed, and how the recognition performed against the business's own judgement."
+      },
+      {
+        "heading": "Open problems",
+        "placeholder": "What remains unresolved, and what would have to be measured to know whether the recognition is actually improving decisions."
+      }
     ],
     "manuscript": null,
-    "questionConfirmed": false
+    "questionConfirmed": true
   },
   {
     "slug": "yuvan-project",
     "url": "/research/yuvan-project.html",
     "title": "Exploratory Situational AI Application",
-    "question": "What does an application built on situation-centric concepts look like in practice?",
-    "status": "Experiment",
+    "question": "Can a fraud alert be turned into an inspectable situation — candidate types with the evidence for and against each — without letting a language model make the decision?",
+    "status": "Preliminary",
     "kind": "Experiment",
     "people": [
       "yuvan-muruganandham"
@@ -162,37 +150,33 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Exploratory application and live demo.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one is an exploratory application of Situational AI, presented with a live demo.",
+    "lede": "Sentinel: from fraud alert to inspectable situation. An exploratory Situational AI application for card-not-present fraud triage.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. Sentinel is a working application built on a single principle: an alert is an event, and it is not yet an answer.",
     "concepts": [
       "Recognition",
       "Architecture"
     ],
     "presentation": "The Experiments · live demo",
     "sections": [
-      [
-        "Hypothesis",
-        "What the application expected situation-centric concepts to change."
-      ],
-      [
-        "Background",
-        "The problem the application addresses."
-      ],
-      [
-        "Approach",
-        "Architecture, the situations it recognizes, the signals it uses, and how a recognized situation shapes the response."
-      ],
-      [
-        "Experiments and Preliminary Findings",
-        "What the demonstration shows and what was observed."
-      ],
-      [
-        "Open Problems",
-        "What remains unresolved."
-      ]
+      {
+        "heading": "Recognize, interpret, respond",
+        "html": "<p><strong>Recognize</strong> — point-in-time identities and behavioral context. <strong>Interpret</strong> — possible situation types, with the evidence for and against each. <strong>Respond</strong> — a proposed action, human review, and an audit record.</p><p>Optional language generation sits outside the decision path. It writes narrative; it cannot choose a label, a prediction set or an action.</p>"
+      },
+      {
+        "heading": "The pipeline",
+        "html": "<ol><li><strong>Alert event</strong> — an upstream detector flags a transaction</li><li><strong>Case context</strong> — entity links and point-in-time features</li><li><strong>Pattern matcher</strong> — candidate types, with evidence for and against</li><li><strong>Set and policy</strong> — a prediction set, a proposed action and a lane</li><li><strong>Human review</strong> — analyst disposition, with human-only routing</li></ol><p>Every assessment and disposition lands in a hash-chained audit trail. Automatic routing is off.</p>"
+      },
+      {
+        "heading": "Preliminary findings",
+        "html": "<p>The real-data limit is visible, and reported rather than hidden.</p><table class=\"concept-table\"><tbody><tr><th>178 / 200</th><td>human label unanimity</td></tr><tr><th>564 / 600</th><td>primary ratings of “cannot determine”</td></tr><tr><th>0 / 200</th><td>named candidates admitted by the raw matcher</td></tr></tbody></table><p class=\"status-line\">Selected, stratified cases — not fraud accuracy, live prevalence, or end-to-end coverage.</p>"
+      },
+      {
+        "heading": "Next",
+        "html": "<p>Better evidence and candidate admission come before any automation. Then independent validation.</p>"
+      }
     ],
     "manuscript": null,
-    "questionConfirmed": false
+    "questionConfirmed": true
   },
   {
     "slug": "avani-student-exploration",
@@ -219,22 +203,26 @@
     ],
     "presentation": null,
     "sections": [
-      [
-        "Background",
-        "Where the review places Situational AI: procedural and object-oriented programming, ML-enabled systems, agentic architectures, and Endsley's situational awareness tradition as intellectual lineage."
-      ],
-      [
-        "Findings",
-        "The paradigm progression the review traces, and the structural gap it identifies between what a system can infer and what a human must maintain on its behalf."
-      ],
-      [
-        "Limitations",
-        "The review's own stated limits, including the absence of empirical validation and the recency of the core sources."
-      ],
-      [
-        "Proposed Empirical Work",
-        "The methodology the review proposes: a prototype against an agentic baseline, on matched tasks of increasing novelty."
-      ]
+      {
+        "heading": "Four generations of software",
+        "html": "<p>Each era of software is organized around something. The review traces the succession and places Situational AI as the next candidate.</p><table class=\"concept-table\"><tbody><tr><th>Pre-2000s · Traditional software</th><td>Organized around <strong>instructions</strong>. “Do exactly this.” Rules written in advance.</td></tr><tr><th>2000s–2015 · Machine learning</th><td>Organized around <strong>data patterns</strong>. “Learn from examples.” Adapts via training.</td></tr><tr><th>2015–2025 · Agentic AI</th><td>Organized around <strong>tasks and workflows</strong>. “Break it into steps and run them.”</td></tr><tr><th>Emerging · Situational AI</th><td>Organized around <strong>situations</strong>. “Understand what is happening, then decide.”</td></tr></tbody></table><p class=\"status-line\">After Van Roy (2009), <em>Programming Paradigms for Dummies</em>, UCL.</p>"
+      },
+      {
+        "heading": "A situation is five things at once",
+        "html": "<p>The review's working definition holds five elements in one connected frame, and keeps holding them over time:</p><ul><li><strong>Context</strong> — what is happening, and what led up to it</li><li><strong>State</strong> — where things stand right now</li><li><strong>Priorities</strong> — what matters most, and to whom</li><li><strong>Expected response</strong> — what a competent actor would do here</li><li><strong>Escalation conditions</strong> — when to stop and get a human</li></ul><p>These move through a loop rather than a pipeline: recognize, remember, plan, act, escalate — and acting changes the situation, so the new state flows back to the beginning. Nothing resets.</p>"
+      },
+      {
+        "heading": "Three design requirements",
+        "html": "<p>The review treats these as structural rather than desirable:</p><ul><li><strong>Explainability</strong> — the reasoning must be legible to a person. If you cannot see why it decided something, you cannot correct it when it is wrong.</li><li><strong>Layered cognition</strong> — perception, symbolic structure and reasoning stay distinct rather than compressed into one opaque process. Separation is what makes it debuggable.</li><li><strong>Bounded autonomy</strong> — independence scales with the situation. Routine, act; high-stakes, escalate. Autonomy is not one setting you turn up.</li></ul>"
+      },
+      {
+        "heading": "What is still unresolved",
+        "html": "<p>The review states its own limits plainly.</p><table class=\"concept-table\"><tbody><tr><th>No formal definition of “situation”</th><td>Without one, the paradigm claim cannot be tested or falsified. <em>High</em></td></tr><tr><th>No empirical validation</th><td>Still conceptual — no prototype benchmarked against an agentic baseline. <em>High</em></td></tr><tr><th>Paradigm overlap</th><td>Neuro-symbolic AI and cognitive architectures already cover parts of this space. <em>Medium</em></td></tr><tr><th>Safety and oversight</th><td>Bounded autonomy in real time is not architecturally solved. <em>High</em></td></tr></tbody></table><p>Its conclusion is correspondingly careful: six domains and more than forty sources do not agree on much, but they converge on the same missing piece — a persistent situational layer. The gap is real, even if the answer is not settled.</p>"
+      },
+      {
+        "heading": "Proposed empirical work",
+        "html": "<p>The methodology the review proposes: build a Situational AI prototype with situation identification, memory, response planning, execution and escalation; deploy it against an agentic baseline on matched tasks of increasing complexity and novelty; and measure situation recognition accuracy among the outcomes.</p>"
+      }
     ],
     "manuscript": null,
     "documents": [

@@ -38,8 +38,10 @@ layout: "layouts/base.njk"
     {%- endif %}
 
     {%- for s in project.sections %}
-    <h2>{{ s[0] }}</h2>
-    <div class="content-placeholder">{{ s[1] }}</div>
+    <h2>{{ s.heading or s[0] }}</h2>
+    {%- if s.html %}{{ s.html | safe }}
+    {%- else %}<div class="content-placeholder">{{ s.placeholder or s[1] }}</div>
+    {%- endif %}
     {%- endfor %}
 
     <h2>Researchers</h2>
