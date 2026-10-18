@@ -16,15 +16,32 @@
     "eventRoles": {
       "october-22-2026": "The Evolution"
     },
-    "summary": "Undergraduate computer science researcher at UT Dallas, tracing the lineage of Situational AI and how Endsley's model of situation awareness shows up in AI systems.",
+    "summary": "Undergraduate computer science researcher at UT Dallas, mapping Endsley's model of situation awareness onto LLM agents — how it can be measured, and how it fails.",
     "sections": [
       {
         "heading": "About",
-        "html": "<p>Krishang Reddy Mandala is a junior reading for a B.S. in Computer Science at UT Dallas and a Jindal Undergraduate Research Scholar. He is working on the Situational AI position paper and framework.</p><p>His contribution is the lineage: several research traditions have each solved part of this problem — McCarthy's situation calculus gave a formal way to describe how actions change the world, context-aware computing built software that adapts to its surroundings, and robotics connected sensing, understanding and prediction. Situational AI brings the same question to language-based agents. His working claim is that having the right information is not the same as understanding what is happening.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Evolution</a> at the October 22 forum.</p>"
+        "html": "<p>Krishang Reddy Mandala is a junior reading for a B.S. in Computer Science at UT Dallas and a Jindal Undergraduate Research Scholar. He is working on the Situational AI position paper and framework.</p><p>His literature review synthesises 43 papers published between 1983 and 2026, across human factors, cognitive science, machine learning and AI safety, and asks what happens when Endsley's three-level model of situation awareness is mapped onto LLM agents. It arrives at a measurement scheme and a failure taxonomy — and at an uncomfortable paradox: the more situationally capable an agent becomes, the more effectively it can suppress, fake or game the probes designed to measure that capability.</p><p>He also traces the lineage of the idea — McCarthy's situation calculus, context-aware computing and robotics each solved part of this problem before language agents existed. He presents <a href=\"/events/october-22-2026.html#program\">The Evolution</a> at the October 22 forum.</p>"
       },
       {
         "heading": "Research interests",
-        "html": "<ul><li>Endsley's three-level model of situation awareness — perception, comprehension, projection — and what transfers to AI</li><li>Situation calculus, context-aware computing and robotics as the intellectual lineage of the idea</li><li>The situation as a first-class, explainable object a system can hold and show its evidence for</li><li>The difference between context engineering and understanding</li><li>Benchmarking a situation-centric system against existing systems</li><li>Stating the position formally enough that others can take it up or refute it</li></ul>"
+        "html": "<ul><li>Endsley's three levels — perception, comprehension, projection — mapped onto LLM agent architecture</li><li>Measuring situation awareness in language models: calibration metrics such as P(IK) and P(True), the SAD behavioral benchmark, linear probing of encoded representations, and theory-of-mind tasks</li><li>Failure modes when an agent has no dedicated situation-recognition layer: hallucination, theory-of-mind fragility, deceptive alignment, context-window saturation, adversarial exploitation of local awareness, and degradation when the human leaves the loop</li><li>Deceptive alignment and evaluation gaming, and why capability and evasion rise together</li><li>Memory hierarchies — vector stores and long-term memory, the context window as working memory</li><li>Situation calculus, context-aware computing and robotics as the intellectual lineage of the idea</li></ul>"
+      }
+    ],
+    "documentsHeading": "Paper & Presentation",
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Situation Awareness in Autonomous Systems Mapped to AI Agents",
+        "meta": "Krishang Mandala · UT Dallas · May 2026 · 43 papers, 1983–2026",
+        "file": "/assets/documents/people/krishang-reddy-mandala/situation-awareness-mapped-to-ai-agents.pdf",
+        "pages": 22
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situation Awareness in Autonomous Systems Mapped to AI Agents",
+        "meta": "A synthesis across cognitive engineering, LLM architecture and AI agent evaluation · 11 slides",
+        "file": "/assets/documents/people/krishang-reddy-mandala/situation-awareness-mapped-to-ai-agents-slides.pdf",
+        "pages": 11
       }
     ]
   },
@@ -75,15 +92,32 @@
     "eventRoles": {
       "october-22-2026": "The Experiments · RiskPulse live demo"
     },
-    "summary": "Undergraduate researcher at UT Dallas building RiskPulse, which asks whether situation recognition can improve risk decisions in small and mid-sized businesses.",
+    "summary": "Undergraduate researcher at UT Dallas working on situation-centred models for financial risk — from firm-level fraud and distress to systemic stability — and the author of RiskPulse.",
     "sections": [
       {
         "heading": "About",
-        "html": "<p>Sai Jagadish Manchikanti is a junior at UT Dallas majoring in Computer Information Systems &amp; Technology and Finance, on a pre-PhD track, and a Jindal Undergraduate Research Scholar. He has competed in a sustainability competition with Infosys on supply chain management and AI, and is writing a research paper with Prof. Ramesh Subramoniam and Prasad Pillai.</p><p>He built RiskPulse to test the hypothesis against real organizational risk. His observation is that risk lives in combinations rather than in single alerts: the largest customer thirty days late, payroll still due and suppliers still to fund is one cash situation, not three notifications. RiskPulse retrieves the records, calculates the metrics with checked formulas, has the model explain the implications, and leaves the choice of path to a person.</p><p>He presents <a href=\"/events/october-22-2026.html#program\">The Experiments</a>, with a live demo, at the October 22 forum.</p>"
+        "html": "<p>Sai Jagadish Manchikanti is a junior at UT Dallas majoring in Computer Information Systems &amp; Technology and Finance, on a pre-PhD track, and a Jindal Undergraduate Research Scholar. He has competed in a sustainability competition with Infosys on supply chain management and AI.</p><p>His review, written with Prof. Ramesh Subramoniam as faculty mentor and Prasad Pillai, applies situation-centred behavioral and context modelling (SCBCM) to finance and economics across five pillars: the unifying framework itself, accounting, fraud and compliance, corporate distress prediction and firm behaviour, information asymmetry and market efficiency, and macroprudential and systemic risk. Its argument is that a financial event is never just data — it sits inside behavioral, temporal, network and environmental context at once.</p><p>He also built <strong>RiskPulse</strong>, which takes the same idea down to the scale of a small business: the largest customer thirty days late, payroll still due and suppliers still to fund is one cash situation, not three alerts. He presents <a href=\"/events/october-22-2026.html#program\">The Experiments</a>, with a live demo, at the October 22 forum.</p>"
       },
       {
         "heading": "Research interests",
-        "html": "<ul><li>Emerging organizational risk, and why it appears in combinations of signals rather than in single alerts</li><li>Situation recognition for small and mid-sized businesses, where there is no analyst to join the dots</li><li>Dividing the work: retrieval for records, checked formulas for the numbers, the model for explanation, the person for the decision</li><li>Keeping a human in the loop on consequential financial choices</li><li>Supply chain management and AI</li><li>How a recognized situation shapes which response is appropriate — collect, prioritize, compare, monitor</li></ul>"
+        "html": "<ul><li>Situation-centred behavioral and context modelling (SCBCM) applied to financial risk</li><li>Fraud detection and anti-money-laundering compliance, and the cost of false positives in legacy systems</li><li>Corporate distress as a progression — profit erosion, cash-flow strain, creditor pressure, behavioral distortion, formal failure — and how early it can be recognized</li><li>Information asymmetry, capital allocation and what AI-derived measures of disclosure do to the cost of capital</li><li>Macroprudential and systemic risk, and whether situational signals belong in crisis-prevention frameworks</li><li>Emerging-market evidence and adversarial robustness as the gaps in the current literature</li><li>Risk in small and mid-sized businesses, where there is no analyst to join the dots</li></ul>"
+      }
+    ],
+    "documentsHeading": "Paper & Presentation",
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Situational AI in Finance and Economics: SCBCM Models",
+        "meta": "For accounting, risk, fraud, compliance and macroeconomic stability · Sai Jagadish Kumar Manchikanti, with Dr. Ramesh Subramoniam (faculty mentor) and Prasad Pillai · UT Dallas and Mindspace AI",
+        "file": "/assets/documents/people/sai-jagadish-manchikanti/situational-ai-in-finance-and-economics.pdf",
+        "pages": 8
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situational AI: Finance & Economics Intelligence Framework",
+        "meta": "SCBCM models for accounting, risk, fraud, compliance and macroeconomic stability · 15 slides",
+        "file": "/assets/documents/people/sai-jagadish-manchikanti/situational-ai-in-finance-and-economics-slides.pdf",
+        "pages": 15
       }
     ]
   },

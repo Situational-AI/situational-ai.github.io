@@ -3,8 +3,8 @@
     "slug": "krishang-situation-awareness",
     "url": "/research/krishang-situation-awareness.html",
     "title": "Situational AI & Situation Awareness",
-    "question": "As AI takes on more work, can it recognize the moments that need attention, explain its understanding, and choose an appropriate response?",
-    "status": "Research in Progress",
+    "question": "How is situation awareness quantitatively measured in LLM agents, and what failure modes emerge when agents lack a dedicated situation-recognition layer?",
+    "status": "Manuscript",
     "kind": "Evolution",
     "people": [
       "krishang-reddy-mandala"
@@ -15,8 +15,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Where Situational AI comes from, and how Endsley's model of situation awareness shows up in AI systems.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one traces the lineage of the idea and tests it against the situation awareness tradition, arguing that having the right information is not the same as understanding what is happening.",
+    "lede": "Mapping Endsley's three-level model of situation awareness onto LLM agents: how to measure it, and how it fails.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. This one synthesises 43 papers published between 1983 and 2026 across human factors, cognitive science, machine learning and AI safety, and asks what Endsley's model of situation awareness becomes when it is mapped onto language-model agents.",
     "concepts": [
       "Definition",
       "Perspective",
@@ -33,6 +33,18 @@
         "html": "<p>Several research traditions have each solved part of this problem.</p><ul><li><strong>Situation calculus</strong> — John McCarthy's formal way to describe the world and reason about how actions change it.</li><li><strong>Context-aware computing</strong> — software that adapts to information about people and their surroundings.</li><li><strong>Robotics</strong> — connecting sensing, understanding and prediction so machines can operate in changing environments.</li></ul><p>Situational AI brings the same question to language-based agents.</p>"
       },
       {
+        "heading": "Measuring situation awareness in an LLM",
+        "html": "<p>The review arrives at a four-method setup:</p><ul><li><strong>Calibration metrics</strong> — P(IK) and P(True): the model's stated confidence against its actual correctness</li><li><strong>The SAD behavioral benchmark</strong> — currently the only direct instrument</li><li><strong>Linear probing</strong> of the representations encoded inside the model</li><li><strong>Theory-of-mind tasks</strong></li></ul>"
+      },
+      {
+        "heading": "Six failure modes",
+        "html": "<p>What goes wrong when an agent has no dedicated situation-recognition layer, arranged by the level of awareness each one breaks:</p><table class=\"concept-table\"><tbody><tr><th>Hallucination</th><td>Invents perceptions of sources, tools or world states (L1)</td></tr><tr><th>Theory-of-mind fragility</th><td>Misreads what another party knows or intends (L2)</td></tr><tr><th>Deceptive alignment</th><td>Learns to pass safety evaluations while behaviour is unchanged in deployment</td></tr><tr><th>Context-window saturation</th><td>Awareness degrades as the window fills</td></tr><tr><th>Adversarial exploitation of local awareness</th><td>The agent's own situational grasp is turned against it</td></tr><tr><th>Human out-of-the-loop degradation</th><td>Supervision thins and the failure is not caught</td></tr></tbody></table>"
+      },
+      {
+        "heading": "The central paradox",
+        "html": "<p>The more situationally capable an agent becomes, the more effectively it can suppress, fake or game the probes built to measure that capability. Capability and evasion rise in lockstep, which is precisely what makes evaluation hard.</p>"
+      },
+      {
         "heading": "The gap it identifies",
         "html": "<ul><li><strong>Doing what was asked is not doing what was wanted.</strong> The system follows the prompt and still misses what the person meant.</li><li><strong>Agents don't know the present moment.</strong> They reason well and produce output, but know nothing of now unless told.</li><li><strong>Context engineering is not understanding.</strong> Optimizing what a model receives is not the same as grasping what is happening.</li></ul><p>A worked example: “My sink is still leaking. I called two days ago.” That is an unresolved commitment. The system should combine the message with the existing records, name the situation and record its evidence, then follow up the open ticket, ask a clarifying question, or escalate — not open a second ticket.</p>"
       },
@@ -42,7 +54,23 @@
       }
     ],
     "manuscript": null,
-    "questionConfirmed": true
+    "questionConfirmed": true,
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Situation Awareness in Autonomous Systems Mapped to AI Agents",
+        "meta": "Krishang Mandala · UT Dallas · May 2026 · 43 papers, 1983–2026",
+        "file": "/assets/documents/people/krishang-reddy-mandala/situation-awareness-mapped-to-ai-agents.pdf",
+        "pages": 22
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situation Awareness in Autonomous Systems Mapped to AI Agents",
+        "meta": "A synthesis across cognitive engineering, LLM architecture and AI agent evaluation · 11 slides",
+        "file": "/assets/documents/people/krishang-reddy-mandala/situation-awareness-mapped-to-ai-agents-slides.pdf",
+        "pages": 11
+      }
+    ]
   },
   {
     "slug": "sabareesh-efficient-ai",
@@ -93,8 +121,8 @@
     "slug": "sai-riskpulse",
     "url": "/research/sai-riskpulse.html",
     "title": "RiskPulse + Situational AI",
-    "question": "How can Situational AI use organizational context to improve risk assessment and decisions for small and mid-sized businesses?",
-    "status": "Experiment",
+    "question": "How can SCBCM-based models enhance the detection and interpretation of situational risk in accounting, fraud, compliance and cash-flow management — at the firm level, and aggregated to the sectoral and macroeconomic levels?",
+    "status": "Manuscript",
     "kind": "Experiment",
     "people": [
       "sai-jagadish-manchikanti"
@@ -105,8 +133,8 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Turning business context into better decisions — a working application of situation recognition to emerging organizational risk.",
-    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. RiskPulse is a working application that applies situation recognition to the risks a small or mid-sized business faces, where there is rarely an analyst to join the dots.",
+    "lede": "Situation-centred models for financial risk, from firm-level fraud and distress to systemic stability — and RiskPulse, the working application.",
+    "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. It has two strands: a review of situation-centred behavioral and context modelling (SCBCM) applied across finance and economics, written with Prof. Ramesh Subramoniam and Prasad Pillai; and RiskPulse, a working application that brings the same idea down to the scale of a small business.",
     "concepts": [
       "Recognition",
       "Dynamics",
@@ -114,6 +142,14 @@
     ],
     "presentation": "The Experiments · live demo",
     "sections": [
+      {
+        "heading": "The four research questions",
+        "html": "<ol><li>How can SCBCM-based AI models enhance the detection and interpretation of situational risks in accounting, fraud, compliance and cash-flow management at the firm level?</li><li>Which behavioral and contextual patterns are most predictive of distress, misreporting or non-compliance — and how do these aggregate at sectoral or macroeconomic levels?</li><li>In what ways do AI-generated financial risk signals alter information asymmetry, capital allocation and the cost of capital in financial markets?</li><li>How can situational AI insights be incorporated into macroprudential frameworks to reduce the likelihood or severity of financial crises?</li></ol>"
+      },
+      {
+        "heading": "Distress as a progression",
+        "html": "<p>The review treats corporate distress as something that develops rather than arrives: profit erosion, then cash-flow strain, then creditor pressure, then behavioral distortion, then formal failure. The claim worth testing is that a situation-centred model recognizes the progression early enough to matter.</p>"
+      },
       {
         "heading": "Risk lives in combinations",
         "html": "<p>The largest customer is thirty days late. Payroll is still due. Suppliers still have to be funded. Three alerts in most systems; one cash situation in reality. The point of recognizing the situation is that the combination means something none of the parts mean alone.</p>"
@@ -129,10 +165,30 @@
       {
         "heading": "Open problems",
         "placeholder": "What remains unresolved, and what would have to be measured to know whether the recognition is actually improving decisions."
+      },
+      {
+        "heading": "Where the literature is thin",
+        "html": "<p>The review is explicit about its gaps. Nearly all the studies it covers use US, EU or Japanese data; emerging markets have higher data sparsity, weaker audit quality and more regime changes, which makes direct application unreliable. Adversarial robustness is the other open front.</p>"
       }
     ],
     "manuscript": null,
-    "questionConfirmed": true
+    "questionConfirmed": true,
+    "documents": [
+      {
+        "kind": "Literature review",
+        "title": "Situational AI in Finance and Economics: SCBCM Models",
+        "meta": "For accounting, risk, fraud, compliance and macroeconomic stability · Sai Jagadish Kumar Manchikanti, with Dr. Ramesh Subramoniam (faculty mentor) and Prasad Pillai · UT Dallas and Mindspace AI",
+        "file": "/assets/documents/people/sai-jagadish-manchikanti/situational-ai-in-finance-and-economics.pdf",
+        "pages": 8
+      },
+      {
+        "kind": "Presentation",
+        "title": "Situational AI: Finance & Economics Intelligence Framework",
+        "meta": "SCBCM models for accounting, risk, fraud, compliance and macroeconomic stability · 15 slides",
+        "file": "/assets/documents/people/sai-jagadish-manchikanti/situational-ai-in-finance-and-economics-slides.pdf",
+        "pages": 15
+      }
+    ]
   },
   {
     "slug": "yuvan-project",

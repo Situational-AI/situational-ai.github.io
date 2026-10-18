@@ -51,7 +51,7 @@ layout: "layouts/base.njk"
     <h2>Research question{% if myProjects.length > 1 %}s{% endif %}</h2>
     {%- for pr in myProjects %}
     <blockquote><p><strong>{{ pr.question }}</strong></p></blockquote>
-    <p class="status-line"><span class="status-label">{{ pr.status }}</span> Working question for <a href="{{ pr.url }}">{{ pr.title }}</a>; the student’s own framing is on the project page.</p>
+    <p class="status-line"><span class="status-label">{{ pr.status }}</span> {% if pr.questionConfirmed %}From <a href="{{ pr.url }}">{{ pr.title }}</a>, in the researcher’s own words.{% else %}Working question for <a href="{{ pr.url }}">{{ pr.title }}</a>; the student’s own framing is on the project page.{% endif %}</p>
     {%- endfor %}
 
     <h2>Project{% if myProjects.length > 1 %}s{% endif %}</h2>
