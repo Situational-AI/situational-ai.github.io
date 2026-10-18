@@ -77,7 +77,7 @@ layout: "layouts/base.njk"
     {%- endif %}
 
     {%- if person.documents %}
-    <h2>{{ person.documentsHeading or "Papers &amp; Presentations" }}</h2>
+    <h2>{{ person.documentsHeading or "Papers & Presentations" }}</h2>
     {% set documents = person.documents %}{% include "partials/documents.njk" %}
     {%- elif person.category == "student" %}
     <h2>Manuscript</h2>

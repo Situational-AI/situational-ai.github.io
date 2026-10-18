@@ -103,14 +103,10 @@
     "projects": [
       "avani-student-exploration"
     ],
-    "placeholders": [
-      "About",
-      "Research interests"
-    ],
     "eventRoles": {
       "october-22-2026": "The Idea"
     },
-    "documentsHeading": "Paper &amp; Presentation",
+    "documentsHeading": "Paper & Presentation",
     "documents": [
       {
         "kind": "Literature review",
@@ -125,6 +121,17 @@
         "meta": "Slides accompanying the literature review · 13 slides",
         "file": "/assets/documents/people/avani-tripathi/situational-ai-emerging-programming-paradigm-slides.pdf",
         "pages": 13
+      }
+    ],
+    "summary": "Undergraduate researcher at UT Dallas asking whether situation, rather than the prompt, is becoming the unit an intelligent system should reason from.",
+    "sections": [
+      {
+        "heading": "About",
+        "html": "<p>Avani Tripathi is an undergraduate researcher at the Naveen Jindal School of Management, UT Dallas, and a Jindal Undergraduate Research Scholar. She joined the Situational AI inquiry in 2026 through the JURS programme and spent the summer as an intern at Mindspace AI.</p><p>Her work approaches Situational AI as a question about software itself. For most of the history of programming, a system's behaviour has been settled before it runs — by explicit control flow, by class hierarchies, later by a learned distribution. Her research asks what changes when the situation becomes the thing a system reasons from, and whether that amounts to a new paradigm rather than a new technique.</p><p>She opens the October 22 forum with <a href=\"/events/october-22-2026.html#program\">The Idea</a>.</p>"
+      },
+      {
+        "heading": "Research interests",
+        "html": "<ul><li>Programming paradigms and how they succeed one another — procedural, object-oriented, machine-learned, agentic</li><li>Whether situation can serve as a core computational abstraction, and how it differs from a prompt, a task, a context window or a workflow</li><li>The architecture of agentic and AI-native systems, and the distinction between orchestration and understanding</li><li>Situational awareness as intellectual lineage, from Endsley's three-stage model to shared awareness in human–autonomous teams</li><li>Human–AI teaming: escalation, hand-off, and keeping machine reasoning legible for human review</li><li>How a situation-centric system could be evaluated empirically against an agentic baseline</li></ul>"
       }
     ]
   },
