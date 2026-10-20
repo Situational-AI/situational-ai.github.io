@@ -29,7 +29,28 @@
     ],
     "image": "/assets/images/og-forum-2026-10-22.jpg",
     "dateShort": "Oct. 22 · 5 PM",
-    "dateTiny": "Oct. 22"
+    "dateTiny": "Oct. 22",
+    "venue": {
+      "name": "Crow Museum of Asian Art at UT Dallas",
+      "building": "Edith and Peter O’Donnell Jr. Athenaeum",
+      "campus": "The University of Texas at Dallas, Richardson, Texas",
+      "parkingLot": "Lot M – South, Gold spaces",
+      "parkingMap": "/assets/images/events/october-22-2026/parking-map.jpg",
+      "directions": [
+        "From W. Campbell Rd, head north onto University Pkwy.",
+        "At the fork, bear right onto Armstrong Dr.",
+        "Take the second left, between Lot M – East and Lot M – South.",
+        "Lot M – South will be on your left."
+      ],
+      "parkingNote": "The Edith and Peter O’Donnell Jr. Athenaeum is directly adjacent to Lot M – East. Please park in the Lot M – South Gold spaces, as designated by your permit.",
+      "parkingHelp": {
+        "phone": "(972) 883-7777",
+        "email": "park@utdallas.edu",
+        "label": "UT Dallas Parking and Transportation Office"
+      },
+      "permit": null,
+      "permitNote": "Print the permit, fold it, and leave it on the dashboard near the steering wheel with everything above the fold line visible. It is valid for October 22, 2026 only."
+    }
   },
   {
     "slug": "2026-08-05-jsom-mba-class",

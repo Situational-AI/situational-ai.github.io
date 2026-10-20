@@ -215,29 +215,55 @@ layout: "layouts/base.njk"
     </div>
   </section>
 
-  <!-- Venue & Logistics -->
+  <!-- Venue, parking & logistics -->
   <section class="section" id="venue">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Venue</span>
+        <span class="section-tag">Venue &amp; parking</span>
         <h2>Crow Museum of Asian Art at UT Dallas</h2>
         <p class="section-subtitle">Presented by Mindspace AI in collaboration with the Naveen Jindal School of Management’s Jindal Undergraduate Research Scholars (JURS) program at UT Dallas. The Crow Museum of Asian Art at UT Dallas is the venue.</p>
       </div>
+      {%- set v = (events | bySlug("october-22-2026")).venue %}
       <div class="research-shell">
-        <div class="question-grid">
+        <div class="venue-grid">
           <article class="question-card">
-            <h3>Getting There</h3>
-            <p>Crow Museum of Asian Art, Edith and Peter O’Donnell Jr. Athenaeum, on the UT Dallas campus in Richardson, Texas.</p>
-            <div class="content-placeholder">Street address, entrance, and parking directions.</div>
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Crow+Museum+of+Asian+Art+at+UT+Dallas" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Open in Google Maps</a>
+            <h3>Getting there</h3>
+            <p><strong>{{ v.building }}</strong><br>{{ v.name }}<br>{{ v.campus }}</p>
+            <p class="venue-step-label">Driving to {{ v.parkingLot | replace(", Gold spaces", "") }}</p>
+            <ol class="venue-steps">
+              {%- for step in v.directions %}<li>{{ step }}</li>{% endfor %}
+            </ol>
+            <p>{{ v.parkingNote }}</p>
+            <div class="venue-actions">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Crow+Museum+of+Asian+Art+at+UT+Dallas" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a href="{{ v.parkingMap }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Full-size map</a>
+            </div>
           </article>
           <article class="question-card">
-            <h3>Logistics</h3>
-            <p>The program starts at 5:00 PM, with networking afterward.</p>
+            <h3>Parking permit</h3>
+            <p>Parking is covered. Print the permit before you set off and leave it on your dashboard.</p>
+            <p>{{ v.permitNote }}</p>
+            <div class="venue-actions">
+              {%- if v.permit %}
+              <a href="{{ v.permit }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener" data-print-permit>Print permit</a>
+              <a href="{{ v.permit }}" class="btn btn-outline btn-sm" download>Download PDF</a>
+              {%- else %}
+              <span class="btn btn-outline btn-sm is-soon" aria-disabled="true">Permit PDF — coming shortly</span>
+              {%- endif %}
+            </div>
+          </article>
+          <article class="question-card">
+            <h3>On the day</h3>
+            <p>The program starts at <strong>5:00 PM</strong>, and networking follows.</p>
+            <p>Parking or directional questions on the day: {{ v.parkingHelp.label }}, <a href="tel:+19728837777">{{ v.parkingHelp.phone }}</a> or <a href="mailto:{{ v.parkingHelp.email }}">{{ v.parkingHelp.email }}</a>.</p>
             <div class="content-placeholder">Check-in details, refreshments, and accessibility notes.</div>
             <p class="event-register-only">Registration is handled through Luma.</p>
           </article>
         </div>
+        <figure class="parking-map">
+          <a href="{{ v.parkingMap }}" target="_blank" rel="noopener"><img src="{{ v.parkingMap }}" alt="UT Dallas campus map showing the route from W. Campbell Rd north onto University Pkwy, right onto Armstrong Dr, then the second left to Lot M – South, with the Edith and Peter O’Donnell Jr. Athenaeum adjacent to Lot M – East." loading="lazy"></a>
+          <figcaption>Route to Lot M – South. The Athenaeum sits directly adjacent to Lot M – East. Tap the map for the full-size version.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

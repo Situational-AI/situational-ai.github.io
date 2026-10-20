@@ -77,3 +77,30 @@ window.SAI_EVENTS = {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
+
+// "Print permit": the PDF is same-origin, so load it in a hidden frame and
+// send that frame to the printer. Browsers that refuse to print a framed PDF
+// fall back to opening it in a new tab, where the viewer's own print works.
+(function () {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('[data-print-permit]');
+    if (!link) return;
+    e.preventDefault();
+    var frame = document.createElement('iframe');
+    frame.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0;';
+    frame.src = link.href;
+    var opened = false;
+    function fallback() { if (!opened) { opened = true; window.open(link.href, '_blank', 'noopener'); } }
+    frame.onload = function () {
+      try {
+        frame.contentWindow.focus();
+        frame.contentWindow.print();
+        opened = true;
+      } catch (err) { fallback(); }
+    };
+    frame.onerror = fallback;
+    document.body.appendChild(frame);
+    // If the frame never loads (blocked plugin, slow network), open the tab.
+    setTimeout(fallback, 3000);
+  });
+})();
