@@ -44,7 +44,9 @@
       ],
       "permit": "/assets/documents/events/october-22-2026-parking-permit.pdf",
       "permitNote": "Print the permit, fold it, and leave it on the dashboard near the steering wheel with everything above the fold line visible. It is valid for October 22, 2026 only."
-    }
+    },
+    "mode": "archive",
+    "rsvpUrl": "https://luma.com/7jhkvaz2"
   },
   {
     "slug": "2026-08-05-jsom-mba-class",

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-event="{{ site.currentEvent }}" data-event-mode="register"{% if htmlAttrs %} {{ htmlAttrs | safe }}{% endif %}>
+{%- set currentEvent = events | bySlug(site.currentEvent) -%}
+<html lang="en" data-event="{{ site.currentEvent }}" data-event-mode="{{ currentEvent.mode or 'register' }}"{% if htmlAttrs %} {{ htmlAttrs | safe }}{% endif %}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
