@@ -46,7 +46,65 @@
       "permitNote": "Print the permit, fold it, and leave it on the dashboard near the steering wheel with everything above the fold line visible. It is valid for October 22, 2026 only."
     },
     "mode": "archive",
-    "rsvpUrl": "https://luma.com/7jhkvaz2"
+    "rsvpUrl": "https://luma.com/7jhkvaz2",
+    "photos": [
+      {
+        "file": "01-room-before.jpg",
+        "caption": "The room before the doors opened, the opening slide on the screens."
+      },
+      {
+        "file": "10-jurs-group.jpg",
+        "caption": "The presenters and mentors after the evening’s talks."
+      },
+      {
+        "file": "04-audience.jpg",
+        "caption": "More than eighty people came."
+      },
+      {
+        "file": "05-history-slide.jpg",
+        "caption": "The Evolution: situation calculus, context-aware computing and robotics, each having solved part of the problem before language agents existed."
+      },
+      {
+        "file": "06-presenting.jpg",
+        "caption": "The Computation: whether situation recognition can cut the context and prompt needs enough for smaller, efficient models."
+      },
+      {
+        "file": "02-sentinel-alert.jpg",
+        "caption": "Sentinel: recognize, interpret, respond — with language generation kept outside the decision path."
+      },
+      {
+        "file": "07-botswork-demo.jpg",
+        "caption": "The Real World: the BotsWork demo on situational intelligence in AI coworkers, its implications and next steps."
+      },
+      {
+        "file": "08-own-your-intelligence.jpg",
+        "caption": "“Own your intelligence.”"
+      },
+      {
+        "file": "03-room.jpg",
+        "caption": "The Athenaeum during the evening."
+      },
+      {
+        "file": "09-attendees.jpg",
+        "caption": "In the audience."
+      },
+      {
+        "file": "11-three-asks.jpg",
+        "caption": "The closing slide: three small asks to start."
+      }
+    ],
+    "clips": [
+      {
+        "file": "clip-1.mp4",
+        "caption": "The room during the talks."
+      },
+      {
+        "file": "clip-2.mp4",
+        "caption": "A segment in progress."
+      }
+    ],
+    "feedbackUrl": "https://forms.gle/aNXtoR5wHhsKRJjp8",
+    "photoBase": "/assets/images/events/october-22-2026/"
   },
   {
     "slug": "2026-08-05-jsom-mba-class",

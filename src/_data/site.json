@@ -86,5 +86,10 @@
       "external": true
     }
   ],
-  "currentEvent": "october-22-2026"
+  "currentEvent": "october-22-2026",
+  "links": {
+    "linkedinGroup": "https://www.linkedin.com/groups/40986030/",
+    "newsletter": "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7434891749065469952",
+    "github": "https://github.com/Situational-AI"
+  }
 }

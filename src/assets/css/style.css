@@ -3211,3 +3211,12 @@ a.question-card:hover {
 }
 .next-event-alt a { color: var(--color-text-soft); border-bottom: 1px solid currentColor; }
 .next-event-alt a:hover { color: var(--color-primary); }
+
+.event-gallery video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: #000;
+  display: block;
+}

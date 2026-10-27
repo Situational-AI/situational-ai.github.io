@@ -91,22 +91,49 @@ layout: "layouts/base.njk"
     </div>
   </section>
 
-  <!-- Still to come + stay involved -->
+  <!-- Photographs -->
+  <section class="section event-archive-only" id="photographs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The evening</span>
+        <h2>Photographs</h2>
+      </div>
+      {%- set ev = events | bySlug("october-22-2026") %}
+      <div class="event-gallery">
+        {%- for ph in ev.photos %}
+        <figure>
+          <a href="{{ ev.photoBase }}{{ ph.file }}" target="_blank" rel="noopener"><img src="{{ ev.photoBase }}{{ ph.file }}" alt="{{ ph.caption }}" loading="lazy"></a>
+          <figcaption>{{ ph.caption }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+      <div class="event-gallery" style="margin-top: 8px;">
+        {%- for c in ev.clips %}
+        <figure>
+          <video src="{{ ev.photoBase }}{{ c.file }}" controls preload="metadata" playsinline></video>
+          <figcaption>{{ c.caption }}</figcaption>
+        </figure>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Feedback + what is still to come -->
   <section class="section section-dark event-archive-only" id="archive-materials">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Materials</span>
-        <h2>Photographs, Recordings and Slides</h2>
+        <span class="section-tag">Tell us</span>
+        <h2>How Did We Do?</h2>
+        <p class="section-subtitle">Whether you were in the room or could not make it, your perspective shapes what we do next.</p>
       </div>
-      <div class="research-shell">
+      <div class="section-cta" style="margin-top: 0;">
+        <a href="{{ ev.feedbackUrl }}" class="btn btn-primary" target="_blank" rel="noopener">Share your feedback</a>
+      </div>
+      <div class="research-shell" style="margin-top: 52px;">
         <div class="question-grid">
           <article class="question-card">
-            <h3>Photographs</h3>
-            <div class="content-placeholder">Photographs from the evening.</div>
-          </article>
-          <article class="question-card">
             <h3>Recordings &amp; demos</h3>
-            <div class="content-placeholder">The recording and the demo videos, once edited.</div>
+            <div class="content-placeholder">The full recording and the demo videos, once edited.</div>
           </article>
           <article class="question-card">
             <h3>Slides</h3>
