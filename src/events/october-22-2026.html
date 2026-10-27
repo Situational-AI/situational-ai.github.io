@@ -284,11 +284,18 @@ layout: "layouts/base.njk"
       <div class="section-cta event-register-only">
         <a href="{{ (events | bySlug(site.currentEvent)).rsvpUrl }}" data-rsvp="october-22-2026" class="btn btn-primary" target="_blank" rel="noopener">RSVP for October 22</a>
       </div>
-      <div class="section-cta event-archive-only">
-        <a href="../index.html#contact" class="btn btn-primary">Join the Next Experiment</a>
+      <div class="next-event event-archive-only">
+        <p class="next-event-head">Sign me up for the next one.</p>
+        <p class="next-event-body">We will write when the next forum, workshop or experiment has a date. Nothing else.</p>
+        <form class="follow-form" action="{{ forms.follow.action }}" method="POST" data-google-form data-success="nextEventSuccess">
+          <label for="next-event-email" class="visually-hidden">Email</label>
+          <input id="next-event-email" name="{{ forms.follow.fields.email }}" type="email" placeholder="you@example.com" autocomplete="email" required>
+          <button type="submit" class="btn btn-primary">Sign me up</button>
+        </form>
+        <p class="form-success form-success--small" id="nextEventSuccess" hidden>You’re on the list. We’ll write when the next one has a date.</p>
+        <p class="next-event-alt">Want to do more than attend? <a href="/participate.html">Take up an open question, bring a problem, or propose a collaboration.</a></p>
       </div>
       <p class="event-note event-register-only">Can’t make it? <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7434891749065469952" target="_blank" rel="noopener">Subscribe to the newsletter</a> for the recording and what we learned.</p>
-      <p class="event-note event-archive-only"><a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7434891749065469952" target="_blank" rel="noopener">Subscribe to the newsletter</a> to hear about the next one.</p>
     </div>
   </section>
 
