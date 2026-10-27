@@ -19,7 +19,7 @@ layout: "layouts/base.njk"
       <p class="hero-subtitle">AI has become remarkably capable at responding to prompts, but the world does not arrive as prompts. Situational AI is an emerging research program exploring whether “situation” can become a first-class computational primitive—helping systems recognize what is happening, why it matters, what response is called for, and learn from what happens next.</p>
       <div class="hero-actions">
         <a href="https://luma.com/7jhkvaz2" data-rsvp="october-22-2026" class="btn btn-primary event-register-only" data-rsvp-inflow target="_blank" rel="noopener">RSVP — Join Us October 22</a>
-        <a href="#archive" class="btn btn-primary event-archive-only">Watch the Event</a>
+        <a href="#archive" class="btn btn-primary event-archive-only">What Happened</a>
         <a href="#program" class="btn btn-outline">See the Program</a>
       </div>
     </div>
@@ -48,64 +48,75 @@ layout: "layouts/base.njk"
   <section class="section section-dark event-archive-only" id="archive">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Event Archive</span>
-        <h2>What Happened on October 22</h2>
-        <p class="section-subtitle">The recording, materials, and questions from the first public Situational AI forum, kept here so the work that surrounded it stays findable.</p>
+        <span class="section-tag">What happened</span>
+        <h2>A Full Room, and a Beginning</h2>
+        <p class="section-subtitle">130 registrations, more than 80 people in the room, and an evening of student research, working demos and genuine argument.</p>
       </div>
-      <div class="video-wrapper">
-        <div class="video-container">
-          <div class="content-placeholder" style="position:absolute; inset:0; margin:0; display:flex; flex-direction:column; align-items:center; justify-content:center;">Event recording — embed the video here.</div>
-        </div>
+      <div class="event-prose">
+        <p>Five UT Dallas students presented a summer of work: where the idea comes from and how it sits against Endsley’s situation awareness; whether recognizing the situation first can cut the context and computation a model needs; and two working applications, RiskPulse and Sentinel, demonstrated live.</p>
+        <p>The premise we are building a community around is a simple one. AI should recognize the situations we face, understand what matters to us, and be teachable in how it responds.</p>
+        <p>As Prof. Subramoniam put it on the night: this is a beginning.</p>
       </div>
-      <div class="blog-grid" style="margin-top: 48px;">
-        <div class="blog-card">
-          <div class="blog-card-tag">Slides</div>
-          <h3>Presentation Slides</h3>
-          <div class="content-placeholder">Links to the slide decks from each segment.</div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Presentations</div>
-          <h3>Student Presentations</h3>
-          <div class="content-placeholder">Recordings or slides from the five student segments.</div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Demos</div>
-          <h3>Demo Videos</h3>
-          <div class="content-placeholder">Recordings of the working demonstrations.</div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Photos</div>
-          <h3>Photos</h3>
-          <div class="content-placeholder">Photographs from the forum.</div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Research</div>
-          <h3>Research Papers &amp; Pages</h3>
-          <p>The permanent pages for each summer exploration.</p>
-          <ul style="margin: 0 0 0 18px; color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.8;">
-            <li><a href="../research/krishang-situation-awareness.html">Situational AI &amp; Situation Awareness</a></li>
-            <li><a href="../research/sabareesh-efficient-ai.html">Can Situations Make AI More Efficient?</a></li>
-            <li><a href="../research/sai-riskpulse.html">RiskPulse + Situational AI</a></li>
-            <li><a href="../research/yuvan-project.html">Exploratory Situational AI Application</a></li>
-            <li><a href="../research/avani-student-exploration.html">The Student Exploration</a></li>
-          </ul>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Reflection</div>
-          <h3>What We Learned</h3>
-          <div class="content-placeholder">A short account of what the forum confirmed, challenged, or changed.</div>
-        </div>
-        <div class="blog-card">
-          <div class="blog-card-tag">Open Questions</div>
-          <h3>Questions That Emerged</h3>
-          <div class="content-placeholder">The questions raised in the open discussion, as inputs to the research program.</div>
-        </div>
-        <a href="../index.html#contact" class="blog-card">
-          <div class="blog-card-tag">Next</div>
-          <h3>Join the Next Experiment</h3>
-          <p>The forum was a starting point. The questions it raised are open for anyone to take up.</p>
-          <span class="blog-card-date">Join the Inquiry &rarr;</span>
+      <div class="hero-stats" style="margin-top: 40px;">
+        <div class="stat"><span class="stat-number">130</span><span class="stat-label">registrations</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">80+</span><span class="stat-label">in the room</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">5</span><span class="stat-label">student explorations</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">2</span><span class="stat-label">live demos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The work presented -->
+  <section class="section event-archive-only" id="the-work">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The work</span>
+        <h2>Read What Was Presented</h2>
+        <p class="section-subtitle">Each exploration has a permanent page. Three now carry the researcher’s own manuscript and slides.</p>
+      </div>
+      <div class="blog-grid">
+        {%- for pr in projects %}
+        <a href="{{ pr.url }}" class="blog-card">
+          <div class="blog-card-tag">{{ pr.kind }}</div>
+          <p class="event-card-name">{% for r in people | bySlugs(pr.people) %}{{ r.name }}{% endfor %}</p>
+          <h3>{{ pr.title }}</h3>
+          <p>{{ pr.lede }}</p>
+          <span class="blog-card-date">{% if pr.documents %}Read the paper{% else %}See the project{% endif %} &rarr;</span>
         </a>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Still to come + stay involved -->
+  <section class="section section-dark event-archive-only" id="archive-materials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Materials</span>
+        <h2>Photographs, Recordings and Slides</h2>
+      </div>
+      <div class="research-shell">
+        <div class="question-grid">
+          <article class="question-card">
+            <h3>Photographs</h3>
+            <div class="content-placeholder">Photographs from the evening.</div>
+          </article>
+          <article class="question-card">
+            <h3>Recordings &amp; demos</h3>
+            <div class="content-placeholder">The recording and the demo videos, once edited.</div>
+          </article>
+          <article class="question-card">
+            <h3>Slides</h3>
+            <div class="content-placeholder">The combined slide deck from the evening.</div>
+          </article>
+          <article class="question-card">
+            <h3>What emerged</h3>
+            <div class="content-placeholder">The questions raised in the open discussion, as inputs to the research program.</div>
+          </article>
+        </div>
       </div>
     </div>
   </section>

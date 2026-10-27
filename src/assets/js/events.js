@@ -14,7 +14,7 @@ window.SAI_EVENTS = {
   'october-22-2026': {
     rsvpUrl: 'https://luma.com/7jhkvaz2',
     // 'register' until the event; 'archive' afterwards. Same URL either way.
-    mode: 'register'
+    mode: 'archive'
   }
 };
 
