@@ -1,0 +1,51 @@
+---
+title: "AI Is Becoming More Capable — Situational AI Blog"
+description: "We want it to become more understanding of us. What a room of 80 people and five student explorations made clearer: recognition, teachability, and intelligence you can own."
+ogTitle: "AI Is Becoming More Capable"
+ogDescription: "We want it to become more understanding of us."
+ogType: "article"
+navbarScrolled: true
+nav: "essays"
+layout: "layouts/base.njk"
+---
+  <article class="blog-post">
+    <div class="blog-post-header">
+      <a href="./" class="blog-post-back">&larr; Back to Essays</a>
+      <div class="blog-card-tag">Reflection</div>
+      <h1>AI Is Becoming More Capable</h1>
+      <p class="blog-post-subtitle">We want it to become more understanding of us.</p>
+      <p class="blog-post-meta">October 2026</p>
+    </div>
+
+    <div class="blog-post-content">
+      <p>Every month the models get better at something. Longer context. Stronger reasoning. Better code, better retrieval, better scores on whichever benchmark the field has agreed to care about this quarter.</p>
+      <p>None of that is the same as a system understanding what matters to you.</p>
+      <p>Capability is measured against tasks. Understanding is measured against a person, in a particular moment, with particular obligations and a particular sense of what would be the wrong thing to do right now. The first is improving quickly. The second is barely being attempted.</p>
+
+      <h2>What a full room made clearer</h2>
+      <p>On October 22 we put the idea in front of about eighty people at the Crow Museum of Asian Art at UT Dallas, and watched what happened to it.</p>
+      <p>What I had not expected was how little of the evening was mine. Five UT Dallas students had spent a summer with the hypothesis and had taken it somewhere. One traced its lineage and found that <a href="/research/krishang-situation-awareness.html">situation awareness research had been circling this for forty years</a>, and that mapping it onto language agents produces an uncomfortable paradox: the more situationally capable an agent becomes, the better it gets at gaming the tests for situational capability. Another asked whether recognizing the situation first could <a href="/research/sabareesh-efficient-ai.html">cut the computation</a> rather than add to it. Two built working systems — <a href="/research/sai-riskpulse.html">RiskPulse</a>, which treats a late customer, a payroll run and an unpaid supplier as one cash situation rather than three alerts, and <a href="/research/yuvan-project.html">Sentinel</a>, which turns a fraud alert into a set of candidate situations with the evidence for and against each, and refuses to let the language model choose. A fifth stepped back and asked <a href="/research/avani-student-exploration.html">whether any of this amounts to a new programming paradigm</a> at all.</p>
+      <p>An idea that only its author can hold is not yet an idea. It is a preference. The first real test is whether other people can pick it up, disagree with parts of it, and build something you would not have built. That test was the evening’s actual result, and it mattered more than the attendance.</p>
+
+      <h2>Recognition is the start, not the end</h2>
+      <p>The argument this program has been making is that intelligence begins with recognizing the situation: what is happening, why it matters, and what the moment calls for. <a href="/blog/situation-is-not-context.html">Context supplies the information. Situation supplies the meaning.</a></p>
+      <p>But recognition on its own is still something done <em>to</em> you. A system that reads your situation and acts on its reading, with no way for you to correct it, is not more understanding. It is more confident.</p>
+
+      <h2>Teachable</h2>
+      <p>So the thing we actually want is narrower and harder: a system you can teach.</p>
+      <p>Teach it that in your business a customer going quiet for a week means something different than it does in someone else’s. Teach it which situations you want handled and which you want handed back. Correct it when it reads a moment wrongly — and have the correction persist, rather than evaporating when the conversation ends.</p>
+      <p>That is a demanding requirement. It means the system has to hold an explicit account of what it thinks is happening, show the evidence for it, and let that account be argued with. Sentinel’s design makes the point in miniature: the evidence for and against each candidate situation is on the screen, and the model that writes the explanation is not allowed to choose the answer. You can disagree with a thing like that. You cannot disagree with a black box.</p>
+
+      <h2>And eventually, yours</h2>
+      <p>There is a further ambition underneath, and the evening made me willing to say it out loud.</p>
+      <p>If a system accumulates situational experience — what happened, what it understood, what was chosen, what followed, and where it was wrong — then over years that accumulation becomes something substantial. It is a record of how you work, what you prioritize, what you consider an acceptable response. It is, in a real sense, intelligence built through your own life.</p>
+      <p>That ought to belong to you. Not to whichever vendor happened to host it.</p>
+      <p>We are a long way from being able to deliver that. But it is worth naming the direction, because it changes what you build. A system designed to be teachable and portable looks different from one designed to be impressive.</p>
+
+      <h2>This is a beginning</h2>
+      <p>Prof. Ramesh Subramoniam closed the evening by saying that this is a beginning, and he was right in the way that is slightly inconvenient to hear. We have a hypothesis, five explorations, two working demonstrations, and a long list of things we cannot yet do.</p>
+      <p>There is still <a href="/research/open-questions.html">no formal definition of a situation</a> precise enough to compute with. No benchmark. No empirical result showing that an explicit situation layer beats a well-engineered agentic baseline. Every student paper says so plainly, which is the part I am most pleased about.</p>
+      <p>What exists is a question worth the work, and now a few more people willing to do it.</p>
+      <p>If you want to argue with the hypothesis, test it, or bring a real situation that breaks it — <a href="/participate.html">that is the invitation</a>.</p>
+    </div>
+  </article>
