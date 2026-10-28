@@ -50,7 +50,7 @@ layout: "layouts/base.njk"
       <span class="section-tag">03 · Computational Primitive</span>
       <h2>Make Situation a First-Class Object</h2>
       <p>Language models operate over tokens. Reinforcement-learning systems often operate over states. Our hypothesis is that intelligent behavior needs a native unit that binds perception, goals, judgment, expectation, action, and outcome: the situation.</p>
-      <p>Situation is to intelligent behavior what the token is to language modeling. This is an analogy about computational role—not a claim that situations are literal text tokens.</p>
+      <p>Situation is to intelligent behavior what the token is to language modeling. This is an analogy about computational role, not a claim that situations are literal text tokens.</p>
       <h3>A situation object may contain</h3>
       <ul>
         <li>Observer, role, actors, and relationships</li>
@@ -64,7 +64,7 @@ layout: "layouts/base.njk"
     <section class="research-section" id="situation-space">
       <span class="section-tag">04 · Representation</span>
       <h2>From Semantic Space to Situation Space</h2>
-      <p>The proposal is not to replace embeddings. It is to change what gets embedded. Semantic embeddings capture similarity in language. A situation representation should capture similarity in underlying dynamics—even when the vocabulary, objects, and domains differ.</p>
+      <p>The proposal is not to replace embeddings. It is to change what gets embedded. Semantic embeddings capture similarity in language. A situation representation should capture similarity in underlying dynamics, even when the vocabulary, objects, and domains differ.</p>
       <div class="formula">Events + roles + goals + stage + risk + constraints <strong>→ Situation representation → Analogous situations</strong></div>
       <p>A patient disengaging from treatment and a prospect going silent during a sales process share little vocabulary. Yet both may express the same pattern: expected progression has been interrupted, timely intervention matters, and delay increases the probability of failure.</p>
       <p>If a latent situation space can preserve such structure, experience may transfer across domains wherever the situational dynamics are analogous.</p>
@@ -77,7 +77,7 @@ layout: "layouts/base.njk"
       <p>Interpretation is essential. Detecting an event is not the same as recognizing the situation. A situation-centric architecture maintains an explicit hypothesis about what is occurring, revises that hypothesis as evidence changes, selects a response, and observes whether the response produced the expected transition.</p>
       <h3>Situation memory</h3>
       <p>Conventional memory remembers information. Situation memory remembers experience: what occurred, what was recognized, from whose perspective, what response was selected, why it was selected, what outcome followed, and whether the original interpretation was correct.</p>
-      <p>SCBCM—the Situation-Centric Bot Cognitive Model—is one proposed implementation of this larger thesis.</p>
+      <p>SCBCM, the Situation-Centric Bot Cognitive Model, is one proposed implementation of this larger thesis.</p>
     </section>
 
     <section class="research-section" id="experiments">
@@ -85,7 +85,7 @@ layout: "layouts/base.njk"
       <h2>What We Need to Discover</h2>
       <div class="question-grid">
         <article class="question-card"><h3>Formalization</h3><p>What is the minimal situation representation? Which properties are invariant, temporal, observer-relative, or learned?</p></article>
-        <article class="question-card"><h3>Recognition</h3><p>Can a system detect emerging and overlapping situations—and recognize when its interpretation is wrong?</p></article>
+        <article class="question-card"><h3>Recognition</h3><p>Can a system detect emerging and overlapping situations, and recognize when its interpretation is wrong?</p></article>
         <article class="question-card"><h3>Analogy</h3><p>Can situational retrieval find useful structural analogies that semantic retrieval misses?</p></article>
         <article class="question-card"><h3>Memory</h3><p>Can a system accumulate situational experience and improve without merely accumulating more text?</p></article>
         <article class="question-card"><h3>Evaluation</h3><p>Does an explicit situation layer improve timing, decision quality, coordination, adaptation, and explanation?</p></article>

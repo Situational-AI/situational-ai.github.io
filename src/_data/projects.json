@@ -26,15 +26,15 @@
     "sections": [
       {
         "heading": "Endsley's three-level model",
-        "html": "<p>Situation awareness came out of aviation psychology, where one small misjudgement carries very large consequences. Endsley's model has three levels: <strong>perception</strong> of the elements in the environment — objects, state, conditions; <strong>comprehension</strong> of what those elements mean; and <strong>projection</strong> of the future state from the previous two.</p><p class=\"status-line\">Endsley, M. R. (1995). <em>Toward a Theory of Situation Awareness in Dynamic Systems.</em></p>"
+        "html": "<p>Situation awareness came out of aviation psychology, where one small misjudgement carries very large consequences. Endsley's model has three levels: <strong>perception</strong> of the elements in the environment (objects, state, conditions); <strong>comprehension</strong> of what those elements mean; and <strong>projection</strong> of the future state from the previous two.</p><p class=\"status-line\">Endsley, M. R. (1995). <em>Toward a Theory of Situation Awareness in Dynamic Systems.</em></p>"
       },
       {
         "heading": "The lineage",
-        "html": "<p>Several research traditions have each solved part of this problem.</p><ul><li><strong>Situation calculus</strong> — John McCarthy's formal way to describe the world and reason about how actions change it.</li><li><strong>Context-aware computing</strong> — software that adapts to information about people and their surroundings.</li><li><strong>Robotics</strong> — connecting sensing, understanding and prediction so machines can operate in changing environments.</li></ul><p>Situational AI brings the same question to language-based agents.</p>"
+        "html": "<p>Several research traditions have each solved part of this problem.</p><ul><li><strong>Situation calculus</strong>: John McCarthy's formal way to describe the world and reason about how actions change it.</li><li><strong>Context-aware computing</strong>: software that adapts to information about people and their surroundings.</li><li><strong>Robotics</strong>: connecting sensing, understanding and prediction so machines can operate in changing environments.</li></ul><p>Situational AI brings the same question to language-based agents.</p>"
       },
       {
         "heading": "Measuring situation awareness in an LLM",
-        "html": "<p>The review arrives at a four-method setup:</p><ul><li><strong>Calibration metrics</strong> — P(IK) and P(True): the model's stated confidence against its actual correctness</li><li><strong>The SAD behavioral benchmark</strong> — currently the only direct instrument</li><li><strong>Linear probing</strong> of the representations encoded inside the model</li><li><strong>Theory-of-mind tasks</strong></li></ul>"
+        "html": "<p>The review arrives at a four-method setup:</p><ul><li><strong>Calibration metrics</strong>: P(IK) and P(True): the model's stated confidence against its actual correctness</li><li><strong>The SAD behavioral benchmark</strong>: currently the only direct instrument</li><li><strong>Linear probing</strong> of the representations encoded inside the model</li><li><strong>Theory-of-mind tasks</strong></li></ul>"
       },
       {
         "heading": "Six failure modes",
@@ -46,11 +46,11 @@
       },
       {
         "heading": "The gap it identifies",
-        "html": "<ul><li><strong>Doing what was asked is not doing what was wanted.</strong> The system follows the prompt and still misses what the person meant.</li><li><strong>Agents don't know the present moment.</strong> They reason well and produce output, but know nothing of now unless told.</li><li><strong>Context engineering is not understanding.</strong> Optimizing what a model receives is not the same as grasping what is happening.</li></ul><p>A worked example: “My sink is still leaking. I called two days ago.” That is an unresolved commitment. The system should combine the message with the existing records, name the situation and record its evidence, then follow up the open ticket, ask a clarifying question, or escalate — not open a second ticket.</p>"
+        "html": "<ul><li><strong>Doing what was asked is not doing what was wanted.</strong> The system follows the prompt and still misses what the person meant.</li><li><strong>Agents don't know the present moment.</strong> They reason well and produce output, but know nothing of now unless told.</li><li><strong>Context engineering is not understanding.</strong> Optimizing what a model receives is not the same as grasping what is happening.</li></ul><p>A worked example: “My sink is still leaking. I called two days ago.” That is an unresolved commitment. The system should combine the message with the existing records, name the situation and record its evidence, then follow up the open ticket, ask a clarifying question, or escalate. Not open a second ticket.</p>"
       },
       {
         "heading": "Next",
-        "html": "<ul><li>Benchmark the system against others</li><li>Evaluate the experiments — RiskPulse and Sentinel</li><li>A position paper stating the claim and inviting others to take it up</li><li>A more technical paper on the framework</li></ul>"
+        "html": "<ul><li>Benchmark the system against others</li><li>Evaluate the experiments: RiskPulse and Sentinel</li><li>A position paper stating the claim and inviting others to take it up</li><li>A more technical paper on the framework</li></ul>"
       }
     ],
     "manuscript": null,
@@ -107,7 +107,7 @@
       },
       {
         "heading": "Situation memory instead of re-reading",
-        "html": "<p>Storing and retrieving situation objects directly lets a system make incremental updates rather than running full-sequence inference each time. A traditional agent reprocesses the same context again and again; a situational agent keeps persistent situation memory and cuts the repeated token-level computation.</p><p>That is also what makes small models interesting: local, specialized models that operate within a context you dictate, without the data-centre dependency — though local hardware is slower, so the trade-off needs measuring rather than assuming.</p>"
+        "html": "<p>Storing and retrieving situation objects directly lets a system make incremental updates rather than running full-sequence inference each time. A traditional agent reprocesses the same context again and again; a situational agent keeps persistent situation memory and cuts the repeated token-level computation.</p><p>That is also what makes small models interesting: local, specialized models that operate within a context you dictate, without the data-centre dependency. Local hardware is slower, though, so the trade-off needs measuring rather than assuming.</p>"
       },
       {
         "heading": "What remains unresolved",
@@ -121,7 +121,7 @@
     "slug": "sai-riskpulse",
     "url": "/research/sai-riskpulse.html",
     "title": "RiskPulse + Situational AI",
-    "question": "How can SCBCM-based models enhance the detection and interpretation of situational risk in accounting, fraud, compliance and cash-flow management — at the firm level, and aggregated to the sectoral and macroeconomic levels?",
+    "question": "How can SCBCM-based models enhance the detection and interpretation of situational risk in accounting, fraud, compliance and cash-flow management, at the firm level and aggregated to the sectoral and macroeconomic levels?",
     "status": "Manuscript",
     "kind": "Experiment",
     "people": [
@@ -133,7 +133,7 @@
     "events": [
       "october-22-2026"
     ],
-    "lede": "Situation-centred models for financial risk, from firm-level fraud and distress to systemic stability — and RiskPulse, the working application.",
+    "lede": "Situation-centred models for financial risk, from firm-level fraud and distress to systemic stability, and RiskPulse, the working application.",
     "intro": "One of five explorations from the summer of 2026, when UT Dallas students worked with Mindspace AI on questions emerging from Situational AI. It has two strands: a review of situation-centred behavioral and context modelling (SCBCM) applied across finance and economics, written with Prof. Ramesh Subramoniam and Prasad Pillai; and RiskPulse, a working application that brings the same idea down to the scale of a small business.",
     "concepts": [
       "Recognition",
@@ -144,7 +144,7 @@
     "sections": [
       {
         "heading": "The four research questions",
-        "html": "<ol><li>How can SCBCM-based AI models enhance the detection and interpretation of situational risks in accounting, fraud, compliance and cash-flow management at the firm level?</li><li>Which behavioral and contextual patterns are most predictive of distress, misreporting or non-compliance — and how do these aggregate at sectoral or macroeconomic levels?</li><li>In what ways do AI-generated financial risk signals alter information asymmetry, capital allocation and the cost of capital in financial markets?</li><li>How can situational AI insights be incorporated into macroprudential frameworks to reduce the likelihood or severity of financial crises?</li></ol>"
+        "html": "<ol><li>How can SCBCM-based AI models enhance the detection and interpretation of situational risks in accounting, fraud, compliance and cash-flow management at the firm level?</li><li>Which behavioral and contextual patterns are most predictive of distress, misreporting or non-compliance, and how do these aggregate at sectoral or macroeconomic levels?</li><li>In what ways do AI-generated financial risk signals alter information asymmetry, capital allocation and the cost of capital in financial markets?</li><li>How can situational AI insights be incorporated into macroprudential frameworks to reduce the likelihood or severity of financial crises?</li></ol>"
       },
       {
         "heading": "Distress as a progression",
@@ -194,7 +194,7 @@
     "slug": "yuvan-project",
     "url": "/research/yuvan-project.html",
     "title": "Exploratory Situational AI Application",
-    "question": "Can a fraud alert be turned into an inspectable situation — candidate types with the evidence for and against each — without letting a language model make the decision?",
+    "question": "Can a fraud alert be turned into an inspectable situation, with candidate types and the evidence for and against each, without letting a language model make the decision?",
     "status": "Preliminary",
     "kind": "Experiment",
     "people": [
@@ -216,15 +216,15 @@
     "sections": [
       {
         "heading": "Recognize, interpret, respond",
-        "html": "<p><strong>Recognize</strong> — point-in-time identities and behavioral context. <strong>Interpret</strong> — possible situation types, with the evidence for and against each. <strong>Respond</strong> — a proposed action, human review, and an audit record.</p><p>Optional language generation sits outside the decision path. It writes narrative; it cannot choose a label, a prediction set or an action.</p>"
+        "html": "<p><strong>Recognize</strong>: point-in-time identities and behavioral context. <strong>Interpret</strong>: possible situation types, with the evidence for and against each. <strong>Respond</strong>: a proposed action, human review, and an audit record.</p><p>Optional language generation sits outside the decision path. It writes narrative; it cannot choose a label, a prediction set or an action.</p>"
       },
       {
         "heading": "The pipeline",
-        "html": "<ol><li><strong>Alert event</strong> — an upstream detector flags a transaction</li><li><strong>Case context</strong> — entity links and point-in-time features</li><li><strong>Pattern matcher</strong> — candidate types, with evidence for and against</li><li><strong>Set and policy</strong> — a prediction set, a proposed action and a lane</li><li><strong>Human review</strong> — analyst disposition, with human-only routing</li></ol><p>Every assessment and disposition lands in a hash-chained audit trail. Automatic routing is off.</p>"
+        "html": "<ol><li><strong>Alert event</strong>: an upstream detector flags a transaction</li><li><strong>Case context</strong>: entity links and point-in-time features</li><li><strong>Pattern matcher</strong>: candidate types, with evidence for and against</li><li><strong>Set and policy</strong>: a prediction set, a proposed action and a lane</li><li><strong>Human review</strong>: analyst disposition, with human-only routing</li></ol><p>Every assessment and disposition lands in a hash-chained audit trail. Automatic routing is off.</p>"
       },
       {
         "heading": "Preliminary findings",
-        "html": "<p>The real-data limit is visible, and reported rather than hidden.</p><table class=\"concept-table\"><tbody><tr><th>178 / 200</th><td>human label unanimity</td></tr><tr><th>564 / 600</th><td>primary ratings of “cannot determine”</td></tr><tr><th>0 / 200</th><td>named candidates admitted by the raw matcher</td></tr></tbody></table><p class=\"status-line\">Selected, stratified cases — not fraud accuracy, live prevalence, or end-to-end coverage.</p>"
+        "html": "<p>The real-data limit is visible, and reported rather than hidden.</p><table class=\"concept-table\"><tbody><tr><th>178 / 200</th><td>human label unanimity</td></tr><tr><th>564 / 600</th><td>primary ratings of “cannot determine”</td></tr><tr><th>0 / 200</th><td>named candidates admitted by the raw matcher</td></tr></tbody></table><p class=\"status-line\">Selected, stratified cases. Not fraud accuracy, live prevalence, or end-to-end coverage.</p>"
       },
       {
         "heading": "Next",
@@ -265,15 +265,15 @@
       },
       {
         "heading": "A situation is five things at once",
-        "html": "<p>The review's working definition holds five elements in one connected frame, and keeps holding them over time:</p><ul><li><strong>Context</strong> — what is happening, and what led up to it</li><li><strong>State</strong> — where things stand right now</li><li><strong>Priorities</strong> — what matters most, and to whom</li><li><strong>Expected response</strong> — what a competent actor would do here</li><li><strong>Escalation conditions</strong> — when to stop and get a human</li></ul><p>These move through a loop rather than a pipeline: recognize, remember, plan, act, escalate — and acting changes the situation, so the new state flows back to the beginning. Nothing resets.</p>"
+        "html": "<p>The review's working definition holds five elements in one connected frame, and keeps holding them over time:</p><ul><li><strong>Context</strong>: what is happening, and what led up to it</li><li><strong>State</strong>: where things stand right now</li><li><strong>Priorities</strong>: what matters most, and to whom</li><li><strong>Expected response</strong>: what a competent actor would do here</li><li><strong>Escalation conditions</strong>: when to stop and get a human</li></ul><p>These move through a loop rather than a pipeline: recognize, remember, plan, act, escalate. Acting changes the situation, so the new state flows back to the beginning. Nothing resets.</p>"
       },
       {
         "heading": "Three design requirements",
-        "html": "<p>The review treats these as structural rather than desirable:</p><ul><li><strong>Explainability</strong> — the reasoning must be legible to a person. If you cannot see why it decided something, you cannot correct it when it is wrong.</li><li><strong>Layered cognition</strong> — perception, symbolic structure and reasoning stay distinct rather than compressed into one opaque process. Separation is what makes it debuggable.</li><li><strong>Bounded autonomy</strong> — independence scales with the situation. Routine, act; high-stakes, escalate. Autonomy is not one setting you turn up.</li></ul>"
+        "html": "<p>The review treats these as structural rather than desirable:</p><ul><li><strong>Explainability</strong>: the reasoning must be legible to a person. If you cannot see why it decided something, you cannot correct it when it is wrong.</li><li><strong>Layered cognition</strong>: perception, symbolic structure and reasoning stay distinct rather than compressed into one opaque process. Separation is what makes it debuggable.</li><li><strong>Bounded autonomy</strong>: independence scales with the situation. Routine, act; high-stakes, escalate. Autonomy is not one setting you turn up.</li></ul>"
       },
       {
         "heading": "What is still unresolved",
-        "html": "<p>The review states its own limits plainly.</p><table class=\"concept-table\"><tbody><tr><th>No formal definition of “situation”</th><td>Without one, the paradigm claim cannot be tested or falsified. <em>High</em></td></tr><tr><th>No empirical validation</th><td>Still conceptual — no prototype benchmarked against an agentic baseline. <em>High</em></td></tr><tr><th>Paradigm overlap</th><td>Neuro-symbolic AI and cognitive architectures already cover parts of this space. <em>Medium</em></td></tr><tr><th>Safety and oversight</th><td>Bounded autonomy in real time is not architecturally solved. <em>High</em></td></tr></tbody></table><p>Its conclusion is correspondingly careful: six domains and more than forty sources do not agree on much, but they converge on the same missing piece — a persistent situational layer. The gap is real, even if the answer is not settled.</p>"
+        "html": "<p>The review states its own limits plainly.</p><table class=\"concept-table\"><tbody><tr><th>No formal definition of “situation”</th><td>Without one, the paradigm claim cannot be tested or falsified. <em>High</em></td></tr><tr><th>No empirical validation</th><td>Still conceptual. No prototype benchmarked against an agentic baseline. <em>High</em></td></tr><tr><th>Paradigm overlap</th><td>Neuro-symbolic AI and cognitive architectures already cover parts of this space. <em>Medium</em></td></tr><tr><th>Safety and oversight</th><td>Bounded autonomy in real time is not architecturally solved. <em>High</em></td></tr></tbody></table><p>Its conclusion is correspondingly careful: six domains and more than forty sources do not agree on much, but they converge on the same missing piece: a persistent situational layer. The gap is real, even if the answer is not settled.</p>"
       },
       {
         "heading": "Proposed empirical work",
