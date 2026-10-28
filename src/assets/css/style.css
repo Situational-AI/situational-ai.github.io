@@ -3220,3 +3220,76 @@ a.question-card:hover {
   background: #000;
   display: block;
 }
+
+/* ============================================
+   Channels — join, subscribe, follow
+   ============================================ */
+.channels-label {
+  font-family: var(--font-label);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 16px;
+}
+
+.channels { display: grid; gap: 12px; }
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface-solid);
+  transition: var(--transition);
+}
+
+.channel:hover {
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.channel-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+.channel-icon svg { width: 20px; height: 20px; }
+
+.channel-text { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+.channel-text strong { font-size: 1.02rem; font-weight: 600; letter-spacing: -0.01em; }
+.channel-text span { font-size: 0.92rem; line-height: 1.5; color: var(--color-text-muted); }
+
+.channel-go {
+  flex-shrink: 0;
+  font-family: var(--font-label);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+@media (max-width: 760px) {
+  .channel {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    grid-template-areas: "icon title" ".    desc" ".    go";
+    align-items: start;
+    gap: 6px 14px;
+    padding: 18px;
+  }
+  .channel-icon { grid-area: icon; }
+  .channel-text { display: contents; }
+  .channel-text strong { grid-area: title; align-self: center; }
+  .channel-text span { grid-area: desc; }
+  .channel-go { grid-area: go; margin-top: 8px; }
+}
