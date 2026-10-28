@@ -13,7 +13,7 @@
     </div>
   </div>
   {%- set current = events | bySlug(site.currentEvent) %}
-  {%- if current and not hideAnnounce %}
+  {%- if current and current.mode != "archive" and not hideAnnounce %}
   {#- One line under the bar, on every page that has no RSVP of its own. Hidden by events.js once the event is archived. -#}
   <div class="nav-announce event-register-only">
     <a href="{{ current.url }}" class="nav-announce-label"><span class="hero-pill-dot" aria-hidden="true"></span><span class="nav-announce-full">Attend the {{ current.title }} · {{ current.dateShort }}</span><span class="nav-announce-short">Attend the {{ current.kind }} · {{ current.dateTiny }}</span></a>

@@ -2,7 +2,7 @@
     the event page). events.js shows it once the element marked
     data-rsvp-inflow has left the viewport, and hides it in archive mode. -#}
 {%- set current = events | bySlug(site.currentEvent) %}
-{%- if current and rsvpFloat %}
+{%- if current and current.mode != "archive" and rsvpFloat %}
 <div class="rsvp-float event-register-only" data-rsvp-float{% if rsvpFloatAlways %} data-rsvp-always{% else %} hidden{% endif %}>
   <a href="{{ current.url }}" class="rsvp-float-label"><span class="hero-pill-dot" aria-hidden="true"></span><span class="rsvp-float-full">Attend the {{ current.kind }} · {{ current.dateShort }}</span><span class="rsvp-float-short">Attend {{ current.dateTiny }}</span></a>
   <a href="{{ current.rsvpUrl }}" data-rsvp="{{ current.slug }}" class="rsvp-float-cta" target="_blank" rel="noopener">RSVP &rarr;</a>

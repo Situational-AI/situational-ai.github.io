@@ -1,6 +1,6 @@
 ---
 title: "Events — Situational AI"
-description: "Situational AI is developing through conversations, experiments and encounters across disciplines. Upcoming and past events, from the first JURS address to the October 22 forum."
+description: "Situational AI is developing through conversations, experiments and encounters across disciplines. The record so far, from the first JURS address in February to the October 22 forum."
 ogTitle: "Situational AI — Events"
 ogDescription: "Forums, workshops, showcases, and experiments organized around the open questions of Situational AI."
 ogImage: {"url": "/assets/images/og-forum-2026-10-22.jpg", "type": "image/jpeg", "width": 1200, "height": 630, "alt": "Situational AI Open Research & Technology Forum — The World Does Not Arrive as Prompts — October 22, 2026, 5 PM, Crow Museum of Asian Art, UT Dallas"}
@@ -22,7 +22,7 @@ layout: "layouts/base.njk"
   {%- set past = events | where("status", "past") %}
   <section class="section" style="padding-top: 0;" id="upcoming">
     <div class="container">
-      <div class="section-header section-header--left"><h2>Upcoming</h2></div>
+      <div class="section-header section-header--left"><h2>Upcoming</h2><p class="section-subtitle">Nothing scheduled yet. <a href="/participate.html#follow">Tell us to let you know</a> when the next one has a date.</p></div>
       <div class="blog-list">
         {%- for ev in upcoming %}
         <a href="{{ ev.url }}" class="blog-list-card event-card">
@@ -44,8 +44,8 @@ layout: "layouts/base.njk"
       <div class="section-header section-header--left"><h2>Past</h2><p class="section-subtitle">Each gathering has its own page: why we met, who was there, what emerged, and the photographs.</p></div>
       <div class="blog-list">
         {%- for ev in past | sort(true, false, 'date') %}
-        <a href="/events/{{ ev.slug }}.html" class="blog-list-card event-card">
-          <img class="event-card-image" src="/assets/images/events/{{ ev.slug }}/{{ ev.photos[0].file }}" alt="" loading="lazy">
+        <a href="{{ ev.url or ('/events/' + ev.slug + '.html') }}" class="blog-list-card event-card">
+          <img class="event-card-image" src="{{ ev.photoBase or ('/assets/images/events/' + ev.slug + '/') }}{{ ev.photos[0].file }}" alt="" loading="lazy">
           <div>
             <div class="blog-card-tag">{{ ev.kind }}</div>
             <h3>{{ ev.title }}</h3>
